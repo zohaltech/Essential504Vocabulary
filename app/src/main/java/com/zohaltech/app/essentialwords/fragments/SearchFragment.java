@@ -44,7 +44,8 @@ public class SearchFragment extends Fragment {
     public void search(String text) {
         vocabularies.clear();
         if (text != null && text.length() > 0) {
-            vocabularies.addAll(Vocabularies.search(text));
+            //TODO search
+            //vocabularies.addAll(Vocabularies.search(text));
         }
         adapter.notifyDataSetChanged();
     }

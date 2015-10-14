@@ -29,9 +29,11 @@ public class VocabulariesActivity extends EnhancedActivity {
         recyclerVocabularies.setLayoutManager(layoutManager);
         //recyclerVocabularies.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         theme = (Theme) getIntent().getSerializableExtra("THEME");
-        ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(theme.getId());
-        VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies, true);
-        recyclerVocabularies.setAdapter(adapter);
+
+        //TODO handle themeId
+        //ArrayList<Vocabulary> vocabularies = Vocabularies.selectByLesson(theme.getId());
+        //VocabularyAdapter adapter = new VocabularyAdapter(this, vocabularies, true);
+        //recyclerVocabularies.setAdapter(adapter);
     }
 
     @Override

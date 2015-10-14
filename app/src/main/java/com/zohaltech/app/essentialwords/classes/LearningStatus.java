@@ -20,7 +20,7 @@ public class LearningStatus {
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         if (settings.getStatus() != ReminderSettings.Status.STOP) {
-            ArrayList<Vocabulary> vocabularies = Vocabularies.selectByTheme(themeId);
+            ArrayList<Vocabulary> vocabularies = Vocabularies.selectByLesson(themeId);
             int vocabCount = vocabularies.size();
             Reminder reminder = ReminderManager.getLastReminder();
             if (reminder != null) {
@@ -43,7 +43,7 @@ public class LearningStatus {
                     learningStatus.setVocabCount(vocabCount);
                 } else {
                     learningStatus.setProgress(vocabIndex * 100 / vocabCount);
-                    learningStatus.setDayIndex(currentVocab.getDay());
+                    learningStatus.setDayIndex(currentVocab.getLesson());
                     learningStatus.setDayCount(vocabCount / 6);
                     learningStatus.setVocabIndex(vocabIndex);
                     learningStatus.setVocabCount(vocabCount);

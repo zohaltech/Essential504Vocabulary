@@ -181,7 +181,9 @@ public class SchedulerActivity extends EnhancedActivity {
                 chkSa.isChecked()};
 
         int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
-        int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
+      //  int startVocabId = Vocabularies.selectByLesson(selectedThemeId).get(0).getId();
+        //TODO handle themeId
+        int startVocabId=0;
 
         Date reminderTime = Calendar.getInstance().getTime();
         Reminder garbage = settings.getReminder();
@@ -267,7 +269,9 @@ public class SchedulerActivity extends EnhancedActivity {
         if (settings.getReminder() != null) {
             Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
             assert vocabulary != null;
-            spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
+
+            //TODO handle themeId
+          //  spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
             //edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
         }
         boolean[] days = settings.getWeekdays();

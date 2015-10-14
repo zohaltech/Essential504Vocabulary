@@ -47,7 +47,7 @@ public class ReminderManager {
         }
 
         Reminder reminder = new Reminder(next.getId(), null, next.getVocabulary(), next.getVocabEnglishDef(), true);
-        if (current.getDay() == next.getDay()) {
+        if (current.getLesson() == next.getLesson()) {
             Calendar calendar = Calendar.getInstance();
             calendar.add(Calendar.MINUTE, settings.getIntervals());
 
@@ -101,8 +101,11 @@ public class ReminderManager {
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
-            if (lastVocabulary == null || vocabulary.getDay() == lastVocabulary.getDay()) {
-                ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
+            if (lastVocabulary == null || vocabulary.getLesson() == lastVocabulary.getLesson()) {
+
+                //TODO handle themeId
+              //  ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
+                ArrayList<Vocabulary> siblings=new ArrayList<>();
                 for (int j = 0; j < siblings.size(); j++) {
                     if (vocabulary.getId() > siblings.get(j).getId()) {
                         continue;

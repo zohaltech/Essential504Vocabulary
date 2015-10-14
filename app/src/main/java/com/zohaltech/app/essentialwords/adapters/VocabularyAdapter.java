@@ -41,7 +41,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
         final Vocabulary vocabulary = vocabularies.get(position);
         if (showExtra && position % 6 == 0) {
             holder.txtSection.setVisibility(View.VISIBLE);
-            holder.txtSection.setText("DAY " + vocabulary.getDay());
+            holder.txtSection.setText("DAY " + vocabulary.getLesson());
         } else {
             holder.txtSection.setVisibility(View.GONE);
         }

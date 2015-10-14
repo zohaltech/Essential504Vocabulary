@@ -3,36 +3,30 @@ package com.zohaltech.app.essentialwords.entities;
 
 public class Vocabulary {
     private int     id;
-    private int     themeId;
-    private int     day;
+    private int     lesson;
     private String  vocabulary;
+    private String  pronunciation;
     private String  vocabEnglishDef;
     private String  vocabPersianDef;
+    private String  examples;
     private Boolean learned;
     private Boolean bookmarked;
 
 
-    public Vocabulary(int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked
-    ) {
-        setThemeId(themeId);
-        setDay(day);
+    public Vocabulary(int lesson, String vocabulary, String pronunciation, String examples, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
+        setLesson(lesson);
+        setExamples(examples);
         setVocabulary(vocabulary);
+        setPronunciation(pronunciation);
         setVocabEnglishDef(vocabEnglishDef);
         setVocabPersianDef(vocabPersianDef);
         setLearned(learned);
         setBookmarked(bookmarked);
     }
 
-    public Vocabulary(int id, int themeId, int day, String vocabulary, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
-        this(themeId, day, vocabulary, vocabEnglishDef, vocabPersianDef, learned, bookmarked);
+    public Vocabulary(int id, int lesson, String vocabulary, String pronunciation, String examples, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
+        this(lesson, vocabulary, pronunciation, examples, vocabEnglishDef, vocabPersianDef, learned, bookmarked);
         this.id = id;
-    }
-
-    public Vocabulary(int id, String vocabulary, String vocabEnglishDef, String vocabPersianDef) {
-        setId(id);
-        setVocabulary(vocabulary);
-        setVocabEnglishDef(vocabEnglishDef);
-        setVocabPersianDef(vocabPersianDef);
     }
 
     public int getId() {
@@ -43,24 +37,25 @@ public class Vocabulary {
         this.id = id;
     }
 
-    public int getThemeId() {
-        return themeId;
+
+    public int getLesson() {
+        return lesson;
     }
 
-    public void setThemeId(int themeId) {
-        this.themeId = themeId;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
+    public void setLesson(int lesson) {
+        this.lesson = lesson;
     }
 
     public String getVocabulary() {
         return vocabulary;
+    }
+
+    public String getPronunciation() {
+        return pronunciation;
+    }
+
+    public void setPronunciation(String pronunciation) {
+        this.pronunciation = pronunciation;
     }
 
     public void setVocabulary(String vocabulary) {
@@ -97,6 +92,14 @@ public class Vocabulary {
 
     public void setBookmarked(Boolean bookmarked) {
         this.bookmarked = bookmarked;
+    }
+
+    public String getExamples() {
+        return examples;
+    }
+
+    public void setExamples(String examples) {
+        this.examples = examples;
     }
 
 }
