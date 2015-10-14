@@ -46,6 +46,7 @@ public class Vocabularies {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
+                                                           cursor.getInt(cursor.getColumnIndex(Lesson)),
                                                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
                                                            cursor.getString(cursor.getColumnIndex(Pronunciation)),
                                                            cursor.getString(cursor.getColumnIndex(Examples)),

@@ -16,16 +16,22 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zohaltech.app.essentialwords.classes.WebApiClient;
+import com.zohaltech.app.essentialwords.data.Examples;
+import com.zohaltech.app.essentialwords.data.Vocabularies;
+import com.zohaltech.app.essentialwords.entities.Example;
+import com.zohaltech.app.essentialwords.entities.Vocabulary;
 import com.zohaltech.app.essentialwords.fragments.DrawerFragment;
 import com.zohaltech.app.essentialwords.fragments.SearchFragment;
 import com.zohaltech.app.essentialwords.fragments.ThemesFragment;
 
 import com.zohaltech.app.essentialwords.R;
+
+import java.util.ArrayList;
+
 import widgets.MySnackbar;
 
 
 public class MainActivity extends EnhancedActivity {
-
     long startTime;
     private DrawerLayout   drawerLayout;
     private DrawerFragment drawerFragment;
@@ -34,6 +40,7 @@ public class MainActivity extends EnhancedActivity {
     @Override
     protected void onCreated() {
         setContentView(R.layout.activity_main);
+       // getExamples();
         startTime = System.currentTimeMillis() - 5000;
         WebApiClient.sendUserData();
     }
@@ -136,5 +143,32 @@ public class MainActivity extends EnhancedActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void getExamples(){
+        ArrayList<Vocabulary> vocabularies= Vocabularies.select();
+
+        for (Vocabulary vocabulary:vocabularies) {
+            String[] examples=vocabulary.getExamples().split("\n");
+
+            int k=1;
+            for (String ex:examples) {
+                String[] exampleArr=ex.split(".");
+                if(!ex.equals("\n") && !ex.equals("\r")) {
+                    String exStr = ex.substring(3);
+
+                    Example e = new Example(vocabulary.getId(), k, exStr, "");
+                    Examples.insert(e);
+                    k++;
+                }
+
+
+
+
+            }
+            String s="";
+
+        }
+
     }
 }

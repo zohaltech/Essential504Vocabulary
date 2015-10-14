@@ -10,15 +10,12 @@ import android.provider.Settings;
 import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.classes.CsvReader;
 import com.zohaltech.app.essentialwords.classes.MyRuntimeException;
-import com.zohaltech.app.essentialwords.entities.Theme;
 
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
-
     public static final String DATABASE_NAME    = "ESSENTIAL_WORDS";
-
-    public static final int    DATABASE_VERSION = 1;
+    public static final int    DATABASE_VERSION =14;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -34,8 +31,9 @@ public class DataAccess extends SQLiteOpenHelper {
             db.execSQL(SystemSettings.CreateTable);
 
 
+            insertDataFromAsset(db, Vocabularies.TableName, "data/504.csv", ';');
+            insertDataFromAsset(db, Vocabularies.TableName, "data/examples.csv", ';');
 
-            insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
 
 
             ContentValues systemSettingsValues = new ContentValues();
