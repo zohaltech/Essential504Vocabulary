@@ -9,9 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.zohaltech.app.essential504vocabulary.classes.App;
+import com.zohaltech.app.essentialwords.classes.App;
 
-import com.zohaltech.app.essential504vocabulary.R;
+import com.zohaltech.app.essentialwords.R;
 
 public class MyToast extends Toast {
 

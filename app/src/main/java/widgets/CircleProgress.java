@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.zohaltech.app.essential504vocabulary.R;
+import com.zohaltech.app.essentialwords.R;
 
 public class CircleProgress extends ImageView {
 

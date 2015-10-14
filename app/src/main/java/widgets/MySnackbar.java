@@ -4,7 +4,7 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.zohaltech.app.essential504vocabulary.R;
+import com.zohaltech.app.essentialwords.R;
 
 
 public class MySnackbar {

@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
-import com.zohaltech.app.essential504vocabulary.classes.App;
+import com.zohaltech.app.essentialwords.classes.App;
 
 
 public class PersianTextView extends AppCompatTextView {

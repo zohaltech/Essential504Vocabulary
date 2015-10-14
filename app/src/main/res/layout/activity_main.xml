@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="com.zohaltech.app.essential504vocabulary.fragments.DrawerFragment"
+        android:name="com.zohaltech.app.essentialwords.fragments.DrawerFragment"
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

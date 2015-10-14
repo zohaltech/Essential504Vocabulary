@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.zohaltech.app.essential504vocabulary.classes.App;
+import com.zohaltech.app.essentialwords.classes.App;
 
-import com.zohaltech.app.essential504vocabulary.R;
+import com.zohaltech.app.essentialwords.R;
 
 public class MyViewPagerIndicator extends ImageView {
     //private static final int CIRCLE_RADIUS       = 20;
