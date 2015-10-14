@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.zohaltech.app.essential504vocabulary.R;
 import com.zohaltech.app.essential504vocabulary.classes.App;
 import com.zohaltech.app.essential504vocabulary.classes.DialogManager;
 import com.zohaltech.app.essential504vocabulary.classes.ReminderManager;
@@ -37,10 +37,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import com.zohaltech.app.essential504vocabulary.R;
 import widgets.MyToast;
 
-public class SchedulerActivity extends PaymentActivity {
+public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkSa;
     CheckBox chkSu;
     CheckBox chkMo;
@@ -64,7 +63,6 @@ public class SchedulerActivity extends PaymentActivity {
 
     @Override
     protected void onCreated() {
-        super.onCreated();
         setContentView(R.layout.activity_scheduler);
         initialise();
     }
@@ -165,83 +163,58 @@ public class SchedulerActivity extends PaymentActivity {
             }
         });
 
-        //Button btnGetLastStatus = (Button) findViewById(R.id.btnGetStatus);
-        //btnGetLastStatus.setOnClickListener(new View.OnClickListener()
-        //{
-        //    @Override
-        //    public void onClick(View v)
-        //    {
-        //        ReminderSettings settings = ReminderManager.getReminderSettings();
-        //        String status = settings.getStatus().toString();
-        //        if (settings.getReminder() != null)
-        //        {
-        //            Date time = settings.getReminder().getTime();
-        //            String remindTime = (time == null ? "Not Set" : time.toString());
-        //            Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n Alarm Time: " + remindTime, Toast.LENGTH_LONG).show();
-        //        }
-        //        else
-        //        {
-        //            Toast.makeText(SchedulerActivity.this, "Status:" + status + "\n No Reminder", Toast.LENGTH_LONG).show();
-        //        }
-        //    }
-        //});
-
         setViewsStatus();
     }
 
     private void start() {
-        if (SystemSettings.getCurrentSettings().isPremium()) {
-            ReminderSettings settings = ReminderManager.getReminderSettings();
+        ReminderSettings settings = ReminderManager.getReminderSettings();
 
-            boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
+        boolean paused = settings.getStatus() == ReminderSettings.Status.PAUSE;
 
-            boolean[] days = {
-                    chkSu.isChecked(),
-                    chkMo.isChecked(),
-                    chkTu.isChecked(),
-                    chkWe.isChecked(),
-                    chkTh.isChecked(),
-                    chkFr.isChecked(),
-                    chkSa.isChecked()};
+        boolean[] days = {
+                chkSu.isChecked(),
+                chkMo.isChecked(),
+                chkTu.isChecked(),
+                chkWe.isChecked(),
+                chkTh.isChecked(),
+                chkFr.isChecked(),
+                chkSa.isChecked()};
 
-            int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
-            int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
+        int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
+        int startVocabId = Vocabularies.selectByTheme(selectedThemeId).get(0).getId();
 
-            Date reminderTime = Calendar.getInstance().getTime();
-            Reminder garbage = settings.getReminder();
-            if (garbage != null) {
-                if (garbage.getTime() != null) {
-                    reminderTime = garbage.getTime();
-                }
-
-                startVocabId = garbage.getVocabularyId();
-            }
-            Vocabulary vocabulary = Vocabularies.select(startVocabId);
-            if (vocabulary == null) {
-                return;
+        Date reminderTime = Calendar.getInstance().getTime();
+        Reminder garbage = settings.getReminder();
+        if (garbage != null) {
+            if (garbage.getTime() != null) {
+                reminderTime = garbage.getTime();
             }
 
-
-            settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
-            settings.setStartTime(btnStartTime.getText().toString());
-            //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
-            //  settings.setIntervals();
-            settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
-            settings.setWeekdays(days);
-            settings.setStatus(ReminderSettings.Status.RUNNING);
-            ReminderManager.setReminderSettings(settings);
-
-            ReminderManager.start(paused);
-
-            bind();
-
-            settings = ReminderManager.getReminderSettings();
-            Date time = settings.getReminder().getTime();
-            SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
-            MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
-        } else {
-            showPaymentDialog();
+            startVocabId = garbage.getVocabularyId();
         }
+        Vocabulary vocabulary = Vocabularies.select(startVocabId);
+        if (vocabulary == null) {
+            return;
+        }
+
+
+        settings.setReminder(new Reminder(vocabulary.getId(), reminderTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        settings.setStartTime(btnStartTime.getText().toString());
+        //settings.setIntervals(Integer.parseInt(edtAlarmIntervals.getText().toString()));
+        //  settings.setIntervals();
+        settings.setIntervals((Integer) spinnerIntervals.getSelectedItem());
+        settings.setWeekdays(days);
+        settings.setStatus(ReminderSettings.Status.RUNNING);
+        ReminderManager.setReminderSettings(settings);
+
+        ReminderManager.start(paused);
+
+        bind();
+
+        settings = ReminderManager.getReminderSettings();
+        Date time = settings.getReminder().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE HH:mm", Locale.getDefault());
+        MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
     }
 
     private void bind() {
@@ -409,18 +382,6 @@ public class SchedulerActivity extends PaymentActivity {
                 btnSelectTone.setText(ringtone.getTitle(this));
             }
             SystemSettings.update(setting);
-        } else if (requestCode == RC_REQUEST) {
-            super.onActivityResult(requestCode, resultCode, intent);
         }
-    }
-
-    @Override
-    protected void updateUiToPremiumVersion() {
-        destroyPaymentDialog();
-    }
-
-    @Override
-    protected void updateUiToTrialVersion() {
-        //nothing
     }
 }

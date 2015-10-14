@@ -6,7 +6,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class CoreSec {
+public class EssentialSec {
 
     public static String encrypt(String value) {
         try {

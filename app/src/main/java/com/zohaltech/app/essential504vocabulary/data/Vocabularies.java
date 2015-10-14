@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.zohaltech.app.essential504vocabulary.classes.CoreSec;
+import com.zohaltech.app.essential504vocabulary.classes.EssentialSec;
 import com.zohaltech.app.essential504vocabulary.classes.MyRuntimeException;
 import com.zohaltech.app.essential504vocabulary.entities.Vocabulary;
 
@@ -47,9 +47,9 @@ public class Vocabularies {
                     Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(ThemeId)),
                             cursor.getInt(cursor.getColumnIndex(Day)),
-                            CoreSec.decrypt(cursor.getString(cursor.getColumnIndex(Vocabulary))),
-                            CoreSec.decrypt(cursor.getString(cursor.getColumnIndex(EnglishDef))),
-                            CoreSec.decrypt(cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n')),
+                            EssentialSec.decrypt(cursor.getString(cursor.getColumnIndex(Vocabulary))),
+                            EssentialSec.decrypt(cursor.getString(cursor.getColumnIndex(EnglishDef))),
+                            EssentialSec.decrypt(cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n')),
                             cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
                             cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
 

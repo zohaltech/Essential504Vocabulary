@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context="com.zohaltech.app.corevocabulary.activities.SplashActivity">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -30,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Core Vocabulary"
+        android:text="504 Essential Words"
         android:textColor="@color/primary_text"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 

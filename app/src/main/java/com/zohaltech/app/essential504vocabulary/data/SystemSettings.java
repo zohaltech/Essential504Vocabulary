@@ -16,8 +16,6 @@ public class SystemSettings {
     static final String TableName        = "SystemSettings";
     static final String Id               = "Id";
     static final String Installed        = "Installed";
-    static final String Premium          = "Premium";
-    static final String PremiumVersion   = "PremiumVersion";
     static final String RingingToneUri   = "RingingToneUri";
     static final String AlarmRingingTone = "AlarmRingingTone";
     static final String VibrateInAlarms  = "VibrateInAlarms";
@@ -27,8 +25,6 @@ public class SystemSettings {
     static final String CreateTable = "CREATE TABLE " + TableName + " (" +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       Installed + " BOOLEAN NOT NULL, " +
-                                      Premium + " BOOLEAN NOT NULL, " +
-                                      PremiumVersion + " VARCHAR(100)," +
                                       RingingToneUri + " VARCHAR(20)," +
                                       AlarmRingingTone + " VARCHAR(20)," +
                                       VibrateInAlarms + " BOOLEAN NOT NULL, " +
@@ -49,8 +45,6 @@ public class SystemSettings {
                 do {
                     SystemSetting systemSetting = new SystemSetting(cursor.getInt(cursor.getColumnIndex(Id)),
                             cursor.getInt(cursor.getColumnIndex(Installed)) == 1,
-                            cursor.getInt(cursor.getColumnIndex(Premium)) == 1,
-                            cursor.getString(cursor.getColumnIndex(PremiumVersion)),
                             cursor.getString(cursor.getColumnIndex(RingingToneUri)),
                             cursor.getString(cursor.getColumnIndex(AlarmRingingTone)),
                             cursor.getInt(cursor.getColumnIndex(VibrateInAlarms)) == 1,
@@ -73,8 +67,6 @@ public class SystemSettings {
         ContentValues values = new ContentValues();
 
         values.put(Installed, setting.getInstalled() ? 1 : 0);
-        values.put(Premium, setting.getPremium() ? 1 : 0);
-        values.put(PremiumVersion, setting.getPremiumVersion());
         values.put(RingingToneUri, setting.getRingingToneUri());
         values.put(AlarmRingingTone, setting.getAlarmRingingTone());
         values.put(VibrateInAlarms, setting.getVibrateInAlarms() ? 1 : 0);
@@ -84,15 +76,10 @@ public class SystemSettings {
         return da.update(TableName, values, Id + " = ? ", new String[]{String.valueOf(setting.getId())});
     }
 
-    public static void register(SystemSetting setting) {
-        setting.setPremiumVersion( Helper.hashString(Helper.getDeviceId()));
-        update(setting);
-    }
-
-    public static long delete(SystemSetting setting) {
-        DataAccess db = new DataAccess();
-        return db.delete(TableName, Id + " =? ", new String[]{String.valueOf(setting.getId())});
-    }
+    //public static long delete(SystemSetting setting) {
+    //    DataAccess db = new DataAccess();
+    //    return db.delete(TableName, Id + " =? ", new String[]{String.valueOf(setting.getId())});
+    //}
 
     public static SystemSetting getCurrentSettings() {
         ArrayList<SystemSetting> settings = select("", null);

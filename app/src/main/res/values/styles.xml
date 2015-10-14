@@ -8,7 +8,7 @@
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/green</item>
+        <item name="colorAccent">@color/primary</item>
     </style>
 
     <style name="BorderlessButton" parent="Widget.AppCompat.Button.Borderless">

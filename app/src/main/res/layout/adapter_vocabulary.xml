@@ -14,7 +14,7 @@
         android:singleLine="true"
         android:text="Day 1"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/green"/>
+        android:textColor="@color/primary"/>
 
     <!--<LinearLayout-->
     <!--android:id="@+id/layoutDivider"-->

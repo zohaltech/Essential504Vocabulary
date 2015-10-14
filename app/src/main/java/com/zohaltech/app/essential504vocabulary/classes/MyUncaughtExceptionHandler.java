@@ -30,7 +30,7 @@ public class MyUncaughtExceptionHandler implements java.lang.Thread.UncaughtExce
 
     private static void writeToFile(String errorText) {
         try {
-            File file = new File(Environment.getExternalStorageDirectory(), "corevocabulary_log.txt");
+            File file = new File(Environment.getExternalStorageDirectory(), "essentialwords_log.txt");
             if (!file.exists()) {
                 // file.mkdirs();
                 file.createNewFile();

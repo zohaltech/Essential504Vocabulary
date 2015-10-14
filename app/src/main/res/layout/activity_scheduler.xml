@@ -364,7 +364,7 @@
                     android:padding="10dp"
                     android:text="STATUS : RUNNING"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/green"/>
+                    android:textColor="@color/primary"/>
 
             </LinearLayout>
 

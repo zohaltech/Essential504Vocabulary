@@ -24,9 +24,9 @@ public class WebApiClient {
     private static final String HOST_URL = App.context.getString(R.string.host_name);
     private JSONObject jsonObject;
 
-    public static void sendUserData(WebApiClient.PostAction postAction, String token) {
+    public static void sendUserData() {
         WebApiClient webApiClient = new WebApiClient();
-        webApiClient.postSubscriberData(postAction, token);
+        webApiClient.postSubscriberData();
     }
 
     private JSONObject getJsonObject() {
@@ -37,7 +37,7 @@ public class WebApiClient {
         this.jsonObject = jsonObject;
     }
 
-    public void postSubscriberData(final PostAction action, final String token) {
+    public void postSubscriberData() {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -45,11 +45,10 @@ public class WebApiClient {
                     SystemSetting setting = SystemSettings.getCurrentSettings();
                     JSONObject jsonObject = new JSONObject();
 
-                    if (action == PostAction.INSTALL) {
                         if (!setting.getInstalled()) {
                             if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
                                 jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-                                jsonObject.accumulate("AppId", 2);
+                                jsonObject.accumulate("AppId", 3);
                                 jsonObject.accumulate("DeviceId", Helper.getDeviceId());
                                 jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
                                 jsonObject.accumulate("DeviceModel", Build.MODEL);
@@ -59,35 +58,12 @@ public class WebApiClient {
                                 jsonObject.accumulate("IsPurchased", false);
                                 jsonObject.accumulate("MarketId", App.market);
                                 jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
-                                jsonObject.accumulate("PurchaseToken", token);
                                 setJsonObject(jsonObject);
                                 Boolean result = post(getJsonObject());
                                 setting.setInstalled(result);
                                 SystemSettings.update(setting);
                             }
                         }
-                    } else {
-                        if (!setting.getPremium()) {
-                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
-                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-                                jsonObject.accumulate("AppId", 2);
-                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
-                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-                                jsonObject.accumulate("DeviceModel", Build.MODEL);
-                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
-                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
-                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
-                                jsonObject.accumulate("IsPurchased", true);
-                                jsonObject.accumulate("MarketId", App.market);
-                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
-                                jsonObject.accumulate("PurchaseToken", token);
-                                setJsonObject(jsonObject);
-                                Boolean result = post(getJsonObject());
-                                setting.setPremium(result);
-                                SystemSettings.update(setting);
-                            }
-                        }
-                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -132,10 +108,5 @@ public class WebApiClient {
             Log.d("InputStream", e.getLocalizedMessage());
         }
         return false;
-    }
-
-    public enum PostAction {
-        INSTALL,
-        REGISTER
     }
 }

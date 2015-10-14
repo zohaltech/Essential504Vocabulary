@@ -15,7 +15,7 @@ import com.zohaltech.app.essential504vocabulary.entities.Theme;
 import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME    = "CORE_VOCABULARY";
+    public static final String DATABASE_NAME    = "ESSENTIAL_WORDS";
     public static final int    DATABASE_VERSION = 1;
 
     public DataAccess() {
@@ -45,13 +45,12 @@ public class DataAccess extends SQLiteOpenHelper {
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(12, "Science", "science")));
             db.insert(Themes.TableName, null, Themes.getContentValues(new Theme(13, "Collocations for Causes and Results", "causes")));
 
-            insertDataFromAsset(db, Vocabularies.TableName, "app/zohaltech/com/essential504vocabulary/activities/data/vocabs.csv", ';');
-            insertDataFromAsset(db, Examples.TableName, "app/zohaltech/com/essential504vocabulary/activities/data/examples.csv", ';');
-            insertDataFromAsset(db, Notes.TableName, "app/zohaltech/com/essential504vocabulary/activities/data/notes.csv", ';');
+            insertDataFromAsset(db, Vocabularies.TableName, "data/vocabs.csv", ';');
+            insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
+            insertDataFromAsset(db, Notes.TableName, "data/notes.csv", ';');
 
             ContentValues systemSettingsValues = new ContentValues();
             systemSettingsValues.put(SystemSettings.Installed, 0);
-            systemSettingsValues.put(SystemSettings.Premium, 0);
             systemSettingsValues.put(SystemSettings.VibrateInAlarms, 0);
             systemSettingsValues.put(SystemSettings.SoundInAlarms, 0);
             systemSettingsValues.put(SystemSettings.RingingToneUri, Settings.System.DEFAULT_NOTIFICATION_URI.getPath());

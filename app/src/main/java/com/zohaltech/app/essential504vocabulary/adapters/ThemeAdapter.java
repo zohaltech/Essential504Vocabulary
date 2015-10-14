@@ -13,9 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
-import com.zohaltech.app.essential504vocabulary.activities.MainActivity;
+import com.zohaltech.app.essential504vocabulary.R;
 import com.zohaltech.app.essential504vocabulary.activities.VocabulariesActivity;
 import com.zohaltech.app.essential504vocabulary.classes.App;
 import com.zohaltech.app.essential504vocabulary.classes.LearningStatus;
@@ -25,7 +23,6 @@ import com.zohaltech.app.essential504vocabulary.entities.Theme;
 
 import java.util.ArrayList;
 
-import com.zohaltech.app.essential504vocabulary.R;
 import widgets.CircleProgress;
 
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
@@ -115,59 +112,48 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         //final int imageId = activity.getResources().getIdentifier(theme.getIconName(), "drawable", activity.getPackageName());
         //Picasso.with(activity).load(imageId).into(holder.imgTheme);
 
-        if (position == 0) {
-            Picasso.with(activity).load(R.drawable.education).into(holder.imgTheme);
-        } else if (position == 1) {
-            Picasso.with(activity).load(R.drawable.job).into(holder.imgTheme);
-        } else if (position == 2) {
-            Picasso.with(activity).load(R.drawable.media).into(holder.imgTheme);
-        } else if (position == 3) {
-            Picasso.with(activity).load(R.drawable.health).into(holder.imgTheme);
-        } else if (position == 4) {
-            Picasso.with(activity).load(R.drawable.environment).into(holder.imgTheme);
-        } else if (position == 5) {
-            Picasso.with(activity).load(R.drawable.advertising).into(holder.imgTheme);
-        } else if (position == 6) {
-            Picasso.with(activity).load(R.drawable.foreign_language).into(holder.imgTheme);
-        } else if (position == 7) {
-            Picasso.with(activity).load(R.drawable.urbanisation).into(holder.imgTheme);
-        } else if (position == 8) {
-            Picasso.with(activity).load(R.drawable.law).into(holder.imgTheme);
-        } else if (position == 9) {
-            Picasso.with(activity).load(R.drawable.sport).into(holder.imgTheme);
-        } else if (position == 10) {
-            Picasso.with(activity).load(R.drawable.space).into(holder.imgTheme);
-        } else if (position == 11) {
-            Picasso.with(activity).load(R.drawable.science).into(holder.imgTheme);
-        } else if (position == 12) {
-            Picasso.with(activity).load(R.drawable.causes).into(holder.imgTheme);
-        }
+        //if (position == 0) {
+        //    Picasso.with(activity).load(R.drawable.education).into(holder.imgTheme);
+        //} else if (position == 1) {
+        //    Picasso.with(activity).load(R.drawable.job).into(holder.imgTheme);
+        //} else if (position == 2) {
+        //    Picasso.with(activity).load(R.drawable.media).into(holder.imgTheme);
+        //} else if (position == 3) {
+        //    Picasso.with(activity).load(R.drawable.health).into(holder.imgTheme);
+        //} else if (position == 4) {
+        //    Picasso.with(activity).load(R.drawable.environment).into(holder.imgTheme);
+        //} else if (position == 5) {
+        //    Picasso.with(activity).load(R.drawable.advertising).into(holder.imgTheme);
+        //} else if (position == 6) {
+        //    Picasso.with(activity).load(R.drawable.foreign_language).into(holder.imgTheme);
+        //} else if (position == 7) {
+        //    Picasso.with(activity).load(R.drawable.urbanisation).into(holder.imgTheme);
+        //} else if (position == 8) {
+        //    Picasso.with(activity).load(R.drawable.law).into(holder.imgTheme);
+        //} else if (position == 9) {
+        //    Picasso.with(activity).load(R.drawable.sport).into(holder.imgTheme);
+        //} else if (position == 10) {
+        //    Picasso.with(activity).load(R.drawable.space).into(holder.imgTheme);
+        //} else if (position == 11) {
+        //    Picasso.with(activity).load(R.drawable.science).into(holder.imgTheme);
+        //} else if (position == 12) {
+        //    Picasso.with(activity).load(R.drawable.causes).into(holder.imgTheme);
+        //}
 
         //new ImageLoaderTask(holder.imgTheme).execute(imageId);
 
         holder.txtTheme.setText(theme.getName());
 
         SystemSetting setting = SystemSettings.getCurrentSettings();
-        if (position < 2 || setting.isPremium()) {
-            holder.imgPremium.setVisibility(View.GONE);
-            holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
-                    intent.putExtra("THEME", theme);
-                    App.currentActivity.startActivity(intent);
-                }
-            });
-        } else {
-            holder.imgPremium.setVisibility(View.VISIBLE);
-            holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //MySnackbar.show(v, "Please buy premium version", Snackbar.LENGTH_SHORT);
-                    ((MainActivity)activity).showPaymentDialog();
-                }
-            });
-        }
+        holder.imgPremium.setVisibility(View.GONE);
+        holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
+                intent.putExtra("THEME", theme);
+                App.currentActivity.startActivity(intent);
+            }
+        });
         //holder.layoutProgressDetail.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
         holder.layoutProgressDetail.setVisibility(View.GONE);
         //collapse(holder.layoutProgressDetail);

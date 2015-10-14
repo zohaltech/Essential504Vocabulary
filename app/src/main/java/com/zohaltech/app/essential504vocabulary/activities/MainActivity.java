@@ -24,7 +24,7 @@ import com.zohaltech.app.essential504vocabulary.R;
 import widgets.MySnackbar;
 
 
-public class MainActivity extends PaymentActivity {
+public class MainActivity extends EnhancedActivity {
 
     long startTime;
     private DrawerLayout   drawerLayout;
@@ -33,19 +33,9 @@ public class MainActivity extends PaymentActivity {
 
     @Override
     protected void onCreated() {
-        super.onCreated();
         setContentView(R.layout.activity_main);
         startTime = System.currentTimeMillis() - 5000;
-        //        SystemSetting setting=SystemSettings.getCurrentSettings();
-        //        SystemSettings.register(setting);
-        //
-        //        if(setting.getPremium().equals(Helper.hashString(Helper.getDeviceId()))){
-        //            String s;
-        //        }
-
-        //if (App.preferences.getBoolean("Encoded", false))
-        // EncryptVocabs();
-        WebApiClient.sendUserData(WebApiClient.PostAction.INSTALL, null);
+        WebApiClient.sendUserData();
     }
 
     @Override
@@ -55,20 +45,6 @@ public class MainActivity extends PaymentActivity {
         drawerFragment.setUp(drawerLayout, toolbar);
         drawerFragment.setMenuVisibility(true);
         displayView(0);
-    }
-
-    @Override
-    protected void updateUiToPremiumVersion() {
-        if (drawerFragment != null) {
-            drawerFragment.updateUi();
-        }
-        destroyPaymentDialog();
-        displayView(0);
-    }
-
-    @Override
-    protected void updateUiToTrialVersion() {
-        //nothing
     }
 
     @Override
@@ -161,50 +137,4 @@ public class MainActivity extends PaymentActivity {
             super.onBackPressed();
         }
     }
-
-    //    private void EncryptVocabs() {
-    //        ArrayList<Vocabulary> vocabularies = Vocabularies.select();
-    //        ArrayList<Example> examples = Examples.select();
-    //
-    //        for (Vocabulary vocabulary : vocabularies) {
-    //            try {
-    //                vocabulary.setEncVocab(CoreSec.encrypt(vocabulary.getVocabulary()));
-    //                vocabulary.setEncPersianDef(CoreSec.encrypt(vocabulary.getVocabPersianDef()));
-    //                vocabulary.setEncEngDef(CoreSec.encrypt(vocabulary.getVocabEnglishDef()));
-    //
-    //                Vocabularies.update(vocabulary);
-    //            } catch (Exception e) {
-    //                e.printStackTrace();
-    //            }
-    //        }
-    //        //        for (Vocabulary vocabulary : vocabularies) {
-    //        //            try {
-    //        //
-    //        //                String voc = decrypt(vocabulary.getEncVocab1());
-    //        //                String p = decrypt(vocabulary.getEncPersianDef1());
-    //        //
-    //        //                //                        String voc = java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncVocab1())),"UTF-8");
-    //        //                //                        String p =  java.net.URLDecoder.decode(new String(xsamCrypt.decrypt(vocabulary.getEncPersianDef1())),"UTF-8");
-    //        //                //                vocabulary.setEncVocab(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabulary())));
-    //        //                //                vocabulary.setEncPersianDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabPersianDef())));
-    //        //                //                vocabulary.setEncEngDef(XsamCrypt.bytesToHex(xsamCrypt.encrypt(vocabulary.getVocabEnglishDef())));
-    //        //
-    //        //                Vocabularies.update(vocabulary);
-    //        //
-    //        //            } catch (Exception e) {
-    //        //                e.printStackTrace();
-    //        //            }
-    //        //        }
-    //        for (Example example : examples) {
-    //            try {
-    //                example.setEncEnglish(CoreSec.encrypt(example.getEnglish()));
-    //                example.setEncPersian(CoreSec.encrypt(example.getPersian()));
-    //
-    //                Examples.update(example);
-    //            } catch (Exception e) {
-    //                e.printStackTrace();
-    //            }
-    //        }
-    //        App.preferences.edit().putBoolean("Encoded", true).apply();
-    //    }
 }

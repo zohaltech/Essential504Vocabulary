@@ -58,9 +58,6 @@ public class DrawerFragment extends Fragment {
                         intent = new Intent(getActivity(), IntroductionActivity.class);
                         startActivity(intent);
                         break;
-                    case R.id.nav_buy:
-                        ((MainActivity) getActivity()).pay();
-                        break;
                     case R.id.nav_about:
                         intent = new Intent(getActivity(), AboutActivity.class);
                         startActivity(intent);
@@ -74,19 +71,6 @@ public class DrawerFragment extends Fragment {
                 return false;
             }
         });
-    }
-
-    public void updateUi() {
-        final MenuItem buyItem = navView.getMenu().findItem(R.id.nav_buy);
-        if (SystemSettings.getCurrentSettings().isPremium()) {
-            buyItem.setVisible(false);
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateUi();
     }
 
     public void setUp(DrawerLayout drawerLayout, final Toolbar toolbar) {
@@ -118,6 +102,5 @@ public class DrawerFragment extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
-
     }
 }

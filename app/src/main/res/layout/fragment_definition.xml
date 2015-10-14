@@ -47,7 +47,7 @@
                 android:id="@+id/txtVocabEnglishDefinition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/green_light"
+                android:background="@color/primary_light"
                 android:gravity="start|center"
                 android:padding="15dp"
                 android:text="Place a premium on something"

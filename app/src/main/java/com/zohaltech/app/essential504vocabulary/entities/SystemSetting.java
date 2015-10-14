@@ -7,28 +7,24 @@ import com.zohaltech.app.essential504vocabulary.classes.Helper;
 public class SystemSetting {
     private int     id;
     private Boolean installed;
-    private Boolean premium;
-    private String  premiumVersion;
     private String  alarmRingingTone;
     private String  ringingToneUri;
     private Boolean vibrateInAlarms;
     private Boolean soundInAlarms;
 
 
-    public SystemSetting(Boolean installed, Boolean premium, String premiumVersion, String ringingToneUri,
+    public SystemSetting(Boolean installed, String ringingToneUri,
                          String alarmRingingTone, Boolean vibrateInAlarms, Boolean soundInAlarms) {
         setInstalled(installed);
-        setPremium(premium);
-        setPremiumVersion(premiumVersion);
         setAlarmRingingTone(alarmRingingTone);
         setRingingToneUri(ringingToneUri);
         setVibrateInAlarms(vibrateInAlarms);
         setSoundInAlarms(soundInAlarms);
     }
 
-    public SystemSetting(int id, Boolean installed, Boolean premium, String premiumVersion, String ringingToneUri,
+    public SystemSetting(int id, Boolean installed, String ringingToneUri,
                          String alarmRingingTone, Boolean vibrateInAlarms, Boolean soundInAlarms) {
-        this(installed, premium, premiumVersion, ringingToneUri, alarmRingingTone, vibrateInAlarms, soundInAlarms);
+        this(installed, ringingToneUri, alarmRingingTone, vibrateInAlarms, soundInAlarms);
         this.id = id;
     }
 
@@ -46,22 +42,6 @@ public class SystemSetting {
 
     public void setInstalled(Boolean installed) {
         this.installed = installed;
-    }
-
-    public String getPremiumVersion() {
-        return premiumVersion;
-    }
-
-    public void setPremiumVersion(String premiumVersion) {
-        this.premiumVersion = premiumVersion;
-    }
-
-    public Boolean getPremium() {
-        return premium;
-    }
-
-    public void setPremium(Boolean premium) {
-        this.premium = premium;
     }
 
     public String getAlarmRingingTone() {
@@ -94,11 +74,5 @@ public class SystemSetting {
 
     public void setSoundInAlarms(Boolean soundInAlarms) {
         this.soundInAlarms = soundInAlarms;
-    }
-
-    public boolean isPremium() {
-        // TODO: 2015/09/27
-        //return true;
-        return getPremiumVersion() != null && getPremiumVersion().equals(Helper.hashString(Helper.getDeviceId()));
     }
 }
