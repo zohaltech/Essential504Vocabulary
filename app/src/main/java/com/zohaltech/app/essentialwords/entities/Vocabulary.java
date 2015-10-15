@@ -8,14 +8,14 @@ public class Vocabulary {
     private String  pronunciation;
     private String  vocabEnglishDef;
     private String  vocabPersianDef;
-    private String  examples;
+    //private String  examples;
     private Boolean learned;
     private Boolean bookmarked;
 
 
-    public Vocabulary(int lesson, String vocabulary, String pronunciation, String examples, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
+    public Vocabulary(int lesson, String vocabulary, String pronunciation, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
         setLesson(lesson);
-        setExamples(examples);
+        //setExamples(examples);
         setVocabulary(vocabulary);
         setPronunciation(pronunciation);
         setVocabEnglishDef(vocabEnglishDef);
@@ -25,7 +25,7 @@ public class Vocabulary {
     }
 
     public Vocabulary(int id, int lesson, String vocabulary, String pronunciation, String examples, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
-        this(lesson, vocabulary, pronunciation, examples, vocabEnglishDef, vocabPersianDef, learned, bookmarked);
+        this(lesson, vocabulary, pronunciation,  vocabEnglishDef, vocabPersianDef, learned, bookmarked);
         this.id = id;
     }
 
@@ -94,12 +94,12 @@ public class Vocabulary {
         this.bookmarked = bookmarked;
     }
 
-    public String getExamples() {
-        return examples;
-    }
-
-    public void setExamples(String examples) {
-        this.examples = examples;
-    }
+    //public String getExamples() {
+    //    return examples;
+    //}
+    //
+    //public void setExamples(String examples) {
+    //    this.examples = examples;
+    //}
 
 }

@@ -8,41 +8,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zohaltech.app.essentialwords.R;
 import com.zohaltech.app.essentialwords.activities.VocabulariesActivity;
 import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.classes.LearningStatus;
-import com.zohaltech.app.essentialwords.data.SystemSettings;
-import com.zohaltech.app.essentialwords.entities.SystemSetting;
-import com.zohaltech.app.essentialwords.entities.Theme;
 
 import java.util.ArrayList;
 
 import widgets.CircleProgress;
 
-public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
+public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.ViewHolder> {
 
     private static final long DURATION = 300;
 
-    Activity                        activity;
-    ArrayList<Theme>                themes;
+    Activity activity;
+    ArrayList<Integer> lessons = new ArrayList<>();
     ArrayList<ProgressDetailStatus> progressDetailStatuses;
-    //ImageLoader                     imageLoader;
 
-    public ThemeAdapter(Activity activity, ArrayList<Theme> themes) {
+    public LessonAdapter(Activity activity, ArrayList<Integer> lessons) {
         this.activity = activity;
-        this.themes = themes;
+        this.lessons = lessons;
         this.progressDetailStatuses = new ArrayList<>();
-        for (int i = 0; i < themes.size(); i++) {
+        for (int i = 0; i < lessons.size(); i++) {
             progressDetailStatuses.add(new ProgressDetailStatus(i, false));
         }
-        //imageLoader = ImageLoader.getInstance();
-        //imageLoader.init(ImageLoaderConfiguration.createDefault(activity));
     }
 
     public static void expand(final View v) {
@@ -100,65 +92,27 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(activity).inflate(R.layout.adapter_theme, parent, false);
+        View view = LayoutInflater.from(activity).inflate(R.layout.adapter_lesson, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        final Theme theme = themes.get(position);
-        holder.imgTheme.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, App.screenHeight / 3));
+        final int lesson = lessons.get(position);
+        holder.txtLessonNumber.setText("" + lesson);
+        holder.txtLesson.setText("Lesson " + lesson);
 
-        //final int imageId = activity.getResources().getIdentifier(theme.getIconName(), "drawable", activity.getPackageName());
-        //Picasso.with(activity).load(imageId).into(holder.imgTheme);
-
-        //if (position == 0) {
-        //    Picasso.with(activity).load(R.drawable.education).into(holder.imgTheme);
-        //} else if (position == 1) {
-        //    Picasso.with(activity).load(R.drawable.job).into(holder.imgTheme);
-        //} else if (position == 2) {
-        //    Picasso.with(activity).load(R.drawable.media).into(holder.imgTheme);
-        //} else if (position == 3) {
-        //    Picasso.with(activity).load(R.drawable.health).into(holder.imgTheme);
-        //} else if (position == 4) {
-        //    Picasso.with(activity).load(R.drawable.environment).into(holder.imgTheme);
-        //} else if (position == 5) {
-        //    Picasso.with(activity).load(R.drawable.advertising).into(holder.imgTheme);
-        //} else if (position == 6) {
-        //    Picasso.with(activity).load(R.drawable.foreign_language).into(holder.imgTheme);
-        //} else if (position == 7) {
-        //    Picasso.with(activity).load(R.drawable.urbanisation).into(holder.imgTheme);
-        //} else if (position == 8) {
-        //    Picasso.with(activity).load(R.drawable.law).into(holder.imgTheme);
-        //} else if (position == 9) {
-        //    Picasso.with(activity).load(R.drawable.sport).into(holder.imgTheme);
-        //} else if (position == 10) {
-        //    Picasso.with(activity).load(R.drawable.space).into(holder.imgTheme);
-        //} else if (position == 11) {
-        //    Picasso.with(activity).load(R.drawable.science).into(holder.imgTheme);
-        //} else if (position == 12) {
-        //    Picasso.with(activity).load(R.drawable.causes).into(holder.imgTheme);
-        //}
-
-        //new ImageLoaderTask(holder.imgTheme).execute(imageId);
-
-        holder.txtTheme.setText(theme.getName());
-
-        SystemSetting setting = SystemSettings.getCurrentSettings();
-        holder.imgPremium.setVisibility(View.GONE);
         holder.layoutRoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App.currentActivity, VocabulariesActivity.class);
-                intent.putExtra("THEME", theme);
+                intent.putExtra(VocabulariesActivity.LESSON, lesson);
                 App.currentActivity.startActivity(intent);
             }
         });
-        //holder.layoutProgressDetail.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1));
         holder.layoutProgressDetail.setVisibility(View.GONE);
-        //collapse(holder.layoutProgressDetail);
 
-        LearningStatus status = LearningStatus.getLearningStatusByTheme(theme.getId());
+        LearningStatus status = LearningStatus.getLearningStatusByLesson(lesson);
         if (status != null) {
             holder.layoutDivider.setVisibility(View.VISIBLE);
             holder.layoutCircleProgress.setVisibility(View.VISIBLE);
@@ -170,13 +124,11 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                 holder.layoutProgressDetail.setVisibility(View.GONE);
             }
 
-            holder.txtDayProgress.setText(String.format("Day %d/%d", status.getDayIndex(), status.getDayCount()));
             holder.txtVocabProgress.setText(String.format("Vocab %d/%d", status.getVocabIndex(), status.getVocabCount()));
 
             holder.layoutCircleProgress.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     ProgressDetailStatus status = progressDetailStatuses.get(position);
                     if (status.visible) {
                         collapse(holder.layoutProgressDetail);
@@ -215,32 +167,28 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return themes.size();
+        return lessons.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout   layoutRoot;
-        public ImageView      imgTheme;
-        public ImageView      imgPremium;
-        public TextView       txtTheme;
+        public TextView       txtLessonNumber;
+        public TextView       txtLesson;
         public CircleProgress circleProgress;
         public LinearLayout   layoutDivider;
         public LinearLayout   layoutCircleProgress;
         public LinearLayout   layoutProgressDetail;
-        public TextView       txtDayProgress;
         public TextView       txtVocabProgress;
 
         public ViewHolder(View view) {
             super(view);
             layoutRoot = (LinearLayout) view.findViewById(R.id.layoutRoot);
-            imgTheme = (ImageView) view.findViewById(R.id.imgTheme);
-            imgPremium = (ImageView) view.findViewById(R.id.imgPremium);
-            txtTheme = (TextView) view.findViewById(R.id.txtTheme);
+            txtLessonNumber = (TextView) view.findViewById(R.id.txtLessonNumber);
+            txtLesson = (TextView) view.findViewById(R.id.txtLesson);
             layoutDivider = (LinearLayout) view.findViewById(R.id.layoutDivider);
             layoutCircleProgress = (LinearLayout) view.findViewById(R.id.layoutCircleProgress);
             circleProgress = (CircleProgress) view.findViewById(R.id.circleProgress);
             layoutProgressDetail = (LinearLayout) view.findViewById(R.id.layoutProgressDetail);
-            txtDayProgress = (TextView) view.findViewById(R.id.txtDayProgress);
             txtVocabProgress = (TextView) view.findViewById(R.id.txtVocabProgress);
         }
     }
@@ -254,30 +202,4 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
             this.visible = visible;
         }
     }
-
-    //private class ImageLoaderTask extends AsyncTask<Integer, Void, Bitmap> {
-    //
-    //    ImageView imageView;
-    //
-    //    public ImageLoaderTask(ImageView imageView) {
-    //        this.imageView = imageView;
-    //    }
-    //
-    //    @Override
-    //    protected void onPreExecute() {
-    //        imageView.setImageBitmap(null);
-    //    }
-    //
-    //    @Override
-    //    protected Bitmap doInBackground(Integer... params) {
-    //        //return decodeSampledBitmapFromResource(activity.getResources(), params[0], App.screenWidth, App.screenHeight / 3);
-    //        return BitmapFactory.decodeResource(activity.getResources(), params[0]);
-    //    }
-    //
-    //    @Override
-    //    protected void onPostExecute(Bitmap bitmap) {
-    //        //super.onPostExecute(bitmap);
-    //        imageView.setImageBitmap(bitmap);
-    //    }
-    //}
 }

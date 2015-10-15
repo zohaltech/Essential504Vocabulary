@@ -15,12 +15,12 @@ public class LearningStatus {
     private int dayCount;
     private int vocabCount;
 
-    public static LearningStatus getLearningStatusByTheme(int themeId) {
+    public static LearningStatus getLearningStatusByLesson(int lesson) {
         LearningStatus learningStatus = new LearningStatus();
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         if (settings.getStatus() != ReminderSettings.Status.STOP) {
-            ArrayList<Vocabulary> vocabularies = Vocabularies.selectByLesson(themeId);
+            ArrayList<Vocabulary> vocabularies = Vocabularies.selectByLesson(lesson);
             int vocabCount = vocabularies.size();
             Reminder reminder = ReminderManager.getLastReminder();
             if (reminder != null) {

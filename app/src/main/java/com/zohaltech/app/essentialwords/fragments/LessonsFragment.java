@@ -8,22 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zohaltech.app.essentialwords.adapters.ThemeAdapter;
+import com.zohaltech.app.essentialwords.adapters.LessonAdapter;
 import com.zohaltech.app.essentialwords.data.Themes;
-import com.zohaltech.app.essentialwords.entities.Theme;
 
 import java.util.ArrayList;
 
 import com.zohaltech.app.essentialwords.R;
 
 
-public class ThemesFragment extends Fragment {
+public class LessonsFragment extends Fragment {
 
     RecyclerView recyclerThemes;
-    ArrayList<Theme> themes = new ArrayList<>();
-    ThemeAdapter adapter;
+    ArrayList<Integer> lessons = new ArrayList<>();
+    LessonAdapter adapter;
 
-    public ThemesFragment() {
+    public LessonsFragment() {
     }
 
     @Override
@@ -33,12 +32,12 @@ public class ThemesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_themes, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_lessons, container, false);
         recyclerThemes = (RecyclerView) rootView.findViewById(R.id.recyclerThemes);
-        //recyclerThemes.setHasFixedSize(true);
+        recyclerThemes.setHasFixedSize(true);
         recyclerThemes.setLayoutManager(new LinearLayoutManager(getActivity()));
-        themes.addAll(Themes.select());
-        adapter = new ThemeAdapter(getActivity(), themes);
+        populateLessons();
+        adapter = new LessonAdapter(getActivity(), lessons);
         recyclerThemes.setAdapter(adapter);
         return rootView;
     }
@@ -46,8 +45,14 @@ public class ThemesFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        themes.clear();
-        themes.addAll(Themes.select());
+        lessons.clear();
+        populateLessons();
         adapter.notifyDataSetChanged();
+    }
+
+    private void populateLessons(){
+        for (int i = 0; i < 42; i++) {
+            lessons.add(i + 1);
+        }
     }
 }

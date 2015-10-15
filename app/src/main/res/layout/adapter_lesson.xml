@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="1dp">
 
     <LinearLayout
         android:id="@+id/layoutRoot"
@@ -15,41 +14,30 @@
         android:background="?attr/selectableItemBackground"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imgTheme"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"/>
-
-            <ImageView
-                android:id="@+id/imgPremium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/premium_bg"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-
-        </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/txtLessonNumber"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/number_bg"
+                android:gravity="center"
+                android:text="42"
+                android:textColor="@color/white"/>
+
             <widgets.LatinTextView
-                android:id="@+id/txtTheme"
+                android:id="@+id/txtLesson"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="start|center"
-                android:padding="15dp"
-                android:text="Theme 1"
+                android:padding="10dp"
+                android:text="Lesson 42"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/primary_text"/>
 
@@ -95,16 +83,6 @@
                 android:orientation="horizontal">
 
                 <widgets.LatinTextView
-                    android:id="@+id/txtDayProgress"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Day 16/24"
-                    android:textColor="@color/secondary_text"/>
-
-                <widgets.LatinTextView
                     android:id="@+id/txtVocabProgress"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -117,15 +95,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:layout_marginEnd="10dp"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:layout_marginStart="10dp"-->
-        <!--android:background="@color/divider"/>-->
 
     </LinearLayout>
 

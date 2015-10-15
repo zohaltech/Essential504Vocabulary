@@ -22,7 +22,7 @@ import com.zohaltech.app.essentialwords.entities.Example;
 import com.zohaltech.app.essentialwords.entities.Vocabulary;
 import com.zohaltech.app.essentialwords.fragments.DrawerFragment;
 import com.zohaltech.app.essentialwords.fragments.SearchFragment;
-import com.zohaltech.app.essentialwords.fragments.ThemesFragment;
+import com.zohaltech.app.essentialwords.fragments.LessonsFragment;
 
 import com.zohaltech.app.essentialwords.R;
 
@@ -108,12 +108,12 @@ public class MainActivity extends EnhancedActivity {
         String title = getString(R.string.app_name);
         switch (position) {
             case 0:
-                fragment = new ThemesFragment();
-                title = getString(R.string.title_themes);
+                fragment = new LessonsFragment();
+                title = "Lessons";
                 break;
             case 1:
                 fragment = new SearchFragment();
-                title = getString(R.string.title_search);
+                title = "Search";
                 break;
             default:
                 break;
@@ -145,31 +145,31 @@ public class MainActivity extends EnhancedActivity {
         }
     }
 
-    public void getExamples(){
-        ArrayList<Vocabulary> vocabularies= Vocabularies.select();
-
-        for (Vocabulary vocabulary:vocabularies) {
-            String[] examples=vocabulary.getExamples().split("\n");
-
-            int k=1;
-            for (String ex:examples) {
-                String[] exampleArr=ex.split(".");
-                if(!ex.equals("\n") && !ex.equals("\r")) {
-                    //String exStr = ex.substring(3).replace("\n","");
-                    String exStr = ex.replace("\n","").replace("\r","");
-
-                    Example e = new Example(vocabulary.getId(), k, exStr);
-                    Examples.insert(e);
-                    k++;
-                }
-
-
-
-
-            }
-            String s="";
-
-        }
-
-    }
+    //public void getExamples(){
+    //    ArrayList<Vocabulary> vocabularies= Vocabularies.select();
+    //
+    //    for (Vocabulary vocabulary:vocabularies) {
+    //        String[] examples=vocabulary.getExamples().split("\n");
+    //
+    //        int k=1;
+    //        for (String ex:examples) {
+    //            String[] exampleArr=ex.split(".");
+    //            if(!ex.equals("\n") && !ex.equals("\r")) {
+    //                //String exStr = ex.substring(3).replace("\n","");
+    //                String exStr = ex.replace("\n","").replace("\r", "");
+    //
+    //                Example e = new Example(vocabulary.getId(), k, exStr);
+    //                Examples.insert(e);
+    //                k++;
+    //            }
+    //
+    //
+    //
+    //
+    //        }
+    //        String s="";
+    //
+    //    }
+    //
+    //}
 }
