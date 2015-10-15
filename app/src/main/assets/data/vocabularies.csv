@@ -1,0 +1,505 @@
+Id;Lesson;Vocabulary;Pronunciation;EnglishDef;PersianDef;Learned;Bookmarked
+1;1;Abandon;[a·ban·don || ə'bændən];"desert; leave without planning to come back; quit";ترک کردن ، ترک کردن بدون قصد بازگشت ، دست کشیدن از;0;0
+2;1;Keen;[kɪːn];"sharp; eager; intense; sensitive";تیز ، مشتاق ، شدید ، حساس;0;0
+3;1;Jealous;[jeal·ous || 'dʒeləs];"afraid that the one you love might prefer someone else; wanting what someone else has";هراسان از اینکه شخصی را که دوست دارید ممکن است دیگری را ترجیح دهد ، خواستن آنچه شخص دیگری دارد ، حسود;0;0
+4;1;Tact;[tækt];ability to say the right thing;توانایی گفتن سخن مناسب ، تدبیر ، کیاست;0;0
+5;1;Oath;"[əʊθ; pl.əʊðz]";"a promise that something is true; a curse";سوگند به اینکه چیزی درست است ، دشنام ، سوگند;0;0
+6;1;Vacant;['va·cant || 'veɪkənt];"empty; not filled";خالی ، پر نشده;0;0
+7;1;Hardship;[hard·ship || 'hɑrdʃɪp /'hɑː-];"something that is hard to bear; difficulty";سختی ، دشواری;0;0
+8;1;Gallant;[gal·lant || gə'lɑnt /'gælənt ,gə'lænt];"brave; showing respect for women";شجاع ، کسی که برای خانم ها احترام نشان می دهد ، زن نواز;0;0
+9;1;Data;[da·ta || 'deɪtə];"facts; information";حقایق ، اطلاعات;0;0
+10;1;Unaccustomed;[ˌənəˈkəstəmd];not used to something;به چیزی عادت نداشتن ، نامانوس;0;0
+11;1;Bachelor;[bach·e·lor || 'bætʃələ];a man who has not married;مردی که ازدواج نکرده است ، مجرد;0;0
+12;1;Qualify;[qual·i·fy || 'kwɑlɪfaɪ /'kwɒ-];"become fit; show that you are able";صلاحیت داشتن ، واجد شرایط بودن;0;0
+13;2;Corpse;[kɔːps];a dead body, usually of a person;جسد ، معمولاً مربوط به شخص;0;0
+14;2;Conceal;[con·ceal || kən'siːl];hide;پنهان کردن;0;0
+15;2;Dismal;[dis·mal || 'dɪzməl];dark and depressing;تاریک و دلگیر;0;0
+16;2;Frigid;[frig·id || 'frɪdʒɪd];very cold;خیلی سرد;0;0
+17;2;Inhabit;[in·hab·it || ɪn'hæbɪt];live in;اقامت داشتن در;0;0
+18;2;Numb;[nʌm];"without the power of feeling; deadened";بدون قدرت احساس ، کرخت;0;0
+19;2;Peril;[per·il || 'perəl];danger;خطر;0;0
+20;2;Recline;[re·cline || rɪ'klaɪn];"lie down; stretch out; lean back";خوابیدن ، دراز کشیدن ، لم دادن;0;0
+21;2;Shriek;[ʃrɪːk];scream;جیغ زدن ، جیغ;0;0
+22;2;Sinister;[sin·is·ter || 'sɪnɪstə(r)];"evil; wicked; dishonest; frightening";پلید ، پست ، متقلب ، وحشتناک;0;0
+23;2;Tempt;[tempt];"try to get someone to do something; test; invite";تلاش به وادار کردن کسی به انجام کاری ، امتحان کردن ، دعوت کردن ، وسوسه کردن;0;0
+24;2;Wager;[wa·ger || 'weɪdʒə(r)];bet;شرط;0;0
+25;3;Typical;[typ·i·cal || 'tɪpɪkl];"usual; of a kind";معمولی;0;0
+26;3;Minimum;['min·i·mum || 'mɪnɪməm];"the least possible amount; the lowest amount";کمترین مقدار ممکن ، پایین ترین مقدار;0;0
+27;3;Scarce;[skers /skeəs];"hard to get; rare";کمیاب ، نادر;0;0
+28;3;Annual;[an·nu·al || 'ænjʊəl];"once a year; something that appears yearly or lasts for a year";سالی یکبار ، چیزی که هر ساله پدیدار می شود یا به مدت یک سال طول می کشد ، سالانه;0;0
+29;3;Persuade;[per·suade || pər'sweɪd /pə's-];"win over to do or believe; make willing";متقاعد کردن ، راضی کردن;0;0
+30;3;Essential;"[es·sen·tial || ɪ'senʃl]";"necessary; very important";ضروری ، بسیار مهم;0;0
+31;3;Blend;[blend];"mix together thoroughly; a mixture";کاملاً با هم ترکیب کردن ، مخلوط;0;0
+32;3;Visible;[vis·i·ble || 'vɪzəbl];able to be seen;قابل رویت;0;0
+33;3;Expensive;[ex'pen·sive || -sɪv];"costly; high-priced";گران ، پرهزینه;0;0
+34;3;Talent;[tal·ent || 'tælənt];natural ability;توانایی ذاتی;0;0
+35;3;Devise;[de·vise || dɪ'vaɪz];"think out; plan; invent";ابداع کردن ، برنامه ریزی کردن ، اختراع کردن;0;0
+36;3;Wholesale;[ˈhōlˌsāl];"in large quantity; less than retail in price";به میزان گسترده ، کمتر از قیمت خرده فروشی ، عمده فروشی;0;0
+37;4;Vapor;[ˈvāpər];"moisture in the air that can be seen; fog; mist";بخار هوا که می توان آن را دید ، مه ، غبار;0;0
+38;4;Eliminate;[e·lim·i·nate || ɪ'lɪmɪneɪt];"get rid of; remove; omit";رها شدن از ، برداشتن ، حذف کردن;0;0
+39;4;Villain;"[vil·lain || 'vɪlən]";a very wicked person;آدم بسیار بد جنس و پست;0;0
+40;4;Dense;[dens];"closely packed together; thick";متراکم ، غلیظ;0;0
+41;4;Utilize;"[u·ti·lize || 'juːtlaɪ /-tɪl-]";make use of;استفاده کردن از;0;0
+42;4;Humid;[hu·mid || 'hjuːmɪd];"moist; damp";مرطوب ، نمناک;0;0
+43;4;Theory;[the·o·ry || 'θɪːrɪ /'θɪərɪ];explanation based on thought, observation, or reasoning;توضیح بر اساس اندیشه ، مشاهده یا استدلال ، نظریه ، فرضیه;0;0
+44;4;Descend;[de·scend || dɪ'send];go or come down from a higher place to a lower level;پایین رفتن یا پایین آمدن از مکانی بالاتر به سطحی پایین تر;0;0
+45;4;Circulate;[cir·cu·late || 'sɜːkjʊleɪt];"go around; go from place to place or person to person";پخش شدن ، از مکانی به مکانی یا از شخصی به شخصی رفتن;0;0
+46;4;Enormous;[e'nor·mous || -məs];"extremely large; huge";بی نهایت بزرگ ، عظیم;0;0
+47;4;Predict;[pre·dict || prɪ'dɪkt];tell beforehand;از پیش گفتن ، پیش گویی کردن;0;0
+48;4;Vanish;[van·ish || 'vænɪʃ];"disappear; disappear suddenly";محو شدن ، ناگهان ناپدید شدن;0;0
+49;5;Tradition;[tra·di·tion || trə'dɪʃn];beliefs, opinions, and customs handed down from one generation to another;باور ها ، اعتقادات و رسومی که از نسلی به نسل دیگر منتقل می شود;0;0
+50;5;Rural;[ru·ral || 'rʊrəl /'rʊərəl];in the country;روستایی;0;0
+51;5;Burden;[bur·den || bɜːdn];"what is carried; a load";آنچه حمل می شود ، بار;0;0
+52;5;Campus;[cam·pus || 'kæmpəs];grounds of a college, university, or school;محوطه ی یک دانشکده ، دانشکده یا مدرسه;0;0
+53;5;Majority;[ma·jor·i·ty || mə'dʒɒrətɪ /-'dʒɒr-];"the larger number; greater part; more than half";تعداد بیشتر ، قسمت عمده ، بیش از نیم ، اکثریت;0;0
+54;5;Assemble;[as·sem·ble || ə'sembl];"gather together; bring together";گرد آمدن ، جمع آوری کردن;0;0
+55;5;Explore;[ex·plore || ɪk'splɔː];"go over carefully; look into closely; examine";سیاحت کردن ، اکتشاف کردن ، بررسی کردن;0;0
+56;5;Topic;[top·ic || 'tɑpɪk /'tɒp-];subject that people think, write, or talk about;موضوعی که مردم درباره ی آن فکر می کنند ، می نویسند وی اصحبت می کنند ، مبحث;0;0
+57;5;Debate;[de·bate || dɪ'beɪt];a discussion in which reasons for and against something are brought out;بحثی که در آن دلایل موافق و مخالف چیزی مطرح می شود;0;0
+58;5;Evade;[e·vade || ɪ'veɪd];get away from by trickery or cleverness;با کلک یا زرنگی از چیزی دور شدن;0;0
+59;5;Probe;[prəʊb];"search into; examine thoroughly; investigate";کاوش کردن ، کاملاً برررسی کردن ، تحقیق کردن;0;0
+60;5;Reform;[re·form || rɪ'fɔrm /-'fɔːm];"make better; improve by removing faults";بهتر کردن ، با رفع اشکالات بهبود بخشیدن;0;0
+61;6;Approach;[ap·proach || ə'prəʊtʃ];come near or nearer to;نزدیک شدن به;0;0
+62;6;Detect;[de·tect || dɪ'tekt];"find out; discover";پی بردن ، کشف کردن;0;0
+63;26;Possible;[pos·si·ble || 'pɑsəbl /'pɒ-];"able to be, be done, or happen; able to be true; able to be done or chosen properly";ممکن ، مقدور ، میسر;0;0
+64;26;Compel;[com·pel || kəm'pel];"force; get by force";مجبور کردن ، به زور وادار کردن;0;0
+65;6;Defect;[de·fect || 'diːfekt];"fault; that which is wrong";عیب ، نقص;0;0
+66;6;Employee;[emˈploi-ē];a person who works for pay;شخصی که در ازای مزد کار می کند ، کارمند;0;0
+67;6;Neglect;[neg·lect || nɪ'glekt];give too little care or attention to;خیلی کم اهمیت دادن یا توجه کردن به;0;0
+68;6;Deceive;[de·ceive || dɪ'siːv];"make someone believe as true something that is false; mislead";شخصی را وادار به باور چیزی دروغ کردن ، گمراه کردن;0;0
+69;6;Undoubtedly;[un'doubt·ed·ly || ʌn'daʊtɪdlɪ];"certainly; beyond doubt";قطعاً ، بدون شک;0;0
+70;6;Popular;[pop·u·lar || 'pɑpjələ(r) / 'pɒpjʊl-];liked by most people;محبوب اکثر مردم ، پرطرفدار;0;0
+71;6;Thorough;[thor·ough || 'θɜrəʊ /'θʌrə];"being all that is needed; complete";کامل ، جامع;0;0
+72;6;Client;[cli·ent || 'klaɪənt];"person for whom a lawyer acts; customer";شخصی که وکیل برای او کار می کند ، موکل ، مشتری;0;0
+73;6;Comprehensive;[,com·pre'hen·sive || ‚kɑmprɪ'hensɪv /'kɒm-];"including much; covering completely";فراگیر ، جامع;0;0
+74;6;Defraud;[de·fraud || dɪ'frɔːd];take money, rights, etc., away by cheating;گرفتن پول و حقوق دیگران از راه کلاهبرداردی ، کلاهبرداری کردن از;0;0
+75;7;Postpone;[post·pone || ‚pəʊst'pəʊn /‚pəʊ'spəʊn ,ə-];"put off to a later time; delay";به زمان دیگری موکول کردن ، به تاخیر انداختن ، به تعویق انداختن;0;0
+76;7;Consent;[con·sent || kən'sent];"agree; give permission or approval";موافقت کردن ، اجازه یا رضایت دادن;0;0
+77;7;Massive;[mas·sive || 'mæsɪv];"big and heavy; large and solid; bulky";بزگ ، سنگین ، درشت و تو پر، حجیم;0;0
+78;7;Capsule;[cap·sule || 'kæpsjuːl];a small case or covering;جعبه یا روکش کوچک;0;0
+79;7;Preserve;[pre·serve || prɪ'zɜrv /-'zɜːv];"keep from harm or change; keep safe; protect";از تغییر یا آسیب دور نگه داشتن ، سالم نگه داشتن ، محافظت کردن;0;0
+80;7;Denounce;[de·nounce || dɪ'naʊns];"condemn in public; express strong disapproval of";آشکارا محکوم کردن ، ابراز نارضایتی شدید کردن از;0;0
+81;7;Unique;[u·nique || juː'nɪːk];"having no like or equal; being the only one of its kind";برابر یا شبیه ندارد ، در نوع خود تک است ، منحصر به فرد ، بی همتا;0;0
+82;7;Torrent;[tor·rent || 'tɑrənt ,'tɔ- /'tɒrənt];"any violent, rushing stream; flood";هر جریان خروشان و خشن;0;0
+83;7;Resent;[re·sent || rɪ'zent];feel injured and angered at (something);از چیزی احساس آزردگی خاطر یا عصبانیت کردن;0;0
+84;7;Molest;[mo·lest || mə'lest];"interfere with and trouble; disturb";مزاحم شدن و اذیت کردن ، آزار دادن;0;0
+85;7;Gloomy;['gloom·y || 'gluːmɪ];"dark; dim; in low spirits";تاریک ، کم نور ، با روحیه ی پایین;0;0
+86;7;Unforeseen;[ˌʌnfɔːˈsiːn];"not known beforehand; unexpected";از قبل نامعلوم ، غیر منتظره ، پیش بینی نشده;0;0
+87;8;Exaggerate;[ex·ag·ger·ate || ɪg'zædʒəreɪt];"make something greater than it is; overstate";مبالغه کردن ، غلو کردن;0;0
+88;8;Amateur;[am·a·teur || 'æmətə];person who does something for pleasure, not for money or as a profession;کسی که کاری را برای لذت انجام می دهد نه برای پول یا به عنوان حرفه ، غیر حرفه ای ، آماتور;0;0
+89;8;Mediocre;[me·di·o·cre || ‚mɪːdɪ'əʊkə(r)];"neither good nor bad; average; ordinary";نه خوب نه بد ، متوسط ، معمولی;0;0
+90;8;Variety;[va·ri·e·ty || və'raɪətɪ];"lack of sameness; a number of different things";نابرابری ، چند چیز مختلف ، تنوع;0;0
+91;8;Valid;[val·id || 'vælɪd];"supported by facts or authority; sound; true";معتبر ، درست;0;0
+92;8;Survive;[sur·vive || sər'vaɪv /sə'-];"live longer than; remain alive after";بقاء یافتن ، زنده ماندن ، بازماندن ، جان به در بردن;0;0
+93;8;Weird;[wɪrd /wɪəd];"mystrious; unearthly";اسرار آمیز ، غیر دنیوی;0;0
+94;8;Prominent;['prom·i·nent || 'prɑmɪnənt /'prɒm-];"well-known; important";مشهور ، مهم;0;0
+95;8;Security;[se·cu·ri·ty || sɪ'kjʊrətɪ /-kjʊər-];"freedom from danger, care, or fear; feeling or condition of being safe";عاری از خطر ، مراقبت یا ترس ، احساس یا حالت امنیت;0;0
+96;8;Bulky;[bulk·y || 'bʌlkɪ];"taking up much space; large";فضای زیادی می گیرد ، بزرگ ، حجیم;0;0
+97;8;Reluctant;[re'luc·tant || rɪ'lʌktənt];unwilling;بی میل;0;0
+98;8;Obvious;[ob·vi·ous || 'ɑbvɪəs /'ɒb-];"easily seen or understood; clear to the eye or mind; not to be doubted; plain";به راحتی درک یا دیده می شود ، در آن تردیدی نیست ، آشکار ، واضح ، بدیهی;0;0
+99;9;Vicinity;[vi·cin·i·ty || vɪ'sɪnətɪ];"region near a place; neighborhood";منطقه ای نزدیک یک مکان ، همسایگی;0;0
+100;9;Century;[cen·tu·ry || 'sentʃʊrɪ];100 years;یکصد سال ، قرن;0;0
+101;9;Rage;[reɪdʒ];"violent anger; something that arouses intense but brief enthusiasm";خشم شدید ، چیزی که علاقه ی شدید اما مختصر بر می انگیزد;0;0
+102;9;Document;[doc·u·ment || 'dɒkjʊmənt];something handwritten or printed that gives information or proof of some fact;چیز دستنویس یا تایپ شده که درباره ی حقیقتی شواهد یا اطلاعات می دهد;0;0
+103;9;Conclude;[con·clude || kən'kluːd];"end; finish; decide";تمام کردن ، به پایان رساندن  تصمیم گرفتن;0;0
+104;9;Undeniable;[ˌəndiˈnīəbəl];"not to be denied; cannot be questioned";نمی توان انکار کرد ، نمی توان زیر سوال برد ، غیر قابل انکار;0;0
+105;9;Resist;[re·sist || rɪ'zɪst];"act against; strive against; oppose";عمل کردن برخلاف ، مخالفت کردن با ، مقاومت کردن;0;0
+106;9;Lack;[læk];"be entirely without something; have not enough";کاملاً فاقد چیزی بودن ، به اندازه کافی نداشتن;0;0
+107;9;Ignore;[ig·nore || ɪg'nɔr /ɪg'nɔː];"pay no attention to; disregard";توجه نکردن به ، نادیده گرفتن;0;0
+108;9;Challenge;[chal·lenge || 'tʃælɪndʒ];call to a fight;به مبارزه طلبیدن;0;0
+109;9;Miniature;[min·i·a·ture || 'mɪnətʃʊr /-tʃə];represented on a small scale;در مقیاسی کوچک نشان داده می شود ، کوچک;0;0
+110;9;Source;[sɔrs /sɔːs];place from which something comes or is obtained;مکانی که از آن چیزی نشات می گیرد ، منشا ، مبدا  ، سرچشمه;0;0
+111;10;Excel;[ex·cel || ɪk'sel];"be better than; do better than";برتری داشتن ، بهتر بودن;0;0
+112;10;Feminine;[fem·i·nine || 'femɪnɪn];of women or girls;زنانه ، مونث;0;0
+113;10;Mount;[maʊnt];get up on;سوار شدن ، بالا رفتن از;0;0
+114;10;Compete;[com·pete || kəm'piːt];"try hard to get something wanted by others; be a rival";تلاش سخت برای دست آوردن چیزی که دیگران هم خواهان آن هستند ، رقابت کردن;0;0
+115;10;Dread;[dred];"look forward to with fear; fear greatly; causing great fear";با ترس چشم انتظار چیزی بودن ، خیلی ترسیدن ، خیلی ترساندن;0;0
+116;10;Masculine;[mas·cu·line || 'mæskjʊlɪn];"of man; male";مردانه ، مذکر;0;0
+117;10;Menace;[men·ace || 'menɪs];threat;تهدید;0;0
+118;10;Tendency;[tend·en·cy || 'tendənsɪ];"leaning; movement in a certain direction";گرایش ، حرکت به سوی خاص ، تمایل;0;0
+119;10;Underestimate;[,un·der'es·ti·mate || ‚ʌndə(r)'estɪmeɪt];set too low a value, amount, or rate;دست کم گرفتن;0;0
+120;10;Victorious;[vic·to·ri·ous || vɪk'tɔːrɪəs];"having won a victory; conquering";پیروز ، فاتح;0;0
+121;10;Numerous;[nu·mer·ous || 'nuːmərəs /'nju-];"very many; several";بسیار زیاد ، متعدد;0;0
+122;10;Flexible;[flex·i·ble || 'fleksəbl];"easily bent; willing to yield";تاشو ، انعطاف پذیر;0;0
+123;11;Evidence;[ev·i·dence || 'evɪdəns];that which makes clear the truth or falsehood of something;آنچه درستی یا کذب چیزی را آشکار می سازد ، شواهد ، مدارک;0;0
+124;11;Solitary;[sol·i·tar·y || 'sɑlɪtərɪ /'sɒlɪtrɪ];"alone; single; only";تنها ، مجرد ، انفرادی;0;0
+125;11;Vision;[vi·sion || 'vɪʒn];"power of seeing; sense of sight";قدرت دید ، حس بینایی;0;0
+126;11;Frequent;[fre·quent || 'frɪːkwənt];"happening often; occurring repeatedly";اغلب اتفاق می افتد ، مرتب رخ می دهد ، مکرر;0;0
+127;11;Glimpse;[glɪmps];a short, quick view;نگاه کوتاه و سریع;0;0
+128;11;Recent;[re·cent || 'rɪːsnt];done, made, or occurring not long ago;اخیر ، تازه;0;0
+129;11;Decade;[dec·ade || 'dekeɪd];ten years;ده سال ، دهه;0;0
+130;11;Hesitate;['hes·i·tate || 'hezɪteɪt];"fail to act quickly; be undecided";سریع عمل نکردن ، مردد بودن ، تعلل کردن;0;0
+131;11;Absurd;[ab·surd || əb'sɜːd];"plainly not true or sensible; foolish";به وضوح درست یا عاقلانه نیست ، احمقانه ، مسخره;0;0
+132;11;Conflict;[con·flict || 'kɒnflɪkt];"direct opposition; disagreement";مخالفت مستقیم ، عدم توافق ، تضاد;0;0
+133;11;Minority;[mi·nor·i·ty || maɪ'nɔrətɪ /-'nɒ-];"smaller number or part; less than half";تعداد ی ابخش کوچکتر ، کمتر از نصف ، اقلیت;0;0
+134;11;Fiction;[fic·tion || 'fɪkʃn];that which is imagined or made up;آنچه که تصور یا ساخته می شود ، داستان ، خیالبافی;0;0
+135;12;Ignite;[ig·nite || ɪg'naɪt];set on fire;مشتعل کردن;0;0
+136;12;Abolish;[a·bol·ish || ə'bɒlɪʃ];"do away with completely; put an end to";کاملاً رها شدن از ، خاتمه دادن به;0;0
+137;12;Urban;[ur·ban || 'ɜrbən /'ɜːbən];of or having to do with cities or towns;از شهر یا مربوط به شهر;0;0
+138;12;Population;[pop·u·la·tion || 'pɑpjə'leɪʃn /‚pɒpjʊ-];people of a city or country;افراد یک شهر یا کشور ، جمعیت;0;0
+139;12;Frank;[fræŋk];"free in expressing one's real thoughts, opinions, or feelings; not hiding what is in one's mind";در بیان اندیشه ها ، عقاید و احساسات واقعی آزاد است ، آنچه در ذهن است پنهان نمی کند ، رک;0;0
+140;12;Pollute;[pol·lute || pə'luːt];make dirty;آلوده کردن;0;0
+141;12;Reveal;[re·veal || rɪ'vɪːl];make known;آشکار ساختن;0;0
+142;12;Prohibit;[pro·hib·it || prəʊ'hɪbɪt /prə-];forbid by law or authority;قانوناً منع کردن;0;0
+143;12;Urgent;['ur·gent || 'ɜrdʒənt /'ɜːd-];"demanding immediate action or attention; important";اقدام یا توجه فوری را می طلبد ، مهم;0;0
+144;12;Adequate;[ad·e·quate || 'ædɪkwət];"as much as is needed; fully sufficient";آن مقدار که مورد نیاز است ، کاملاً کافی;0;0
+145;12;Decrease;[de·crease || diː'kriːs];make or become less;کاهش دادن یا کاهش یافتن;0;0
+146;12;Audible;"[au·di·ble || 'ɔːdəbl]";able to be heard;قابل سمع;0;0
+147;13;Journalist;['jour·nal·ist || 'dʒɜrnəlɪst /'dʒɜːn-];one who writes for, edits, manages, or produces a newspaper or magazine;کسی که برای روزنامه یا مجله مطلب می نویسد ، ویرایش می کند و روزنامه یا مجله ای را تولید یا اداره می کند ، روزنامه نگار;0;0
+148;13;Famine;[fam·ine || 'fæmɪn];"starvation; great shortage";گرسنگی ، کمبود زیاد;0;0
+149;13;Revive;[re·vive || rɪ'vaɪv];bring back or come back to life or consciousness;زنده کردن یا به هوش آوردن;0;0
+150;13;Commence;[com·mence || kə'mens];"begin; start";آغاز کردن ، آغاز شدن;0;0
+151;13;Observant;[ob'serv·ant || əb'sɜrvnt /əb'sɜː-];"quick to notice; watchful";تیز بین ، مراقب;0;0
+152;13;Identify;"[i·den·ti·fy || aɪ'dentɪfaɪ]";"recognize as being, or show to be, a certain person or thing; prove to be the same";شناسایی کردن ، تشخیص دادن;0;0
+153;13;Migrate;[maɪ'greɪt];move from one place to another;از جایی به جایی نقل مکان کردن ، مهاجرت کردن;0;0
+154;13;Vessel;[ves·sel || 'vesl];"a ship; a hollow container; tube containing body fluid";کشتی ، ظرف توخالی ، لوله ای که حاوی خون است ، رگ;0;0
+155;13;Persist;[per·sist || pər'sɪst /pə's-];"continue firmly; refuse to stop or be changed";قاطعانه ادامه دادن ، از توقف یا تغییر امتناع ورزیدن;0;0
+156;13;Hazy;[ha·zy || 'heɪzɪ];"misty; smoky; unclear";مه آلود ، پردود ، مبهم ، نامشخص;0;0
+157;13;Gleam;[glɪːm];"a flash or beam of lightperson who prepares a publication; one who corrects a manuscript and helps to improve it";درخشش ، جرقه ای از نور;0;0
+158;13;Editor;['ed·i·tor || 'edɪtə(r)];"person who prepares a publication; one who corrects a manuscript and helps to improve it";شخصی که نشریه ای را آماده می سازد ، کسیکه نسخه ای دست نویس را تصحیح می کند و به بهبود آن کمک میی کند ، ویراستار;0;0
+159;14;Unruly;[un·ru·ly || ʌn'ruːlɪ];"hard to rule or control; lawless";نافرمان ، غیر قانونی ، شرور;0;0
+160;14;Rival;[ri·val || 'raɪvl];"person who wants and tries to get the same thing as another; one who tries to equal or do better than another";رقیب ، حریف;0;0
+161;14;Violent;['vi·o·lent || 'vaɪələnt];acting or done with strong, rough force;خشن ، خشونت آمیز;0;0
+162;14;Brutal;[bru·tal || 'bruːtl];"coarse and savage; like a brute; cruel";خشن و وحشی ، مثل جانور بی رحم;0;0
+163;14;Opponent;[op·po·nent || ə'pəʊnənt];"person who is on the other side of a fight, game, or discussion; person fighting, struggling or speaking against another";کسی که طرف دیگر جنگ ، بازی یا بحث است ، کسی که علیه شخص دیگری می جنگد ، مبارزه می کند یا حرف می زند;0;0
+164;14;Brawl;[brɔːl];a noisy quarrel or fight;بحث یا جنگ پر سر و صدا;0;0
+165;14;Duplicate;[du·pli·cate || 'djuːplɪkət];"an exact copy; make an exact copy of; repeat exactly";کپی دقیق ، کپی کردن ، دقیقاً تکرار کردن;0;0
+166;14;Vicious;[vi·cious || 'vɪʃəs];"evil; wicked; savage";پست ، بدجنس ، وحشی;0;0
+167;14;Whirling;[hwɜrl /wɜːl /wɜːl];"turning or swinging round and round; spinning";به دور خود چرخیدن ، چرخیدن;0;0
+168;14;Underdog;[ˈəndərˌdôg];"person having the worst of any struggle; one who is expected to lose";شخصی که بد ترین شرایط مبارزه را دارد ، شخصی که انتظار می رود بازنده شو د، بازنده;0;0
+169;14;Thrust;[θrʌst];push with force;با نیرو هل دادن ، پرتاب کردن;0;0
+170;14;Bewildered;[be·wil·der || bɪ'wɪldə];"confused completely; puzzled";کاملاً گیج ، مبهوت;0;0
+171;15;Expand;[ex·pand || ɪk'spænd];"increase in size; enlarge; swell";از نظر اندازه افزایش یافتن ، بزرگ شدن ، متورم شدن;0;0
+172;15;Alter;[al·ter || 'ɔːltə];"make different; change; vary";دگرگون کردن ، تغییر دادن ، تغییر کردن;0;0
+173;15;Mature;[ma·ture || mə'tjʊə(r)];"ripe; fully grown or developed";رسیده ، کاملاً رشد کرده یا تکامل یافته;0;0
+174;15;Sacred;[sa·cred || 'seɪkrɪd];"worthy of respect; holy";شایسته احترام ، مقدس;0;0
+175;15;Revise;[re·vise || rɪ'vaɪz];"change; alter; bring up to date";تغییر دادن ، دگرگون کردن ، به روز کردن;0;0
+176;15;Pledge;[pledʒ];promise;قول دادن;0;0
+177;15;Casual;[cas·u·al || 'kæʒjʊəl];"happening by chance; not planned or expected; not calling attention to itself";تصادفاً رخ می دهد ، برنامه ریزی نشده یا غیر منتظره ، توجه را به خود جلب نمی کند;0;0
+178;15;Pursue;[pur·sue || pər'suː /pə'sju-];"follow; proceed along";پیروی کردن ، دنبال کردن;0;0
+179;15;Unanimous;[u·nan·i·mous || juː'nænɪməs];in complete agreement;در توافق کامل ، هم رای;0;0
+180;15;Fortunate;[for·tu·nate || 'fɔrtʃnət /'fɔːt-];"having good luck; lucky";دارای اقبال خوب ، خوش شانس;0;0
+181;15;Pioneer;[pi·o·neer || ‚paɪə'nɪr /-'nɪə];one who goes first or prepares a way for others;فردی که ابتدا می رود یا راهی را برای دیگران آماده می سازد ، پیشگام;0;0
+182;15;Innovative;['in·no·va·tive || ɪnəveɪtɪv];"fresh; clever; having new ideas";تازه ، مبتکرانه ، دارای اندیشه های جدید ، نوین;0;0
+183;16;Slender;[slen·der || 'slendə(r)];"long and thin; limited; slight";کشیده و باریک ، محدود ، اندک;0;0
+184;16;Surpass;[sur·pass || sər'pæs /sə'pɑːs];"do better than; be greater than; excel";بهتر بودن از ، بیشتر بودن از ، برتری داشتن;0;0
+185;16;Vast;[væst /vɑːst];"very great; enormous";بسیار زیاد ، عظیم;0;0
+186;16;Doubt;[daʊt];"not believe; not be sure of; feel uncertain about; lack of certainty";باور نکردن ، مطمئن نبودن از ، احساس اطمینان نکردن ، عدم اطمینان ، تردید کردن;0;0
+187;16;Capacity;[ca'pac·i·ty || -sətɪ];"amount of room or space inside; largest amount that can be held by a container";مقدار جا یا فضای داخل ، بیشترین مقداری که یک ظرف می تواند بگیرد ، ظرفیت;0;0
+188;16;Penetrate;[pen·e·trate || 'penɪtreɪt];get into or through;داخل یا وارد شدن;0;0
+189;16;Pierce;[pɪrs /pɪəs];"go into; go through; penetrate";وارد شدن ، داخل شدن ، نفوذ کردن;0;0
+190;16;Accurate;['ac·cu·rate || 'ækjərət];exactly right as the result of care or pains;دقیق ، صحیح ، درست;0;0
+191;16;Microscope;[mi·cro·scope || 'maɪkrəskəʊp];instrument with a lens for making objects larger so that one can see things more clearly;ابزاری دارای یک لنز برای بزرگتر کردن اشیاء که فرد بتواند آن ها را واضح تر ببیند ، میکروسکوپ;0;0
+192;16;Grateful;[grate·ful || 'greɪtfʊl];"feeling gratitude; thankful";احساس قدر دانی کردن ، ممنون;0;0
+193;16;Cautious;[cau·tious || 'kɔːʃəs];"very careful; never taking chances";بسیار دقیق ، هرگز بر اساس احتمال عمل نمی کند;0;0
+194;16;Confident;[con·fi·dent || 'kɒnfɪdənt];"firmly believing; certain; sure";معتقد سفت و سخت ، مطمئن;0;0
+195;17;Appeal;[ap·peal || ə'piːl];"attraction; interest; to urge";جذابیت , علاقه ، خواهش کردن;0;0
+196;17;Addict;[ad·dict || 'ædɪkt];"one who cannot break away from a habit or practice; addicted unable to break a habit";کسی که نمی تواند عادت یا عملی را ترک کند ، معتاد;0;0
+197;17;Wary;[war·y || 'werɪ /'weərɪ];"on one's guard against danger or trickery; cautious";مراقب در برابر خطر یا فریب ، محتاط;0;0
+198;17;Aware;[a·ware || ə'weə];"knowing; realizing";آگاه ، مطلع;0;0
+199;17;Misfortune;[mɪs'fɔrtʃən /-'fɔː-];bad luck;بد شانسی;0;0
+200;17;Avoid;[a·void || ə'vɔɪd];"keep away from; keep out of the way of";دوری کردن از ، اجتناب کردن از;0;0
+201;17;Wretched;[wretch·ed || 'retʃɪd];"very unsatisfactory; miserable";بسیار نامطلوب ، اسفبار;0;0
+202;17;Keg;[keg];small barrel, usually holding less than ten gallons;بشکه ای کوچک که معمولاً کمتر از ده گالن می گیرد;0;0
+203;17;Nourish;[nour·ish || 'nɜrɪʃ /'nʌ-];"make or keep alive and well, with food; feed; develop an attitude";با غذا سالم و سرحال نگه داشتن ، تغذیه کردن;0;0
+204;17;Harsh;[hɑrʃ /hɑːʃ];"rough to the touch, taste, eye, or ear; sharp";زمخت برای حس لامسه ، چشایی ، بینایی ، یا شنوایی ، تند;0;0
+205;17;Quantity;[quan·ti·ty || 'kwɑntətɪ /'kwɒ-];amount;مقدار;0;0
+206;17;Opt;[ɑpt /ɒpt];"choose or favor; select";انتخاب کردن یا پسندیدن ، برگزیدن;0;0
+207;18;Tragedy;[trag·e·dy || 'trædʒɪdɪ];"a very sad or trrible happening; a sad play";رخدادی بسیار غم انگیز ،یا وحشتناک ، نمایش غم انگیز;0;0
+208;18;Pedestrian;[pe·des·tri·an || pɪ'destrɪən];"person who goes on foot; walker";شخصی که پیاده می رود ، عابر پیاده;0;0
+209;18;Glance;[glæns /glɑːns];"to look at quickly; a quick look";به سرعت نگاه کردن ، نگاه سریع;0;0
+210;18;Budget;[budg·et || 'bʌdʒɪt];estimate of the amount of money that can be spent for different purposes in a given time;تخمین مقدار پولی که می توان در زمان مشخصی برای اهداف مختلف خرج کرد;0;0
+211;18;Nimble;[nim·ble || 'nɪmbl];"active and sure-footed; quick moving; light and quick";فعال و با قدم های مطمئن ، چالاک ، سبک و سریع;0;0
+212;18;Manipulate;[ma·nip·u·late || mə'nɪpjəleɪt /-jʊl-];handle or treat skillfully;ماهرانه برخورد یا رفتار کردن;0;0
+213;18;Reckless;[reck·less || 'reklɪs];"careless; heedless; wild";بی دقت ، بی توجه ، وحشی;0;0
+214;18;Horrid;[ˈhôrid];"terrible; frightful";وحشتناک ، ترسناک;0;0
+215;18;Rave;[reɪv];talk wildly;وحشیانه حرف زدن;0;0
+216;18;Economical;[,e·co'nom·i·cal || ‚'ekə'nɑmɪkl /-nɒm-];not wasting money or time;پول یا وقت را هدر نمی دهد ، اقتصادی ، صرفه جو;0;0
+217;18;Lubricate;[lu·bri·cate || 'luːbrɪkeɪt];make (machinary) smooth and easy to work by putting on oil, grease, or a similar substance;با قرار دادن روغن ، گریس و مواد مشابه ، کار با ماشین آلات را راحت و هموار کردن ، روغن کاری کردن;0;0
+218;18;Ingenious;[in·gen·ious || ɪn'dʒɪːnɪəs];"having great mental ability; clever";داری توانایی ذهنی زیاد ، زرنگ;0;0
+219;19;Harvest;[har·vest || 'hɑrvɪst /'hɑːv-];gathering in of grain or other food crops;جمع آوری غلات یا دیگر محصولات غذایی;0;0
+220;19;Abundant;[a'bundant || -nt];"more than enough; very plentiful";بیش از حد کافی ، بسیار فراوان;0;0
+221;19;Uneasy;[ˌənˈēzē];"restless; disturbed; anxious";بیقرار ، آشفته ، نگران;0;0
+222;19;Calculate;[cal·cu·late || 'kælkjʊleɪt];"find out by adding, subtracting, multiplying, or dividing; figure";پی بردن از طریق جمع ، تفریق ، ضرب و تقسیم کردن ، حساب کردن;0;0
+223;19;Absorb;[ab·sorb || əb'sɔːb];"take in or suck up (liquids); interest greatly";جذب کردن یا مکیدن ( مایعات ) ، بسیار علاقه مند کردن;0;0
+224;19;Estimate;[es·ti·mate || 'estɪmeɪt];"form a judgment or opinion about; guess";درباره چیزی اظهار نظر کردن ، حدس زدن;0;0
+225;19;Morsel;[mor·sel || 'mɔrsl /'mɔːsl];"a small bite; mouthful; tiny amount";گاز کوچک ، به اندازه ی یک دهان ، مقدار بسیار کم;0;0
+226;19;Quota;[quo·ta || 'kwəʊtə];share of a total due from or to a particular state, district, person, etc.;سهمی از یک کل برای یک ایالت ، بخش ، شخص و غیره ، حصه;0;0
+227;19;Threat;[θret];sign or cause of possible evil or harm;نشانه یا علت آسیب یا شرارت ممکن ، تهدید;0;0
+228;19;Ban;[bæn];"prohibit; forbid";ممنوع کردن ، قدغن کردن;0;0
+229;19;Panic;[pan·ic || 'pænɪk];"unreasoning fear; fear spreading through a group of people so that they lose control of themselves";ترس بی دلیل ، ترسی که در بین گروهی از افرا دفراگیر می شود بگونه ای که کنترل خود را از دست می دهند;0;0
+230;19;Appropriate;[ap·pro·pri·ate || ə'prəʊprɪət];"fit; set apart for some special use";مناسب ، کنار گذاشتن برای کاربرد خاصی;0;0
+231;20;Emerge;[e·merge || ɪ'mɜːdʒ];"come out; come up; come into view";بیرون آمدن ، پدیدار شدن ، نمایان شدن;0;0
+232;20;Jagged;['jag·ged || 'dʒægɪd];"with sharp points sticking out; unevenly cut or torn";دارای نوک های تیز که بیرون زده اند ، یکنواخت بریده یا پاره نشده است;0;0
+233;20;Linger;[lin·ger || 'lɪŋgə(r)];"stay on; go slowly as if unwilling to leave";ماندن ، آرام حرکت کردن ، گویی که مایل به ترک نیست;0;0
+234;20;Ambush;[ˈamˌbo͝oSH];a trap in which soldiers or othe enemies hide to make a surprise attack;دامی که در آن سربازان یا دشمنان دیگر مخفی می شوند تا غافلگیرانه حمله کنند ، کمین;0;0
+235;20;Crafty;[craft·y || 'krɑːftɪ];"skillful in deceiving others; sly; tricky";ماهر در فریب دادن دیگران ، رند ، حقه باز;0;0
+236;20;Defiant;[de'fi·ant || -nt];"openly resisting; challenging";آشکارا مقاومت می کند ، مبارزه طلب;0;0
+237;20;Vigor;[ˈvigər];active strength or force;نیرو یا قدرت فعال;0;0
+238;20;Perish;[per·ish || 'perɪʃ];"be destroyed; die";نابود شدن ، مردن;0;0
+239;20;Fragile;[frag·ile || 'frædʒl /'frædʒaɪl];"easily broken, damaged, or destroyed; delicate";براحتی شکسته می شود ، آسیب می بیند یا از بین می رود ، ظریف;0;0
+240;20;Captive;[cap·tive || 'kæptɪv];prisoner;زندانی ، اسیر;0;0
+241;20;Proper;[prop·er || 'prɑpə(r) /'prɒ-];"be successful; have good fortune";موفق بودن ، اقبال خوب داشتن;0;0
+242;20;Devour;[de·vour || dɪ'vaʊə];"eat hungrily; absorb completely; take in greedily";با ولع خوردن ، کاملاً جذب کردن ، حریصانه جذب کردن;0;0
+243;21;Plea;[plɪː];"request; appeal; that which is asked of another";درخواست ، خواهش ، آنچه از دیگری خواسته می شود;0;0
+244;21;Weary;[wea·ry || 'wɪrɪ /'wɪər];tired;خسته;0;0
+245;21;Collide;[col·lide || kə'laɪd];come together with force;با نیرو به هم خوردن;0;0
+246;21;Confirm;[con·firm || kən'fɜːm];"prove to be true or correct; make certain";اثبات این که چیزی درست یا صحیح است ، اطمینان دادن;0;0
+247;21;Verify;[ver·i·fy || 'verɪfaɪ];"prove to be true; confirm";اثبات این که چیزی درست است ، تایید کردن;0;0
+248;21;Anticipate;[an·tic·i·pate || æn'tɪsɪpeɪt];"look forward to; expect";چشم انتظار بودن ، انتظار داشتن;0;0
+249;21;Dilemma;[di·lem·ma || dɪ'lemə];"situation requiring a choice between two evils; a difficult choice";موقعیتی که نیازمند انتخاب بین دو چیز بد است ، یک انتخاب دشوار;0;0
+250;21;Detour;[de·tour || 'diː‚tʊə];a roundabout way;یک مسیر انحرافی;0;0
+251;21;Merit;[mer·it || 'merɪt];"goodness; worth; value";خوبی ، ارزش;0;0
+252;21;Transmit;[trans·mit || trænz'mɪt ,-s-];"send over; pass on; pass along; let through";فرستادن ، انتقال دادن ، عبور دادن;0;0
+253;21;Relieve;[re·lieve || rɪ'lɪːv];"make less; make easier; reduce the pain of; replace; release; free";کاستن ، تسکین دادن ، جایگزین کردن ، آسوده و رها کردن ، آزاد کردن;0;0
+254;21;Baffle;[baf·fle || 'bæfl];be too hard to understand or solve;درک یا حل آن بسیار دشوار است ، مبهوت کردن;0;0
+255;22;Warden;[ward·en || 'wɔrdn /'wɔːdn];"keeper; guard; person in charge of a prison";حافظ ، نگهبان ، مسئول زندان ، زندانبان;0;0
+256;22;Acknowledge;[ac·knowl·edge || ək'nɒlɪdʒ];admit to be true;اعتراف کردن;0;0
+257;22;Justice;[jus·tice || 'dʒʌstɪs];"just conduct; fair dealing";رفتار عادلانه ، برخورد منصفانه ، عدالت;0;0
+258;22;Delinquent;[de'lin·quent || -nt];"an offender; criminal; behind time";متخطی ، جنایتکار ، بزهکار;0;0
+259;22;Reject;[re·ject || rɪ'dʒekt];refuse to take, use, believe, consider, grant, etc.;از گرفتن ، بکار بردن ، باور کردن ، بررسی کردن و اعطاء چیزی امتناع مرزیدن ، نپذیرفتن ، رد کردن;0;0
+260;22;Deprive;[de·prive || dɪ'praɪv];take away from by force;به زور گرفتن ، محروم کردن;0;0
+261;22;Spouse;[spaʊz ,-s];husband or wife;شوهر یا زن ، همسر;0;0
+262;22;Vocation;[vo·ca·tion || vəʊ'keɪʃn];"occupation; business; profession; trade";شغل ، کار ، حرفه ، کسب;0;0
+263;22;Unstable;[ˌənˈstābəl];"not firmly fixed; easily moved or overthrown";تثبیت نشده است ، براحتی جابجا یا واژگون می شود;0;0
+264;22;Homicide;[hom·i·cide || 'hɑmɪsaɪd /'hɒm-];"a killing of one human being by another; murder";کشتن انسانی توسط انسانی دیگر ، قتل ، آدم کشی;0;0
+265;22;Penalize;['pe·nal·ize || 'pɪːnəlaɪz];"declare punishable by law or rule; set a penalty for";مجازات کردن ، تنبیه کردن;0;0
+266;22;Beneficiary;[,ben·e'fi·ci·ar·y || ‚benɪfɪʃərɪ];person who receives benefit;کسی که از مزیتی بهره مند می شود ، ذینفع;0;0
+267;23;Reptile;['rep·tile || 'reptl /-taɪl];"a cold blooded animal that creeps or crawls; snakes, lizards, turtles, alligators, and crocodiles";حیوان خونسردی که می خزد ، مار ، مارمولک ، لاک پشت ، تمساح;0;0
+268;23;Rarely;['rerlɪ /'reəl-];"seldom; not often";به ندرت ، نه زیاد;0;0
+269;23;Forbid;[for·bid || fə(r)'bɪd];"order someone not to do something; make a rule against";دستور دادن به کسی برای انجام ندادن کاری ، منع کردن ، قدغن کردن;0;0
+270;23;Logical;['log·i·cal || 'lɑdʒɪkl /'lɒd-];"reasonable; reasonably expected";مستدل ، معقول ، منطقی;0;0
+271;23;Exhibit;[ex·hib·it || ɪg'zɪbɪt];"display; show";به نمایش گذاشتن ، نشان دادن;0;0
+272;23;Proceed;[pro·ceed || prə'sɪːd];"go on after having stopped; move forward";پس از توقف ادامه دادن ، پیش رفتن;0;0
+273;23;Precaution;[pre·cau·tion || prɪ'kɔːʃn];"measures taken beforehand; foresight";اقدام احتیاطی ، دوراندیشی;0;0
+274;23;Extract;[ex·tract || ɪk'strækt];pull out or draw out, usually with some effort;بیرون کشیدن ، کشیدن ، معمولاً با قدری تلاش;0;0
+275;23;Prior;[pri·or || 'praɪə(r)];"coming before; earlier";آمدن پیش از ، پیشین ، قبلی;0;0
+276;23;Embrace;[em·brace || ɪm'breɪs];"hug one another; a hug";در آغوش گرفتن ، بغل کردن ، آغوش;0;0
+277;23;Valiant;[ˈvalyənt];"brave; courageous";شجاع ، دلیر ، پر دل و جرات;0;0
+278;23;Partial;[par·tial || 'pɑrʃl /'pɑː-];"not complete; not total";نا تمام ، ناقص ، جزئی ، نسبی;0;0
+279;24;Fierce;[fɪrs /fɪəs];"savage; wild";وحشی ، خشن;0;0
+280;24;Detest;[de·test || dɪ'test];"dislike very much; hate";متنفر بودن از ، تنفر داشتن از;0;0
+281;24;Sneer;[snɪr /snɪə];"show scorn or contempt by looks or words; a scornful look or remark";با نگاه یا حرف تمسخر و تحقیر نشان دادن ، نگاه یا حرف تمسخر آمیز;0;0
+282;24;Scowl;[skaʊl];"look angry by lowering the eyebrows; frown";با پایین آوردن ابرو عصبانی به نظر رسیدن ، اخم کردن;0;0
+283;24;Encourage;[en·cour·age || ɪn'kʌrɪdʒ];"give courage to; increase the confidence of";جرات دادن به ، اعتماد را افزایش دادن;0;0
+284;24;Consider;[con·sid·er || kən'sɪdə];think about in order to decide;فکر کردن برای تصمیم گرفتن ، ملاحظه کردن ، اندیشیدن;0;0
+285;24;Vermin;[ver·min || 'vɜrmɪn /'vɜː-];"small animals that are troublesome or destructive; fleas, bedbugs, lice, rats, and mice are vermin";حیوانات کوچکی که مزاحم یا مخرب هستند ، کک ، ساس ، شپش ، موش صحرایی و موش ، حیوانات موذی هستند;0;0
+286;24;Wail;[weɪl];cry loud and long because of grief or pain;به خاطر اندوه یا درد بلند و کشیده فریاد زدن;0;0
+287;24;Symbol;[sym·bol || 'sɪmbl];something that stands for or represents something else;چیزی که نشانه یا نماینده ی چیز دیگری است;0;0
+288;24;Authority;[au·thor·i·ty || ɔː'θɒrətɪ];"the right to command or enforce obedience; power delegated to another; an author or volume that may be appealed to in support of an action or belief";حق تحکم یا اعمال اطاعت ، قدرتی که به دیگری واگذار می شود ، مولف یا کتابی که می توان در تایید یا یک عمل یا باور به آن استناد کرد ، اقتدار;0;0
+289;24;Neutral;[neu·tral || 'nuːtrəl /'njuː-];on neither side of a quarrel or war;بیطرف ، خنثی;0;0
+290;24;Trifle;[tri·fle || 'traɪfl];"a small amount; little bit; something of little value";مقدار کم ، کمی ، چیز کم ارزش;0;0
+291;25;Architect;[ar·chi·tect || 'ɑːkɪtekt];"a person who makes plans for buildings and other structures; a maker; a creator";شخصی که برای ساختمان ها یا دیگر سازه ها طرح می سازد ، سازنده ، خالق;0;0
+292;25;Matrimony;[mat·ri·mo·ny || 'mætrɪməʊnɪ /-mənɪ];"married life; ceremony of marriage";زندگی زناشوئی ، مراسم ازدواج;0;0
+293;25;Baggage;[bag·gage || 'bægɪdʒ];"the trunks and suitcases a person takes when he or she travels; an army's equipment";کیف ها و چمدان هایی که شخص هنگام سفر با خود می برد ، تجهیزات یک ارتش;0;0
+294;25;Squander;[squan·der || 'skwɑndə(r) /'skwɒn-];"spend foolishly; waste";احمقانه خرج یا مصرف کردن ، تلف کردن;0;0
+295;25;Abroad;[a·broad || ə'brɔːd];"outside one's country; going around; far and wide";خارج از وطن ، به خارج ، فراگیر ، گسترده;0;0
+296;25;Fugitive;[fu·gi·tive || 'fjuːdʒɪtɪv];a runaway;فراری ، متواری;0;0
+297;25;Calamity;[ca·lam·i·ty || kə'læmətɪ];"a great misfortune; serious trouble";بدبختی بزرگ ، مشکل جدی;0;0
+298;25;Pauper;[pau·per || 'pɔːpə(r)];a very poor person;شخص بسیار فقیر;0;0
+299;25;Envy;[en·vy || 'envɪ];"jealousy; the object of jealousy; to feel jealous";حسادت ، مایه حسادت ، احساس حسادت کردن;0;0
+300;25;Collapse;[col·lapse || kə'læps];"a breakdown; to fall in; break down; fail suddenly; fold together";فروپاشی ، فرو ریختن ، خراب شدن ، ناگهان فروپاشیدن ، به هم تا کردن;0;0
+301;25;Prosecute;[pros·e·cute || 'prɑsɪkjuːt /'prɒ-];"bring before a court; follow up; carry on";به دادگاه احضار کردن ، پیگیری کردن ، ادامه دادن;0;0
+302;25;Bigamy;['big·a·my || 'bɪgəmɪ];having two wives or two husbands at the same time;همزمان دو همسر داشتن ، تعدد زوجات;0;0
+303;26;Beckon;[beck·on || 'bekən];"signal by a motion of the hand or head; attract";با حرکت دست یا سر علامت دادن ، جذب کردن;0;0
+304;27;Despite;[de·spite || dɪ'spaɪt];in spite of;با وجود ، علیرغم;0;0
+305;27;Disrupt;[dis·rupt || dɪs'rʌpt];"upset; cause to break down";به هم زدن ، مختل کردن;0;0
+306;27;Rash;[ræʃ];"a breaking out with many small red spots on the skin; outbreak of many instances within a short time too hasty or careless";شیوع موارد زیاد در زمانی کوتاه ، بسیار شتاب زده یا بی دقت ، کهیر ، جوش;0;0
+307;27;Rapid;[rap·id || 'ræpɪd];"very quick; swift";بسیار سریع ، تند;0;0
+308;27;Exhaust;[ex·haust || ɪg'zɔːst];"empty completely; use up; tire out";کاملاً تمام کردن ، کاملاً استفاده کردن ، خسته کردن;0;0
+309;27;Severity;[se·ver·i·ty || sɪ'verətɪ];"strictness; harshness; plainness; violence";سخت گیری ، خشونت ، سادگی;0;0
+310;27;Feeble;[fee·ble || 'fɪːbl];weak;ضعیف;0;0
+311;27;Unite;[u·nite || juː'naɪt];"join together; become one";به هم پیوستن ، یکی شدن ، متحد شدن;0;0
+312;27;Cease;[siːs];stop;متوقف کردن ، دست برداشتن از;0;0
+313;27;Thrifty;['thrift·y || 'θrɪftɪ];"saving; careful in spending; thriving";صرفه جو ، دقیق در خرج;0;0
+314;27;Miserly;[mi·ser·ly || 'maɪzəlɪ];"stingy; like a miser";خسیس ، خسیس وار;0;0
+315;27;Monarch;[mon·arch || 'mɑnərk /'mɒnək];"king or queen; ruler";شاه یا ملکه ، پادشاه ، حاکم ، فرمانروا;0;0
+316;28;Outlaw;[out·law || 'aʊtlɔː];"an exile; an outcast; a criminal; to declare unlawful";تبعیدی ، مطرود ، جانی ، غیر قانونی اعلام کردن;0;0
+317;28;Promote;[pro·mote || prə'məʊt];"raise in rank or importance; help to grow and develop; help to organize";ارتقاء درجه یا اهمیت ، کمک ب هرشد و توسعه ، کمک به سازمان دهی;0;0
+318;28;Undernourished;[ˌəndərˈnəriSHt];not sufficiently fed;مبتلا به سوء تغذیه;0;0
+319;28;Illustrate;[il·lus·trate || 'ɪləstreɪt];"make clear or explain by stories, examples, comparisons, or other means; serve as an example";از طریق داستان ، مثال ، مقایسه با شیوه های دیگر آشکار کردن یا توضیح دادن ، به عنوان مثال به کار رفتن;0;0
+320;28;Disclose;[dis·close || dɪs'kləʊz];"uncover; make known";فاش کردن ، آشکار ساختن;0;0
+321;28;Excessive;[ex·ces·sive || ɪk'sesɪv];"too much; too great; extreme";بسیار زیاد ، خیلی زیاد ، بی نهایت ، بیش از حد;0;0
+322;28;Disaster;[dis·as·ter || dɪ'zɑːstə];"an event that causes much suffering or loss; a great misfortune";واقعه ای که باعث رنج و خسارت زیادی می شود ، بدبختی زیاد;0;0
+323;28;Censor;[cen·sor || 'sensə];"person who tells others how they ought to behave; one who changes books, plays and other works so as to make them acceptable to the government; to make changes in";شخصی که ب هدیگران می گوید که چگونه باید رفتار کنند ، کسی که کتاب ، نمایش نامه و آثار دیگر رار به گونه ای تغییر می دهد که آن ها را برای دولت حاکم قابل قبول می سازد ، تغییر ایجاد کردن;0;0
+324;28;Culprit;[cul·prit || 'kʌlprɪt];"offender; person guilty of a fault or crime";متخطی ، کسی که متهم به گناه یا جرمی است;0;0
+325;28;Juvenile;[ju·ve·nile || 'dʒuːvənaɪl];"young; youthful; of or for boys and girls; a young person";جوان ، جوان مآبانه ، مربوط به دختر و پسر ، یک فرد جوان;0;0
+326;28;Bait;[beɪt];"anything, specially food, used to attract fish or other animals so that they may be caught; anything used to tempt or attract a person to begin something he or she does not wish to do; to put bait on (a hook) or in (a trap); torment by unkind or annoying remarks";هر چیزی ، خصوصاً غذا ، که از آن برای جذب ماهی ها و دیگر حیوانات استفاده می شود که به توان آن هارا گرفت ، هر چیزی کهبرای وسوسه کردن یا جذب یک شخص استفاده می شود تا کاری را شروع کند که میل به انجام آن را ندارد ، طعمه ای را روی یک قلاب یا دام قرار دادن ، با حرف های نامهربانانه یا آزار دهنده کسی را اذیت کردن;0;0
+327;28;Insist;[in·sist || ɪn'sɪst];keep firmly to some demand, statement, or position;سخت به یک خواسته ، کفته یا موضعی پایبند بودن;0;0
+328;29;Toil;[tɔɪl];"hard work; to work hard; move with difficulty";کار سخت ، سخت کار کردن ، به سختی کار کردن;0;0
+329;29;Blunder;[blun·der || 'blʌndə];"stupid mistake; to make a stupid mistake; stumble; say clumsily";اشتباه احمقانه ، مرتکب اشتباه احمقانه ای شدن ، تلوتلو خوردن ، با دستپاچگی گفتن;0;0
+330;29;Daze;[deɪz];confuse;گیج کردن;0;0
+331;29;Mourn;[mɔrn /mɔːn];"grieve; feel or show sorrow for";غصه دار بودن ، ابراز یا احساس اندوه کردن;0;0
+332;29;Subside;[sub·side || səb'saɪd];"sink to a lower level; grow less";به سطح پایین تری فرو رفتن ، کمتر شدن;0;0
+333;29;Maim;[meɪm];"cripple; disable; cause to lose an arm, leg, or other part of the body";معلول کردن ، ناتوان ساختن ، باعث از دست دادن بازو پا یا بخش دیگری از بدن شدن;0;0
+334;29;Comprehend;[com·pre·hend || ‚kɒmprɪ'hend];understand;درک کردن;0;0
+335;29;Commend;[com·mend || kə'mend];"praise; hand over for safekeeping";ستودن ، تحویل دادن;0;0
+336;29;Final;[fi·nal || 'faɪnl];"coming last; deciding";آخر از همه می آید ، تعیین کننده;0;0
+337;29;Exempt;[ex·empt || ɪg'zempt];"make free from; freed from";معاف یا آزاد کردن از ، مستثنی از;0;0
+338;29;Vain;[veɪn];"having too much pride in one's ability, looks, etc.; of no use";به توانایی و چهره خود غرور زیاد ورزیدن ، بی فایده;0;0
+339;29;Repetition;[rep·e·ti·tion || ‚repɪ'tɪʃn];act of doing or saying again;عمل دوباره گفتن یا دوباره انجام دادن;0;0
+340;30;Depict;[de·pict || dɪ'pɪkt];"represent by drawing or painting; describe";با ترسیم یا نقاشی نشان دادن ، توصیف کردن;0;0
+341;30;Mortal;[mor·tal || 'mɔrtl /'mɔːtl];"sure to die sometime; pertaining to man; deadly; pertaining to or causing death";قطعاً زمانی از بین می رود ، مربوط به انسان ، کشنده ، مربوط به مرگ یا باعث مرگ می شود;0;0
+342;30;Novel;[nov·el || 'nɑvl /'nɒvl];"new; strange; a long story with characters and plot";تازه ، عجیب ، داستانی طولانی دارای شخصیت و طرح;0;0
+343;30;Occupant;['oc·cu·pant || 'ɑkjəpənt /ɒkjʊp-];person in possession of a house, office, or position;فرد مالک یک خانه ، دفتر یا منصب;0;0
+344;30;Appoint;[ap·point || ə'pɔɪnt];"decide on; set a time or place; choose for a position; equip or furnish";انتخاب کردن ، زمان یا مکانی را مشخص کردن ، برای مقامی انتخاب کردن ، مجهز یا مبلمان کردن;0;0
+345;30;Quarter;[quar·ter || 'kwɔrtə(r) /'kwɔːtə];"region; section; (quarters) a place to live; to provide a place to live";منطقه ، بخش ، مکانی برای زندگی کردن ، مکانی برای زندگی فراهم کردن;0;0
+346;30;Site;[saɪt];position or place (of anything);موقعیت یا مکان ( چیزی );0;0
+347;30;Quote;[kwəʊt];"repeat exactly the words of another or a passage from a book; that is, something that is repeated exactly; give the price of; a quotation";دقیقاً حرف های شخص دیگری یا متنی از کتابی را تکرا کردن ، یعنی چیزی که دقیقاً تکرار می شود ، یک نقل قول;0;0
+348;30;Verse;[vɜrs / vɜːs-];"a short division of a chapter in the Bible; a single line or a group of lines of poetry";بخش کوتاهی از فصلی در انجیل ، یک سطر یا چند سطر شعر;0;0
+349;30;Morality;[mo·ral·i·ty || mə'ræləɪtɪ];"the right or wrong of an action; virtue; a set of rules or principles of conduct";درستی یا نادرستی یک عمل ، فضیلت ، مجموعه ای از قوانین یا اصول اخلاقی;0;0
+350;30;Roam;[rəʊm];"wander; go about with no special plan or aim";سرگردان بودن ، بی هیچ هدف یا برنامه خاصی به هر سو رفتن;0;0
+351;30;Attract;[at·tract || ə'trækt];"draw to oneself; win the attention and liking of";به طرف خود کشیدن ، توجه و علاقه ی کسی را بدست آوردن;0;0
+352;31;Commuter;[com'mut·er || -tə];one who travels regularly, especially over a considerable distance between home and work;کسی که مرتب مسافت قابل ملاحظه ی منزل و محل کار را می پیماید;0;0
+353;31;Confine;[con·fine || 'kɒnfaɪn];"keep in; hold in";حبس کردن ، زندانی کردن;0;0
+354;31;Idle;[i·dle || 'aɪdl];"not doing anything; not busy; lazy; without any good reason or cause; to waste (time)";هیچ کاری انجام نمی دهد ، مشغول نیست ، تنبل ، بی هیچ دلیل یا علت وقت تلف کردن;0;0
+355;31;Idol;[i·dol || 'aɪdl];"a thing, usually an image, that is worshiped; a person or thing that is loved very much";چیزی که ستایش می شود ، معمولاً یک نصویر ، شخص یا چیزی که خیلی محبوب است;0;0
+356;31;Jest;[dʒest];"joke; fun; mockery; thing to be laughed at; to jock; poke fun";جک ، خنده ، تمسخر ، چیزی که باید به آن خندید ، دست انداختن ، مسخره کردن;0;0
+357;31;Patriotic;[pa·tri·ot·ic || ‚peɪtrɪ'ɑtɪk /‚pætrɪ'ɒ-];"loving one's country; showing love and loyal support for one's country";عاشق کشور خود ، نسبت به کشور خود عاشقانه و وفادارانه حمایت نشان می دهد;0;0
+358;31;Valor;[ˈvalər];"bravery; courage";شجاعت ، جرات;0;0
+359;31;Lunatic;[lu·na·tic || 'luːnətɪk];"crazy person; insane; extremely foolish";شخص دیوانه ، لایعقل ، بسیار احمقاته;0;0
+360;31;Vein;[veɪn];"mood; a blood vessel that carries blood to the heart; a crack or seam in a rock filled with a different mineral";خلق و خو ، رگ خونی که خون را به قلب حمل می کند  ،شکاف یا درز داخل یک تخته سنگ که با یک ماده ی معدنی متفاوت پر شده است;0;0
+361;31;Uneventful;[ˌʌnɪˈvɛntfʊl];without important or striking happenings;بدون رخدادی مهم ی اقابل ملاحظه;0;0
+362;31;Fertile;[fer·tile || 'fɜrtl /'fɜːtaɪl];"bearing seeds or fruit; producing much of anything";میوه یا بذر می دهد ، از هر چیز زیاد تولید می کند;0;0
+363;32;Refer;[re·fer || rɪ'fɜr /-'fɜː];"hand over; send, direct, or turn for information, help, or action; (refer to) direct attention to or speak about; assign to or think of as caused by";تحویل دادن ، فرستادن ، هدایت کردن ، یا رو کردن برای اطاعت ، کمک یا اقدام ، معطوف داشتن یا سخن گفتن پیرامون;0;0
+364;32;Distress;[dis·tress || dɪ'stres];"great pain or sorrow; misfortune; dangerous or difficult situation; to cause pain or make unhappy";غم یا درد زیاد ، بد شانسی ، وضعیت خطرناک یا دشوار ، درد یا ناراحتی ایجاد کردن;0;0
+365;32;Diminish;[di·min·ish || dɪ'mɪnɪʃ];make or become smaller in size, amount or importance;کمتر کردن یا کمتر شدن از نظر اندازه ، مقدار یا اهمیت;0;0
+366;32;Maximum;[max·i·mum || 'mæksɪməm];"greatest amount; greatest possible";بیشترین مقدار ، بیشترین مقدار ممکن;0;0
+367;32;Flee;[flɪː];"run away; go quickly";فرار کردن ، بسرعت رفتن;0;0
+368;32;Vulnerable;[vul·ner·a·ble || 'vʌlnərəbl];"capable of being injured; open to attack; sensitive to criticism, influences, etc.";آسیب پذیر ، در معرض حمله ، حساس به انتقاد ، اثرات و غیره;0;0
+369;32;Signify;[sig·ni·fy || 'sɪgnɪfaɪ];"mean; be a sign of; make known by signs, words, or actions; have importance";معنی دادن ، نشانه ی چیزی بودن ، با علامت ، حرف یا عمل مشخص کردن ، اهمیت داشتن;0;0
+370;32;Mythology;[my·thol·o·gy || mɪ'θɑlədʒɪ /-'θɒ-];legends or stories that ususally attempt to explain something in nature;افسانه ها یا داستان هایی که معمولاً تلاش می کنند چیزی را در طبیعت نشان دهند ، اساطیر;0;0
+371;32;Colleague;[col·league || 'kɒliːg];"associate; fellow worker";همیار ، همکار;0;0
+372;32;Torment;[tor·ment || tɔr'ment /tɔː-];"cause very great pain to; worry or annoy very much; cause of very great pain; very great pain";تامین کردن ، به عنوان شرط بیان کردن ، در برابر وضعیتی یا برای وضعیتی آماده شدن;0;0
+373;32;Loyalty;['loy·al·ty || 'lɔɪəltɪ];faithfulness to a person, government, idea, custome, or the like;وفاداری به یک شخص ، دولت ، اندیشه ، رسم و غیره;0;0
+374;33;Volunteer;[vol·un·teer || ‚vɑlən'tɪr /‚vɒlən'tɪə];"person who enters any service of his or her own free will; to offer one's services";فردی که با میل شخصی خودش در هر خدمتی وارد شو د، خدمات خود را ارائه دادن;0;0
+375;33;Prejudice;[prej·u·dice || 'predʒʊdɪs];"an opinion formed without taking time and care to judge fairly; to harm or injure";عقیده ای که بدون زمان و دقت برای قضاوتی عادلانه شکل گرفته است ، آسیب رساندن ، مجروح کردن;0;0
+376;33;Shrill;[ʃrɪl];"having a high pitch; high and sharp in sound; piercing";دارای صدای بلند ، از نظر صدا بلند و شدید ، گوشخراش;0;0
+377;33;Jolly;[jol·ly || 'dʒɑlɪ /'dʒɒl-];"merry; full of fun";شاد ، مملوء از خنده;0;0
+378;33;Witty;[wit·ty || 'wɪtɪ];cleverly amusing;به شکل زیرکانه ای خنده دار;0;0
+379;33;Hinder;[hind·er || 'haɪndə(r)];"hold back; make hard to do";عقب نگه داشتن ، انجام کار را دشوار ساختن;0;0
+380;33;Lecture;[lec·ture || 'lektʃə(r)];"speech or planned talk; a scolding; to scold";سرزنش ، سرزنش کردن ، سخنرانی یا نطق برنامه ریزی شده;0;0
+381;33;Abuse;[a·buse || ə'bjuːz];"make bad use of; use wrongly; treat badly; scold very severely; bad or wrong use; bad treatment";سوء استفاده کردن از ، غلط به کار بردن ، بد رفتاری کردن با ، بسیار شدید سرزنش کردن ، کاربرد یا استفاده ی بد ، رفتار بد;0;0
+382;33;Mumble;[mum·ble || 'mʌmbl];speak indistinctly;نامشخص حرف زدن;0;0
+383;33;Mute;[mjuːt];"silent; unable to speak";ساکت ، ناتوان در صحبت;0;0
+384;33;Wad;[wɑd /wɒd];"small, soft mass; to roll or crush into a small mass";توده نرم و کوچک ، مچاله کردن;0;0
+385;33;Retain;[re·tain || rɪ'teɪn];"keep; remember; employ by payment of a fee";نگه داشتن ، به خاطر سپردن ، با پرداخت دستمزد استخدام کردن;0;0
+386;34;Candidate;[can·di·date || 'kændɪdət];person who is proposed for some office or honor;شخصی که برای تصدی یا افتخاری پیشنهاد می شود ، نامزد;0;0
+387;34;Precede;[pre·cede || ‚prɪː'sɪːd];"go before; come before; be higher in rank or importance";به کار رفتن پیش از ، آمدن پیش از ، از نظر اهمیت یا رتبه بالاتر بودن;0;0
+388;34;Adolescent;[,ad·o'les·cent || ‚ædə'lesnt];"growing up to manhood or womanhood; youthful; a person from about 13 to 22 years of age";رشد کردن تا حد یک مرد یا زن ، نوجوان ، شخصی از حدوداً 13 تا 22 سالگی;0;0
+389;34;Coeducational;[co-ˌejəˈkāSHənl];having to do with educating both sexes in the same school;مربوط به آموزش هر دو جنس در یک مدرسه ، مختلط;0;0
+390;34;Radical;[rad·i·cal || 'rædɪkl];"going to the root; fundamental; extreme; person with extreme opinions";تا به ریشه پیش رفتن ، بنیادی ، افراطی ، شخصی با عقاید افراطی;0;0
+391;34;Spontaneous;[spon·ta·ne·ous || spɑn'teɪnɪəs /spɒn-];"of one's own free will; natural; on the spur of the moment; without rehearsal";با میل شخصی خود ، طبیعی ، فی البداهه ، بدون تمرین;0;0
+392;34;Skim;[skɪm];"remove from the top; move lightly (over); glide along; read hastily or carelessly";از بالا برداشتن ، ملایم از روی چیزی گذشتن ، سر خوردن ، شتابزده یا بی دقتی خواندن;0;0
+393;34;Vaccinate;[vac·ci·nate || 'væksɪneɪt];inoculate with vaccine as a protection against smallpox and other diseases;مصون ساختن با واکسن به عنوان حفاظت در برابر آبله و بیماری های دیگر ، واکسینه کردن;0;0
+394;34;Untidy;[ˌənˈtīdē];"not neat; not in order";آشفته ، نا مرتب;0;0
+395;34;Utensil;[u·ten·sil || juː'tensl];container or tool used for practical purposes;ظرف یا ابزاری که برای اهداف کاربردی استفاده می شود;0;0
+396;34;Sensitive;[sen·si·tive || 'sensɪtɪv];"receiving impressions readily; easily affected or influenced; easily hurt or offended";به راحتی برداشت ها را دریافت می کند ، به راحتی تحت تاثیر قرار می گیرد ، براحتی آسیب می بیند یا ناراحت می شود ، حساس;0;0
+397;34;Temperate;[tem·per·ate || 'tempərət];"not very hot and not very cold; moderate";نه زیاد داغ و نه زیاد سرد ، معتدل ، ملایم;0;0
+398;35;Vague;[veɪg];"not definite; not clear; not distinct";نامعین ، ناآشکار ، نامشخص;0;0
+399;35;Elevate;[el·e·vate || 'elɪveɪt];"raise; lift up";بالا بردن ، بلند کردن;0;0
+400;35;Lottery;[lot·ter·y || 'lɑtərɪ /'lɒt-];a scheme for distributing prizes by lot or chance;طرحی برای توزیع جایزه از طریق بخت آزمایی یا شانس;0;0
+401;35;Finance;[fi·nance || fɪ'næns / 'faɪnæns];"money matters; to provide money for";مسائل مالی ، فراهم کردن پول برای;0;0
+402;35;Obtain;[ob·tain || əb'teɪn];"get; be in use";ب هدست آوردن ، مورد استفاده بودن;0;0
+403;35;Cinema;[cin·e·ma || 'sɪnɪmə];moving picture;تصویر متحرک;0;0
+404;35;Event;[e·vent || ɪ'vent];"happening; important happening; result or outcome; one item in a program of sports";رخداد ، رویداد مهم ، نتیجه یا پیامد;0;0
+405;35;Discard;[dis·card || dɪ'skɑːd];throw aside;کنار انداختن;0;0
+406;35;Soar;[sɔr /sɔː];"fly upward or at a great height; aspire";به بالا یا در ارتفاع زیاد پرواز کردن ، اوج گرفتن;0;0
+407;35;Subsequent;['sub·se·quent || 'sʌbsɪkwənt];"later; following; coming after";بعدی ، متعاقب ، آنچه که بعد می آید;0;0
+408;35;Relate;[re·late || rɪ'leɪt];"tell; give an account of; connect in thought or meaning";گفتن ، شرح دادن ، از نظر معنایی یا فکری ربط دادن;0;0
+409;35;Stationary;[sta·tion·ar·y || 'steɪʃnərɪ ,-nrɪ];"having a fixed station or lpace; standing still; not moving; not changing in size, number or activity";دارای جایگها یا مکانی ثابت ، آرام ایستاده است ، بی حرکت ، از نظر اندازه ، تعداد یا فعالیت تغییر نمی کند;0;0
+410;36;Prompt;[prɑmpt /prɒmpt];"quick; on time; done at once; to cause (someone) to do something; remind (someone) of the words or actions needed";سریع ، به موقع ، فورا انجام می شود ، کسی را وادار به انجام کاری کردن ، اعمال یا واژگان مورد نیاز را به یاد کسی انداختن;0;0
+411;36;Hasty;['hast·y || 'heɪstɪ];"quick; hurried; not well thought out";سریع ، شتابزده ، خوب روی آن فکر نشده است;0;0
+412;36;Scorch;[skɔrtʃ /skɔːtʃ];"burn slightly; dry up; criticize sharply";سوزاندن ملایم ، خشکاندن ، شدیداً انتقاد کردن;0;0
+413;36;Tempest;[tem·pest || 'tempɪst];"violent storm with much wind; a violent disturbance";طوفان خشن با باد زیاد ، اغتشاش و آشفتگی خشونت آمیز;0;0
+414;36;Soothe;[suːð];"quiet; calm; comfort";آرام کردن ، ساکت کردن ، آرامش دادن;0;0
+415;36;Sympathetic;[sym·pa·thet·ic || ‚sɪmpə'θetɪk];"having or showing kind feelings toward others; approving; enjoying the same things and getting along well together";نسبت به دیگران احساسات مهربانانه ای دارد یا نشان می دهد ، موافق;0;0
+416;36;Redeem;[re·deem || rɪ'dɪːm];"buy back; pay off; carry out; set free; make up for";پس فروختن ، باز پرداخت کردن ، انجام دادن ، آزاد کردن ، جبران کردن;0;0
+417;36;Resume;[re·sume || rɪ'zuːm / -'zjuːm];"begin again; go on; take again";دوباره شروع کردن ، ادامه دادن ، از سر گرفتن;0;0
+418;36;Harmony;[har·mo·ny || 'hɑrmənɪ /'hɑːm-];"situation of getting on well together or going well together; sweet or musical sound";هماهنگی ، صدای موزون و شیرین;0;0
+419;36;Refrain;[re·frain || rɪ'freɪn];hold back;خودداری کردن ، اجتناب کردن;0;0
+420;36;Illegal;[il·le·gal || 'ɪ'lɪːgl];"not lawful; against the law";غیر قانونی ، خلاف قانون;0;0
+421;36;Narcotic;[nar·cot·ic || nɑr'kɑtɪk /nɑː'kɒ-];drug that produces drowsiness, sleep, dullness, or an insensible condition, and lessens pain by dulling the nerves;ماده ای که خماری ، خواب ، بی حالی یا حالت بی حسی ایجاد می کند و ب اتسکین اعصاب درد را کاهش می دهد;0;0
+422;37;Heir;[er /eə];"person who has a right to someone's property after that one dies; person who inherits anything";شخصی که پس از مرگ فردی نسبت به دارایی اش حق دارد ، شخصی که چیزی را به ارث می برد;0;0
+423;37;Majestic;[ma·jes·tic || mə'dʒestɪk];"grand; noble; dignified; kingly";بزرگ ، شریف ، با عزت ، شاهانه ، با شکوه;0;0
+424;37;Dwindle;[dwin·dle || 'dwɪndl];"become smaller and smaller; shrink";کوچکتر و کوچکتر شدن ، جمع شدن;0;0
+425;37;Traitor;[trai·tor || 'treɪtə(r)];person who betrays his or her country, a friend, duty, etc.;شخصی که به کشور ، دوست و یا وظیفه اش خیانت می کند;0;0
+426;37;Deliberate;[de·lib·er·ate || dɪ'lɪbərət];"to consider carefully; intended; done on purpose; slow and careful, as though allowing time to decide what to do";به دقت بررسی کردن ، عمدی ، کند و دقیق ، تو گویی که به زمان اجازه می دهید تصمیم بگیرد چه بکند;0;0
+427;37;Vandal;[Van·dal || 'vændl];person who wilfully or ignorantly destroys or damages beautiful things;کسی که خواسته یا نادانسته به چیزهای زیبا آسیب می زند یا آن ها را از بین می برد;0;0
+428;37;Drought;[draʊt];"long period of dry weather; lack of rain; lack of water; dryness";دوره ی طولانی هوای خشک ، نبود باران ، نبود آب ، خشکسالی;0;0
+429;37;Abide;[a·bide || ə'baɪd];"accept and follow out; remain faithful to; dwell; endure";پذیرفتن و دنبال کردن ، وفادار ماندن به ، اقامت داشتن ، تحمل کردن;0;0
+430;37;Unify;[u·ni·fy || 'juːnɪfaɪ];"unite; make or form into one";متحد کردن ، یکی کردن ، یکی شدن;0;0
+431;37;Summit;[sum·mit || 'sʌmɪt];"highest point; top";بالاترین نقطه ، نوک ، قله;0;0
+432;37;Heed;[hɪːd];"give careful attention to; take notice of; careful attention";به دقت توجه کردن ، توجه کردن به ، توجه دقیق;0;0
+433;38;Biography;[bi'og·ra·phy || -fɪ];"the written story of a person's life; the part of literature that consists of biographies";داستان مکتوب زندگی یک شخص ، بخشی از ادبیات که از زندگینامه تشکیل می شود;0;0
+434;38;Drench;[drentʃ];"wet thoroughly; soak";کاملاً خیس کردن ، خیساندن;0;0
+435;38;Swarm;[swɔrm /swɔːm];"group of insects flying or moving about together; crowd or great number; to fly or move about in great numbers";گروهی از حشرات که با هم به هر سو حرکت یا پرواز می کنند ، جمعیت یا تعداد زیاد ، به تعداد زیاد به هر سو حرکت یا پرواز کردن;0;0
+436;38;Wobble;[wob·ble || 'wɒbl];move unsteadily from side to side;به طور نامنظم از سویی به سویی حرکت کردن;0;0
+437;38;Tumult;[tu·mult || 'tuːmʌlt /'tju-];"noise; uproar; violent disturbance or disorder";سر و صدا ، آشوب ، آشفتگی یا بی نظمی خشونت آمیز;0;0
+438;38;Kneel;[nɪːl];"go down on one's knees; remain on the knees";زانو زدن ، روی زانو ماندن;0;0
+439;38;Dejected;[de·ject·ed || dɪ'dʒektɪd];"in low spirits; sad";با روحیه پایین ، غمگین;0;0
+440;38;Obedient;[o'be·di·ent || ə'bɪːdɪənt];"doing what one is told; willing to obey";آنچه که به او گفته می شود انجام می دهد ، مایل به اطاعت;0;0
+441;38;Recede;[re·cede || rɪ'sɪːd];"go back; move back; slope backward; withdraw";برگشتن ، به عقب حرکت کردن ، به طرف عقب شیب داشتن ، عقب کشیدن;0;0
+442;38;Tyrant;[ty·rant || 'taɪərənt];"cruel or unjust ruler; cruel master; absolute ruler";حاکم ظالم یا غیر منصف ، ارباب ظالم ، حاکم مطلق;0;0
+443;38;Charity;[char·i·ty || 'tʃærətɪ];"generous giving to the poor; institutions for helping the sick, the poor, or the helpless; kindness in judging people's faults";بخشش سخاوتمندانه به فقرا ، موسساتی که برای کمک به بیماران ، فقرا و بیچارگان ، مهربانی در سنجش تقصیرات مردم;0;0
+444;38;Verdict;[ver·dict || 'vɜrdɪkt /'vɜː-];"decision of a jury; judgment";تصمیم یک هیئت منصفه ، قضاوت;0;0
+445;39;Unearth;[ˌənˈərTH];"dig up; discover; find out";حفر کردن ، کشف کردن ، پی بردن;0;0
+446;39;Depart;[de·part || dɪ'pɑːt];"go away; leave; turn away (from); change; die";دور شدن ، ترک کردن ، روی گرداندن از ، تغییر دادن ، از بین رفتن;0;0
+447;39;Coincide;[co·in·cide || ‚kəʊɪn'saɪd];"occupy the same place in space; occupy the same time; correspond exactly; agree";از نظر فضا مکان یکسانی را اشغال کردن ، زمان یکسانی را اشغال کردن ، دقیقاً برابر بودن ، توافق داشتن;0;0
+448;39;Cancel;[can·cel || 'kænsl];"cross out; mark so that it cannot be used; wipe out; call off";خط زدن ، علامت گذاری کردن برای اینکه نتوان از آن استفاده کرد ، از بین بردن ، لغو کردن;0;0
+449;39;Debtor;['debt·or || 'detə(r)];person who owes something to another;شخصی که به شخص دیگری بدهکار است;0;0
+450;39;Legible;[leg·i·ble || 'ledʒəbl];"able to be read; easy to read; plain and clear";قابل خواندن ، راحت برای خواندن ، ساده و آشکار;0;0
+451;39;Placard;[plac·ard || 'plækərd /'plækɑːd];"a notice to be posted in a public place; poster";یک آگهی که باید در مکان عمومی نصب شود ، پوستر;0;0
+452;39;Contagious;[con'ta·gious || -dʒəs];spreading by contact, easily spreading from one to another;از طریق تماس منتشر می شود ، به راحتی از فردی به فردی سرایت می کند ، مسری;0;0
+453;39;Clergy;[cler·gy || 'klɜːdʒɪ];"persons prepared for religious work; clergymen as a group";افرادی که برای کار مذهبی آماده می شوند ، مجموعه روحانیون;0;0
+454;39;Customary;['cus·tom·ar·y || 'kʌstəmrɪ];usual;معمول ، مرسوم;0;0
+455;39;Transparent;[trans'par·ent || træns'perənt /træns'pærənt];"easily seen through; clear";براحتی می توان از داخل آن دید ، روشن ، شفاف;0;0
+456;39;Scald;[skɔːld];"pour boiling liquid over; burn with hot liquid or steam; heat almost to the boiling point";مایع داغ روی چیزی ریختن ، با بخار یا مایع داغ سوزاندن ، تقریباً تا نقط ی جوش حرارت دادن;0;0
+457;40;Epidemic;[ep·i·dem·ic || ‚epɪ'demɪk];"an outbreak of a disease that spreads rapidly, so that many people have it at the same time; widespread";شیوع یک بیماری که به سرعت منتشر می شود به طوری که افراد زیادی همزمان به آن مبتلا می شوند ، فراگیر;0;0
+458;40;Obesity;[əʊ'bɪːsətɪ];extreme fatness;چاقی مفرط;0;0
+459;40;Magnify;[mag·ni·fy || 'mægnɪfaɪ];"cause to look larger than it really is; make too much of; go beyond the truth in telling";بیش از حد واقعی جلوه دادن ، در گفتن پا را از حقیقت فراتر گذاشتن;0;0
+460;40;Chiropractor;[chi·ro·prac·tor || 'kaɪərəʊ‚præktə];a person who treats ailments by massage and manipulation of the vertebrae and other forms of therapy on the theory that disease results from interference with the normal functioning of the nervous system;شخصی که بیماری ها را با ماساژ و کنترل ستون فقرات و دیگر اشکال دمان معالجه می کند و فرضیه اش این است که بیماری با دخالت در عملکرد طبیعی سیستم عصبی پدید می آید;0;0
+461;40;Obstacle;[ob·sta·cle || 'ɑbstəkl /'ɒb-];"anything that gets in the way or hinders; impediment; obstruction";هر چیزی که سر راه قرار می گییرد ی امانع می شود ، گیر ، مانع;0;0
+462;40;Ventilate;[ven·ti·late || 'ventleɪt /-tɪl-];"change the air in; purify by fresh air; discuss openly";هوای داخل را تغییر دادن ، با هوای تازه تطهیر کردن ، علناً بحث کردن;0;0
+463;40;Jeopardize;[jeop·ard·ize || 'dʒepə(r)daɪz];"risk; endanger";ریسک کردن ، به خطر انداختن;0;0
+464;40;Negative;[neg·a·tive || 'negətɪv];"saying no; minus; showing the lights and shadows reversed";گفته ی منفی ، روشنایی و سایه را معکوس نشان دادن;0;0
+465;40;Pension;[pen·sion || 'penʃən];"regular payment that is not wages; to make such a payment";پرداخت منظمی که دستمزد نیست ، چنین مبلغی را پرداختن;0;0
+466;40;Vital;[vi·tal || 'vaɪtl];"having to do with life; necessary to life; causing death; failure or ruin; lively";مربوط به حیات ، ضروری برای حیات ، عامل مرگ و میر ، شکست یا ویرانی ، حیاتی;0;0
+467;40;Municipal;[mu·nic·i·pal || mjuː'nɪsɪpl];"of a city or state; having something to do in the affairs of a city or town";مربوط به شهر یا ایالت ، با امور شهر یا شهرک ارتباط دارد;0;0
+468;40;Oral;[o·ral || 'ɔːrəl];"spoken; using speech; of the mouth";کلامی ، به کاربرنده ی کلام ، دهانی ، شفاهی;0;0
+469;41;Complacent;[com'pla·cent || -nt];"pleased with oneself; self-satisfied";از خود راضی;0;0
+470;41;Wasp;[wɑsp ,wɔ- /wɒ-];an insect with a slender body and powerful sting;حشره ای با بدنی باریک و کشیده و نیشی قوی;0;0
+471;41;Rehabilitate;[re·ha·bil·i·tate || ‚rɪːə'bɪlɪteɪt];"restore to good condition; make over in a new form; restore to former standing, rank, reputation, etc.";به وضعیتی خوب باز گرداندن ، با جایگاه مقام یا شهرت قبلی برگرداندن;0;0
+472;41;Parole;[pa·role || pə'rəʊl];"word of honor; conditional freedom; to free (a prisoner) under certain conditions";قول شرف ، آزادی مشروط ، ( یک زندانی ) را تحت شرایط خاصی آزاد کردن;0;0
+473;41;Vertical;['ver·ti·cal || 'vɜrtɪkl /'vɜːt-];straight up and down with reference to the horizon, for example, a vertical line;مستقیم از بالا و پایین مثلاً خط عمودی;0;0
+474;41;Multitude;[mul·ti·tude || 'mʌltɪtjuːd];"a great number; a crowd";تعداد زیاد ، یک جماعت;0;0
+475;41;Nominate;[nom·i·nate || 'nɑmɪneɪt /'nɒ-];"name as a candidate for office; appoint to an office";به عنوان نامزد یا منصب مشخص کردن ، برای پست دفتری منصوب کردن;0;0
+476;41;Potential;[po·ten·tial || pəʊ'tenʃl];"possibility as opposed to actuality; capability of coming into being or action; possible as opposed to actual; capable of coming into being or action";امکان در برابر واقعیت ، توان به وجود آوردن یا موثر واقع شدن;0;0
+477;41;Morgue;[mɔrg /mɔːg];"place where bodies of unknown persons found dead are kept; the reference library of a newspaper office";مکانی که در آن اجساد افراد ناشناسی که مرده یافت می شوند نگهداری می شود ، کتابخانه ی مرجع یک دفتر روزنامه;0;0
+478;41;Preoccupied;[,pre'oc·cu·pied || ‚prɪ'ɑkjəpaɪd /-ɒkjʊ-];took up all the attention;درگیر ، مشغول;0;0
+479;41;Upholstery;[up'hol·ster·y || ʌp'həʊlstərɪ];coverings and cushions for furniture;روکش ها و رویه های مبل;0;0
+480;41;indifference;[in·dif·fer·ence || ɪn'dɪfrəns];lack of interest, care, or attention;عدم علاقه ، دقت یا توجه;0;0
+481;42;Maintain;[main·tain || meɪn'teɪn];"keep; keep on; carry on; uphold; support; declare to be true";نگه داشتن ، ادامه دادن ، ترویج کردن ، پشتیبانی کردن ، حقیقی اعلام کردن;0;0
+482;42;Snub;[snʌb];"treat coldly, scornfully, or with contempt; cold treatment";سرد ، تمسخر آمیز یا با تمسخر رفتار کردن ، رفتار سرد;0;0
+483;42;Endure;[en·dure || ɪn'djʊə];"last; keep on; undergo; bear; stand";دوام آوردن ، ادامه داشتن ، تحمل کردن ، ایستادگی کردن;0;0
+484;42;Wrath;[ræθ /rɒθ];"very great anger; rage";خشم بسیار زیاد ، غضب;0;0
+485;42;Expose;[ex·pose || ɪk'spəʊz];"lay open; uncover; leave unprotected; show openly";باز گذاشتن ، نپوشاندن ، بی حفاظ گذاشتن ، علناً نشان دادن;0;0
+486;42;Legend;[leg·end || 'ledʒənd];"story coming from the past, which many people have believed; what is written on a coin or below a picture";داستانی که از گذشته نشات می گیرد و افراد زیادی آن را باور کرده اند ، آنچه که روی یک سکه یا پایین یک تصویر نوشته می شود;0;0
+487;42;Ponder;[pon·der || 'pɑndə(r) /'pɒ-];consider carefully;به دقت تامل کردن;0;0
+488;42;Resign;[re·sign || rɪ'zaɪn];"give up; yield; submit";دست برداشتن از ، تسلیم شدن ، تسلیم کردن;0;0
+489;42;Drastic;[dras·tic || 'dræstɪk];acting with force or violence;با قدرت یا خشونت عمل کردن;0;0
+490;42;Wharf;[hwɔrf /wɔːf];platform built on the shore or out from the shore beside which ships can load or unload;سکویی که روی ساحل یا بیرون از ساحل ساخته می شود که در کنار آن کشتی ها می توانند بارگیری کرده یا بار تخلیه کنند;0;0
+491;42;Amend;[a·mend || ə'mend];"change for the better; correct; change";اصلاح کردن ، تغییر دادن;0;0
+492;42;Ballot;[bal·lot || 'bælət];"piece of paper used in voting; the whole number of votes cast; the method of secret voting; to vote or decide by using ballots""";قطعه ای کاغذ که در رای گیری استفاده می شود ، تعداد کل آراء شمرده ، شیوه ی رای گیری مخفیانه ، با استفاده از رای تصمیم گرفتن;0;0
+493;26;Awkward;[awk·ward || 'ɔːkwəd];"clumsy; not well-suited to use; not easily managed; embarrassing";دست و پا چلفتی ، ثقیل ، نامناسب ، شرم آور;0;0
+494;26;Venture;[ven·ture || 'ventʃə(r)];"a daring undertaking; an attempt to make money by making business risks; to dare; to expose to risk";جرات کردن ، در معرض خطر قرار دادن;0;0
+495;26;Awesome;[awe·some || 'ɔːsəm];causing or showing great fear, wonder, or respect;سهمگین ، پرهیبت ، باشکوه;0;0
+496;26;Guide;[gaɪd];"a person who shows the way; to direct; to manage";کسی که راه را نشان می دهد ، هدایت کردن ، اداره کردن;0;0
+497;26;Quench;[kwentʃ];"put an end to; drawn or put out";خاتمه دادن ، خفه کردن ، خاموش کردن;0;0
+498;26;Betray;[be·tray || bɪ'treɪ];"give away to the enemy; be unfaithful; mislead; show";لو دادن ، بی وفا بودن  ،گمراه کردن ، نشان دادن;0;0
+499;26;Utter;[ut·ter || 'ʌtə(r)];"speak; make known; express";گفتن ، آشکار کردن ، بیان کردن;0;0
+500;26;Pacify;['pac·i·fy || 'pæsɪfaɪ];"make calm; quiet down; bring peace to";آرام کردن ، ساکت کردن;0;0
+501;26;Respond;[re·spond || rɪ'spɑnd /-'spɒnd];"answer; react";پاسخ دادن ، واکنش نشان دادن;0;0
+502;31;Dispute;[dis·pute || dɪ'spjuːt];"disagree; oppose; try to win; a debate or disagreement";موافقت نکردن ، مخالفت کردن ، برای بدست آوردن تلاش کردن ، بحث یا مخالفت;0;0
+503;32;Provide;[pro·vide || prə'vaɪd];"to supply; to state as a condition; to prepare for or against some situation";تامین کردن ، به عنوان شرط بیان کردن ، در برابر وضعیتی یا برای وضعیتی آماده شدن;0;0
+504;37;Surplus;[sur·plus || 'sɜrplʌs /'sɜːpləs];"amount over and above what is needed; excess, extra";مقداری بیشتر و فراتر از آنچه مورد نیاز است ، مازاد اضافی;0;0

@@ -31,7 +31,7 @@ public class DataAccess extends SQLiteOpenHelper {
             db.execSQL(SystemSettings.CreateTable);
 
 
-            insertDataFromAsset(db, Vocabularies.TableName, "data/504.csv", ';');
+            insertDataFromAsset(db, Vocabularies.TableName, "data/vocabularies.csv", ';');
             insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
 
             ContentValues systemSettingsValues = new ContentValues();
