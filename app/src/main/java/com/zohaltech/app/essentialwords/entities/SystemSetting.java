@@ -1,6 +1,5 @@
 package com.zohaltech.app.essentialwords.entities;
 
-
 public class SystemSetting {
     private int     id;
     private Boolean installed;
@@ -8,7 +7,6 @@ public class SystemSetting {
     private String  ringingToneUri;
     private Boolean vibrateInAlarms;
     private Boolean soundInAlarms;
-
 
     public SystemSetting(Boolean installed, String ringingToneUri,
                          String alarmRingingTone, Boolean vibrateInAlarms, Boolean soundInAlarms) {

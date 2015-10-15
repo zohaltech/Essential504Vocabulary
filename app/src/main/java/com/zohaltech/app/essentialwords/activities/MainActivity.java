@@ -155,7 +155,7 @@ public class MainActivity extends EnhancedActivity {
             for (String ex:examples) {
                 String[] exampleArr=ex.split(".");
                 if(!ex.equals("\n") && !ex.equals("\r")) {
-                    String exStr = ex.substring(3);
+                    String exStr = ex.substring(3).replace("\n","");
 
                     Example e = new Example(vocabulary.getId(), k, exStr, "");
                     Examples.insert(e);
