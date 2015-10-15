@@ -103,9 +103,7 @@ public class ReminderManager {
             // if there is no reminder at all or current vocabulary isn't in another group
             if (lastVocabulary == null || vocabulary.getLesson() == lastVocabulary.getLesson()) {
 
-                //TODO handle themeId
-              //  ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
-                ArrayList<Vocabulary> siblings=new ArrayList<>();
+                ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
                 for (int j = 0; j < siblings.size(); j++) {
                     if (vocabulary.getId() > siblings.get(j).getId()) {
                         continue;

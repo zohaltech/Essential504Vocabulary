@@ -24,7 +24,6 @@ public class DataAccess extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            db.execSQL(Themes.CreateTable);
             db.execSQL(Vocabularies.CreateTable);
             db.execSQL(Examples.CreateTable);
             db.execSQL(Notes.CreateTable);
@@ -55,13 +54,13 @@ public class DataAccess extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
         try {
-            database.execSQL(Themes.DropTable);
-            database.execSQL(Vocabularies.DropTable);
-            database.execSQL(Examples.DropTable);
-            database.execSQL(Notes.DropTable);
             database.execSQL(SystemSettings.DropTable);
+            database.execSQL(Notes.DropTable);
+            database.execSQL(Examples.DropTable);
+            database.execSQL(Vocabularies.DropTable);
 
             onCreate(database);
+
         } catch (MyRuntimeException e) {
             e.printStackTrace();
         }

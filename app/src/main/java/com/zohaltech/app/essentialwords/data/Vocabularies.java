@@ -17,7 +17,6 @@ public class Vocabularies {
     static final String Vocabulary    = "Vocabulary";
     static final String EnglishDef    = "EnglishDef";
     static final String PersianDef    = "PersianDef";
-    static final String Examples      = "Examples";
     static final String Learned       = "Learned";
     static final String Bookmarked    = "Bookmarked";
 
@@ -28,7 +27,6 @@ public class Vocabularies {
                                       Pronunciation + " VARCHAR(1024), " +
                                       EnglishDef + " VARCHAR(1024)," +
                                       PersianDef + " VARCHAR(1024), " +
-                                      Examples + " VARCHAR(1024), " +
                                       Learned + " Boolean DEFAULT (0), " +
                                       Bookmarked + " Boolean DEFAULT (0) );";
 
@@ -49,7 +47,6 @@ public class Vocabularies {
                                                            cursor.getInt(cursor.getColumnIndex(Lesson)),
                                                            cursor.getString(cursor.getColumnIndex(Vocabulary)),
                                                            cursor.getString(cursor.getColumnIndex(Pronunciation)),
-                                                           cursor.getString(cursor.getColumnIndex(Examples)),
                                                            cursor.getString(cursor.getColumnIndex(EnglishDef)),
                                                            cursor.getString(cursor.getColumnIndex(PersianDef)).replace('|', '\n'),
                                                            cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
@@ -74,12 +71,12 @@ public class Vocabularies {
         return select("", null, "");
     }
 
-    //public static ArrayList<Vocabulary> selectSiblings(long vocabularyId) {
-    //    Vocabulary vocabulary = select(vocabularyId);
-    //    assert vocabulary != null;
-    //
-    //    return select("Where " + ThemeId + " = ? AND " + Day + " = ? ", new String[]{"" + vocabulary.getThemeId(), vocabulary.getLesson() + ""}, "");
-    //}
+    public static ArrayList<Vocabulary> selectSiblings(long vocabularyId) {
+        Vocabulary vocabulary = select(vocabularyId);
+        assert vocabulary != null;
+
+        return select("Where " + Lesson + " = ? ", new String[]{"" + vocabulary.getLesson()}, "");
+    }
 
     public static ArrayList<Vocabulary> selectBookmarks() {
         return select("Where " + Bookmarked + " = ? ", new String[]{"1"}, "");
@@ -108,50 +105,49 @@ public class Vocabularies {
         return select(whereClause, null, "");
     }
 
-    //public static ArrayList<Vocabulary> search(String searchText) {
-    //    String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
-    //                   "INNER JOIN " + Examples.TableName + " e\n" +
-    //                   "ON v.Id=e." + Examples.VocabularyId + "\n" +
-    //                   "LEFT JOIN " + Notes.TableName + " n\n" +
-    //                   "ON v.Id=n." + Notes.VocabularyId + "\n" +
-    //                   "WHERE v." + Vocabulary + " LIKE '%" + searchText + "%'\n" +
-    //                   "OR v." + EnglishDef + "  LIKE '%" + searchText + "%'\n" +
-    //                   "OR v." + PersianDef + "  LIKE '%" + searchText + "%'\n" +
-    //                   "OR e." + Examples.English + " LIKE '%" + searchText + "%'\n" +
-    //                   "OR e." + Examples.Persian + " LIKE '%" + searchText + "%'\n" +
-    //                   "OR n." + Notes.Description + " LIKE '%" + searchText + "%'";
-    //
-    //    ArrayList<Vocabulary> vocabularies = new ArrayList<>();
-    //    DataAccess da = new DataAccess();
-    //    SQLiteDatabase db = da.getReadableDB();
-    //    Cursor cursor = null;
-    //
-    //    try {
-    //        cursor = db.rawQuery(query, null);
-    //        if (cursor != null && cursor.moveToFirst()) {
-    //            do {
-    //                Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
-    //                                                       cursor.getInt(cursor.getColumnIndex(ThemeId)),
-    //                                                       cursor.getInt(cursor.getColumnIndex(Day)),
-    //                                                       cursor.getString(cursor.getColumnIndex(Vocabulary)),
-    //                                                       cursor.getString(cursor.getColumnIndex(EnglishDef)),
-    //                                                       cursor.getString(cursor.getColumnIndex(PersianDef)),
-    //                                                       cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
-    //                                                       cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
-    //
-    //                vocabularies.add(vocabulary);
-    //            } while (cursor.moveToNext());
-    //        }
-    //    } catch (MyRuntimeException e) {
-    //        e.printStackTrace();
-    //    } finally {
-    //        if (cursor != null && !cursor.isClosed())
-    //            cursor.close();
-    //        if (db != null && db.isOpen())
-    //            db.close();
-    //    }
-    //    return vocabularies;
-    //}
+    public static ArrayList<Vocabulary> search(String searchText) {
+        String query = "SELECT DISTINCT v.* FROM " + TableName + " v\n" +
+                       "INNER JOIN " + Examples.TableName + " e\n" +
+                       "ON v.Id=e." + Examples.VocabularyId + "\n" +
+                       "LEFT JOIN " + Notes.TableName + " n\n" +
+                       "ON v.Id=n." + Notes.VocabularyId + "\n" +
+                       "WHERE v." + Vocabulary + " LIKE '%" + searchText + "%'\n" +
+                       "OR v." + EnglishDef + "  LIKE '%" + searchText + "%'\n" +
+                       "OR v." + PersianDef + "  LIKE '%" + searchText + "%'\n" +
+                       "OR e." + Examples.English + " LIKE '%" + searchText + "%'\n" +
+                       "OR n." + Notes.Description + " LIKE '%" + searchText + "%'";
+
+        ArrayList<Vocabulary> vocabularies = new ArrayList<>();
+        DataAccess da = new DataAccess();
+        SQLiteDatabase db = da.getReadableDB();
+        Cursor cursor = null;
+
+        try {
+            cursor = db.rawQuery(query, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                do {
+                    Vocabulary vocabulary = new Vocabulary(cursor.getInt(cursor.getColumnIndex(Id)),
+                                                           cursor.getInt(cursor.getColumnIndex(Lesson)),
+                                                           cursor.getString(cursor.getColumnIndex(Vocabulary)),
+                                                           cursor.getString(cursor.getColumnIndex(Pronunciation)),
+                                                           cursor.getString(cursor.getColumnIndex(EnglishDef)),
+                                                           cursor.getString(cursor.getColumnIndex(PersianDef)),
+                                                           cursor.getInt(cursor.getColumnIndex(Learned)) == 1,
+                                                           cursor.getInt(cursor.getColumnIndex(Bookmarked)) == 1);
+
+                    vocabularies.add(vocabulary);
+                } while (cursor.moveToNext());
+            }
+        } catch (MyRuntimeException e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null && !cursor.isClosed())
+                cursor.close();
+            if (db != null && db.isOpen())
+                db.close();
+        }
+        return vocabularies;
+    }
 
     public static long insert(Vocabulary vocabulary) {
         DataAccess da = new DataAccess();

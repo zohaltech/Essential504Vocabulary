@@ -78,12 +78,12 @@
                         <widgets.LatinTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start theme: "
+                            android:text="Start lesson: "
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             tools:ignore="HardcodedText"/>
 
                         <android.support.v7.widget.AppCompatSpinner
-                            android:id="@+id/spinnerStartTheme"
+                            android:id="@+id/spinnerStartLesson"
                             style="@style/FormButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

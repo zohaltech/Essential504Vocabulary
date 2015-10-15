@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zohaltech.app.essentialwords.adapters.LessonAdapter;
-import com.zohaltech.app.essentialwords.data.Themes;
 
 import java.util.ArrayList;
 
@@ -18,7 +17,7 @@ import com.zohaltech.app.essentialwords.R;
 
 public class LessonsFragment extends Fragment {
 
-    RecyclerView recyclerThemes;
+    RecyclerView recyclerLessons;
     ArrayList<Integer> lessons = new ArrayList<>();
     LessonAdapter adapter;
 
@@ -33,12 +32,12 @@ public class LessonsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_lessons, container, false);
-        recyclerThemes = (RecyclerView) rootView.findViewById(R.id.recyclerThemes);
-        recyclerThemes.setHasFixedSize(true);
-        recyclerThemes.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerLessons = (RecyclerView) rootView.findViewById(R.id.recyclerLessons);
+        recyclerLessons.setHasFixedSize(true);
+        recyclerLessons.setLayoutManager(new LinearLayoutManager(getActivity()));
         populateLessons();
         adapter = new LessonAdapter(getActivity(), lessons);
-        recyclerThemes.setAdapter(adapter);
+        recyclerLessons.setAdapter(adapter);
         return rootView;
     }
 

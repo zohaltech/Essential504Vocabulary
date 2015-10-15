@@ -23,10 +23,8 @@ import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.classes.DialogManager;
 import com.zohaltech.app.essentialwords.classes.ReminderManager;
 import com.zohaltech.app.essentialwords.data.SystemSettings;
-import com.zohaltech.app.essentialwords.data.Themes;
 import com.zohaltech.app.essentialwords.data.Vocabularies;
 import com.zohaltech.app.essentialwords.entities.SystemSetting;
-import com.zohaltech.app.essentialwords.entities.Theme;
 import com.zohaltech.app.essentialwords.entities.Vocabulary;
 import com.zohaltech.app.essentialwords.serializables.Reminder;
 import com.zohaltech.app.essentialwords.serializables.ReminderSettings;
@@ -49,7 +47,7 @@ public class SchedulerActivity extends EnhancedActivity {
     CheckBox chkFr;
 
     AppCompatSpinner spinnerIntervals;
-    AppCompatSpinner spinnerStartTheme;
+    AppCompatSpinner spinnerStartLesson;
 
     Button       btnStart;
     Button       btnStop;
@@ -71,7 +69,7 @@ public class SchedulerActivity extends EnhancedActivity {
         //edtStartVocabularyNo = (EditText) findViewById(R.id.edtStartVocabularyNo);
         //edtAlarmIntervals = (EditText) findViewById(R.id.edtAlarmIntervals);
         spinnerIntervals = (AppCompatSpinner) findViewById(R.id.spinnerIntervals);
-        spinnerStartTheme = (AppCompatSpinner) findViewById(R.id.spinnerStartTheme);
+        spinnerStartLesson = (AppCompatSpinner) findViewById(R.id.spinnerStartLesson);
         btnStartTime = (Button) findViewById(R.id.btnStartTime);
 
         chkSa = (CheckBox) findViewById(R.id.chkSa);
@@ -180,10 +178,8 @@ public class SchedulerActivity extends EnhancedActivity {
                 chkFr.isChecked(),
                 chkSa.isChecked()};
 
-        int selectedThemeId = spinnerStartTheme.getSelectedItemPosition() + 1;
-      //  int startVocabId = Vocabularies.selectByLesson(selectedThemeId).get(0).getId();
-        //TODO handle themeId
-        int startVocabId=0;
+        int selectedLesson = spinnerStartLesson.getSelectedItemPosition() + 1;
+        int startVocabId = Vocabularies.selectByLesson(selectedLesson).get(0).getId();
 
         Date reminderTime = Calendar.getInstance().getTime();
         Reminder garbage = settings.getReminder();
@@ -254,25 +250,21 @@ public class SchedulerActivity extends EnhancedActivity {
         spinnerIntervals.setAdapter(intervalAdapter);
         spinnerIntervals.setSelection(intervalAdapter.getPosition(settings.getIntervals()));
 
-        ArrayList<String> themeNames = new ArrayList<>();
-        ArrayList<Theme> themes = Themes.select();
+        ArrayList<String> lessons = new ArrayList<>();
 
-        for (Theme theme : themes) {
-            themeNames.add(theme.getName());
+        for (int i = 0; i < 42; i++) {
+            lessons.add("Lesson " + (i + 1));
         }
 
-        ArrayAdapter<String> themesAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, themeNames);
-        themesAdapter.setDropDownViewResource(R.layout.spinner_item);
-        spinnerStartTheme.setAdapter(themesAdapter);
-        spinnerStartTheme.setSelection(0);
+        ArrayAdapter<String> lessonsAdapter = new ArrayAdapter<>(this, R.layout.spinner_current_item, lessons);
+        lessonsAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinnerStartLesson.setAdapter(lessonsAdapter);
+        spinnerStartLesson.setSelection(0);
 
         if (settings.getReminder() != null) {
             Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
             assert vocabulary != null;
-
-            //TODO handle themeId
-          //  spinnerStartTheme.setSelection(vocabulary.getThemeId() - 1);
-            //edtStartVocabularyNo.setText(String.valueOf(settings.getReminder().getVocabularyId()));
+            spinnerStartLesson.setSelection(vocabulary.getLesson() - 1);
         }
         boolean[] days = settings.getWeekdays();
 
@@ -291,7 +283,7 @@ public class SchedulerActivity extends EnhancedActivity {
     private void setViewsStatus() {
         switch (ReminderManager.getReminderSettings().getStatus()) {
             case RUNNING:
-                spinnerStartTheme.setEnabled(false);
+                spinnerStartLesson.setEnabled(false);
                 btnStartTime.setEnabled(false);
                 spinnerIntervals.setEnabled(false);
                 chkSu.setEnabled(false);
@@ -305,7 +297,7 @@ public class SchedulerActivity extends EnhancedActivity {
                 txtStatus.setText("Status : Running");
                 break;
             case PAUSE:
-                spinnerStartTheme.setEnabled(false);
+                spinnerStartLesson.setEnabled(false);
                 btnStartTime.setEnabled(true);
                 spinnerIntervals.setEnabled(true);
                 chkSu.setEnabled(true);
@@ -319,7 +311,7 @@ public class SchedulerActivity extends EnhancedActivity {
                 txtStatus.setText("Status : Paused");
                 break;
             case STOP:
-                spinnerStartTheme.setEnabled(true);
+                spinnerStartLesson.setEnabled(true);
                 btnStartTime.setEnabled(true);
                 spinnerIntervals.setEnabled(true);
                 chkSu.setEnabled(true);
@@ -333,7 +325,7 @@ public class SchedulerActivity extends EnhancedActivity {
                 txtStatus.setText("Status : Stopped");
                 break;
             case FINISHED:
-                spinnerStartTheme.setEnabled(true);
+                spinnerStartLesson.setEnabled(true);
                 btnStartTime.setEnabled(true);
                 spinnerIntervals.setEnabled(true);
                 chkSu.setEnabled(true);

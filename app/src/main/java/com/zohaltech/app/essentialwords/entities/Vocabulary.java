@@ -24,7 +24,7 @@ public class Vocabulary {
         setBookmarked(bookmarked);
     }
 
-    public Vocabulary(int id, int lesson, String vocabulary, String pronunciation, String examples, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
+    public Vocabulary(int id, int lesson, String vocabulary, String pronunciation, String vocabEnglishDef, String vocabPersianDef, Boolean learned, Boolean bookmarked) {
         this(lesson, vocabulary, pronunciation,  vocabEnglishDef, vocabPersianDef, learned, bookmarked);
         this.id = id;
     }

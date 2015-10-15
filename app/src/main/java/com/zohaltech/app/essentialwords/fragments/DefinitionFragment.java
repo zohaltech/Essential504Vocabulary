@@ -23,6 +23,7 @@ import com.zohaltech.app.essentialwords.R;
 public class DefinitionFragment extends Fragment implements
                                                       TextToSpeech.OnInitListener {
     public static final String VOCAB_ID = "VOCAB_ID";
+    TextView txtPronunciation;
     TextView txtVocabEnglishDefinition;
     TextView txtVocabPersianMeaning;
 
@@ -47,6 +48,7 @@ public class DefinitionFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate( R.layout.fragment_definition, container, false);
 
+        txtPronunciation = (TextView) view.findViewById(R.id.txtPronunciation);
         txtVocabEnglishDefinition = (TextView) view.findViewById(R.id.txtVocabEnglishDefinition);
         txtVocabPersianMeaning = (TextView) view.findViewById(R.id.txtVocabPersianMeaning);
         Button btnSpeechUS = (Button) view.findViewById(R.id.btnSpeechUS);
@@ -58,6 +60,7 @@ public class DefinitionFragment extends Fragment implements
         textToSpeech = new TextToSpeech(getActivity(), this);
 
         assert vocabulary != null;
+        txtPronunciation.setText(vocabulary.getPronunciation());
         txtVocabEnglishDefinition.setText(vocabulary.getVocabEnglishDef());
         txtVocabPersianMeaning.setText(vocabulary.getVocabPersianDef());
 //        txtVocabEnglishDefinition.setText(vocabulary.getEncEngDef());
