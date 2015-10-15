@@ -15,15 +15,15 @@ public class Examples {
     static final String VocabularyId = "VocabularyId";
     static final String Ordinal      = "Ordinal";
     static final String English      = "English";
-    static final String Persian      = "Persian";
+    //static final String Persian      = "Persian";
 
 
     static final String CreateTable = "CREATE TABLE " + TableName + " ( " +
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       VocabularyId + " INTEGER , " +
                                       Ordinal + " INTEGER , " +
-                                      English + " VARCHAR(1024) , " +
-                                      Persian + " VARCHAR(1024));";
+                                      //Persian + " VARCHAR(1024) , " +
+                                      English + " VARCHAR(1024));";
 
     static final String DropTable = "Drop Table If Exists " + TableName;
 
@@ -43,10 +43,9 @@ public class Examples {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     Example example = new Example(cursor.getInt(cursor.getColumnIndex(Id)),
-                            cursor.getInt(cursor.getColumnIndex(VocabularyId)),
-                            cursor.getInt(cursor.getColumnIndex(Ordinal)),
-                            cursor.getString(cursor.getColumnIndex(English)),
-                            cursor.getString(cursor.getColumnIndex(Persian)));
+                                                  cursor.getInt(cursor.getColumnIndex(VocabularyId)),
+                                                  cursor.getInt(cursor.getColumnIndex(Ordinal)),
+                                                  cursor.getString(cursor.getColumnIndex(English)));
 
                     examples.add(example);
                 } while (cursor.moveToNext());
@@ -78,7 +77,6 @@ public class Examples {
         values.put(VocabularyId, example.getVocabularyId());
         values.put(Ordinal, example.getOrdinal());
         values.put(English, example.getEnglish());
-        values.put(Persian, example.getPersian());
 
         return values;
     }

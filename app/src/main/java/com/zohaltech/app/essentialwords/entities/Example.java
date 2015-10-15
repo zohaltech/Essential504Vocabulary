@@ -5,21 +5,17 @@ public class Example {
     private int    vocabularyId;
     private int    ordinal;
     private String english;
-    private String persian;
 
-    public Example(int id, int vocabularyId, int ordinal, String english, String persian) {
-        this(vocabularyId, ordinal, english, persian);
+    public Example(int id, int vocabularyId, int ordinal, String english) {
+        this(vocabularyId, ordinal, english);
         this.id = id;
     }
 
-    public Example(int vocabularyId, int ordinal, String english, String persian) {
+    public Example(int vocabularyId, int ordinal, String english) {
         setVocabularyId(vocabularyId);
         setOrdinal(ordinal);
         setEnglish(english);
-        setPersian(persian);
     }
-
-
 
     public int getId() {
         return id;
@@ -51,13 +47,5 @@ public class Example {
 
     public void setEnglish(String english) {
         this.english = english;
-    }
-
-    public String getPersian() {
-        return persian;
-    }
-
-    public void setPersian(String persian) {
-        this.persian = persian;
     }
 }

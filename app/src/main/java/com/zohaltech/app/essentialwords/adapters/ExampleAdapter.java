@@ -33,7 +33,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Example example = examples.get(position);
         holder.txtExample.setText(example.getEnglish());
-        holder.txtExamplePersian.setText(example.getPersian());
+        //holder.txtExamplePersian.setText(example.getPersian());
 //        holder.txtExample.setText(example.getEncEnglish());
 //        holder.txtExamplePersian.setText(example.getEncPersian());
     }

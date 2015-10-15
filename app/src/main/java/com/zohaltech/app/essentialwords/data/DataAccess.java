@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 public class DataAccess extends SQLiteOpenHelper {
     public static final String DATABASE_NAME    = "ESSENTIAL_WORDS";
-    public static final int    DATABASE_VERSION =14;
+    public static final int    DATABASE_VERSION = 22;
 
     public DataAccess() {
         super(App.context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,8 +32,7 @@ public class DataAccess extends SQLiteOpenHelper {
 
 
             insertDataFromAsset(db, Vocabularies.TableName, "data/504.csv", ';');
-            insertDataFromAsset(db, Vocabularies.TableName, "data/examples.csv", ';');
-
+            insertDataFromAsset(db, Examples.TableName, "data/examples.csv", ';');
 
 
             ContentValues systemSettingsValues = new ContentValues();

@@ -40,7 +40,7 @@ public class MainActivity extends EnhancedActivity {
     @Override
     protected void onCreated() {
         setContentView(R.layout.activity_main);
-       // getExamples();
+        //getExamples();
         startTime = System.currentTimeMillis() - 5000;
         WebApiClient.sendUserData();
     }
@@ -155,9 +155,10 @@ public class MainActivity extends EnhancedActivity {
             for (String ex:examples) {
                 String[] exampleArr=ex.split(".");
                 if(!ex.equals("\n") && !ex.equals("\r")) {
-                    String exStr = ex.substring(3).replace("\n","");
+                    //String exStr = ex.substring(3).replace("\n","");
+                    String exStr = ex.replace("\n","").replace("\r","");
 
-                    Example e = new Example(vocabulary.getId(), k, exStr, "");
+                    Example e = new Example(vocabulary.getId(), k, exStr);
                     Examples.insert(e);
                     k++;
                 }
