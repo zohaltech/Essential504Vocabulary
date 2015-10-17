@@ -53,12 +53,10 @@ public class AlarmReceiver extends BroadcastReceiver
             notification.sound = Uri.parse(setting.getRingingToneUri());
         }
         //App.notificationManager.notify((int) reminder.getTime().getTime(), builder.build());
-        App.notificationManager.notify((int) reminder.getTime().getTime(), notification);
+        App.notificationManager.notify(reminder.getVocabularyId(), notification);
 
         ReminderManager.setLastReminder(reminder);
-
-        String key = ReminderManager.SENT_WORDS_PER_DAY;
-        App.preferences.edit().putInt(key, ReminderManager.getSentWordsPerDay() + 1).apply();
+        ReminderManager.IncreaseSentWordsPerDay();
         ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
     }
 }

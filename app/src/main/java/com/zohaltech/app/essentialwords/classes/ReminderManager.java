@@ -111,7 +111,7 @@ public class ReminderManager
         }
 
         // in case user manually resumes reminder
-        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes > startTime)
+        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes >= startTime)
         {
             Reminder lastReminder = getLastReminder();
             Vocabulary lastVocabulary = null;
@@ -121,17 +121,24 @@ public class ReminderManager
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
-            if (lastVocabulary == null || getSentWordsPerDay() < settings.getWordsPerDay())
+            int sentWordsPerDay = getSentWordsPerDay();
+            if (lastVocabulary == null || sentWordsPerDay < settings.getWordsPerDay())
             {
-                ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
-                for (int j = 0; j < siblings.size(); j++)
-                {
-                    if (vocabulary.getId() > siblings.get(j).getId())
-                    {
-                        continue;
-                    }
 
-                    Vocabulary current = siblings.get(j);
+                Vocabulary pivotal = lastVocabulary;
+                if (pivotal == null)
+                {
+                    pivotal = Vocabularies.next(0);
+                }
+                if (pivotal == null)
+                {
+                    return;
+                }
+                ArrayList<Vocabulary> queuedVocabularies = Vocabularies.select(" Where " + Vocabularies.Id + " >= ?",
+                        new String[]{String.valueOf(pivotal.getId())}, " Limit " + String.valueOf(settings.getWordsPerDay() - sentWordsPerDay));
+                for (int j = sentWordsPerDay; j < settings.getWordsPerDay(); j++)
+                {
+                    Vocabulary current = queuedVocabularies.get(j);
                     calendar.add(Calendar.SECOND, 1);
                     Date time = calendar.getTime();
 
@@ -143,7 +150,7 @@ public class ReminderManager
                     Reminder reminder = new Reminder(current.getId(), time, current.getVocabulary(), current.getVocabEnglishDef(), false);
 
                     // we'll meet this condition for sure!
-                    if (j == siblings.size() - 1 || elapsedMinutes < startTime + (j * settings.getIntervals()))
+                    if (j == settings.getWordsPerDay() - 1 || elapsedMinutes <= startTime + (j * settings.getIntervals()))
                     {
                         reminder.setTriggerNext(true);
 
@@ -158,8 +165,6 @@ public class ReminderManager
                         settings.setReminder(reminder);
                         addAlarm(App.context, reminder);
                         ReminderManager.setReminderSettings(settings);
-
-                        return;
                     }
                 }
             }
@@ -274,6 +279,12 @@ public class ReminderManager
             App.preferences.edit().putInt(SENT_WORDS_PER_DAY, 0).apply();
             return 0;
         }
+    }
+
+    public static void IncreaseSentWordsPerDay()
+    {
+        int sentWords = App.preferences.getInt(SENT_WORDS_PER_DAY, 0) + 1;
+        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, sentWords).apply();
     }
 
     private static void addAlarm(Context context, Reminder reminder)
