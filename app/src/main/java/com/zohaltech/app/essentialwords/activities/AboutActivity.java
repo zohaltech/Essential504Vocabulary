@@ -1,64 +1,103 @@
 package com.zohaltech.app.essentialwords.activities;
 
-import android.support.v4.view.ViewPager;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
-import android.view.ViewGroup;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.zohaltech.app.essentialwords.adapters.AboutPagerAdapter;
+import com.zohaltech.app.essentialwords.BuildConfig;
 import com.zohaltech.app.essentialwords.classes.App;
 
 import com.zohaltech.app.essentialwords.R;
+import com.zohaltech.app.essentialwords.classes.Helper;
+
+import widgets.MySnackbar;
+import widgets.MyToast;
 
 
 public class AboutActivity extends EnhancedActivity {
 
-    PagerSlidingTabStrip tabCategories;
-    ViewPager            pagerCategories;
-    LinearLayout         layoutRoot;
-    AboutPagerAdapter    aboutPagerAdapter;
+    TextView     txtVersion;
+    Button       btnShare;
+    Button       btnProducts;
+    Button       btnFeedback;
+    Button       btnRate;
+    LinearLayout layoutWebsite;
 
     @Override
     protected void onCreated() {
         setContentView(R.layout.activity_about);
 
-        layoutRoot = (LinearLayout) findViewById(R.id.layoutRoot);
-        tabCategories = (PagerSlidingTabStrip) findViewById(R.id.tabAboutItems);
-        pagerCategories = (ViewPager) findViewById(R.id.pagerAboutItems);
+        txtVersion = (TextView) findViewById(R.id.txtVersion);
+        btnShare = (Button) findViewById(R.id.btnShare);
+        btnProducts = (Button) findViewById(R.id.btnProducts);
+        btnFeedback = (Button) findViewById(R.id.btnFeedback);
+        btnRate = (Button) findViewById(R.id.btnRate);
+        layoutWebsite = (LinearLayout) findViewById(R.id.layoutWebsite);
 
-        aboutPagerAdapter = new AboutPagerAdapter(getSupportFragmentManager());
-        pagerCategories.setAdapter(aboutPagerAdapter);
+        txtVersion.setText("Version " + BuildConfig.VERSION_NAME);
 
-
-        // Bind the tabCategories to the ViewPager
-        tabCategories.setViewPager(pagerCategories);
-
-        pagerCategories.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                changeTabTitleColors(position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                String message = String.format(getResources().getString(R.string.sharing_message),
+                                               getResources().getString(R.string.app_name),
+                                               App.marketWebsiteUri);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+                startActivity(Intent.createChooser(intent, getResources().getString(R.string.share_title)));
             }
         });
 
-        changeTabsFont();
-        changeTabTitleColors(0);
-    }
+        btnProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(App.marketDeveloperUri));
+                if (!myStartActivity(intent)) {
+                    MySnackbar.show(layoutWebsite, getString(R.string.could_not_open_market), Snackbar.LENGTH_SHORT);
+                }
+            }
+        });
 
-    private void changeTabTitleColors(int position) {
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(0)).setTextColor(getResources().getColor(R.color.primary_light));
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(1)).setTextColor(getResources().getColor(R.color.primary_light));
-        ((TextView) ((ViewGroup) tabCategories.getChildAt(0)).getChildAt(position)).setTextColor(getResources().getColor(R.color.white));
+        btnFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "info@zohaltech.com", null));
+                intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.feedback_subject));
+                startActivity(Intent.createChooser(intent, getResources().getString(R.string.feedback_title)));
+            }
+        });
+
+        btnRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(App.marketPollIntent);
+                intent.setData(Uri.parse(App.marketPollUri));
+                intent.setPackage(App.marketPackage);
+                if (!myStartActivity(intent)) {
+                    intent.setData(Uri.parse(App.marketWebsiteUri));
+                    if (!myStartActivity(intent)) {
+                        MyToast.show(String.format(getResources().getString(R.string.could_not_open_market), App.marketName, App.marketName), Toast.LENGTH_SHORT);
+                    }
+                }
+            }
+        });
+
+        layoutWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Helper.goToWebsite("http://zohaltech.com");
+            }
+        });
     }
 
     @Override
@@ -70,17 +109,6 @@ public class AboutActivity extends EnhancedActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void changeTabsFont() {
-        ViewGroup vg = (ViewGroup) tabCategories.getChildAt(0);
-        int tabsCount = vg.getChildCount();
-        for (int j = 0; j < tabsCount; j++) {
-            TextView textView = (TextView) vg.getChildAt(j);
-            textView.setWidth(App.screenWidth / 2);
-            textView.setTextColor(getResources().getColor(R.color.primary_light));
-            textView.setTextSize(16);
-        }
-    }
-
     @Override
     protected void onToolbarCreated() {
         ActionBar actionBar = getSupportActionBar();
@@ -88,6 +116,18 @@ public class AboutActivity extends EnhancedActivity {
             actionBar.setTitle("About");
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    private boolean myStartActivity(Intent intent) {
+        try {
+            startActivity(intent);
+            return true;
+        } catch (ActivityNotFoundException e) {
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
         }
     }
 }

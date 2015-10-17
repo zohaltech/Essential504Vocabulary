@@ -5,13 +5,13 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:layout_marginTop="1dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
     android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <widgets.LatinTextView
             android:id="@+id/txtExample"
