@@ -20,18 +20,8 @@ public class Notes {
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       VocabularyId + " INTEGER , " +
                                       Ordinal + " INTEGER , " +
-                                      Description + " VARCHAR(50));";
+                                      Description + " VARCHAR(512));";
     static final String DropTable   = "Drop Table If Exists " + TableName;
-
-
-    private static ArrayList<Note> cache = null;
-
-    public static ArrayList<Note> getCache() {
-        if (cache == null) {
-            cache = select("", null);
-        }
-        return cache;
-    }
 
     private static ArrayList<Note> select(String whereClause, String[] selectionArgs) {
         ArrayList<Note> noteList = new ArrayList<>();
@@ -45,9 +35,9 @@ public class Notes {
             if (cursor != null && cursor.moveToFirst()) {
                 do {
                     Note note = new Note(cursor.getInt(cursor.getColumnIndex(Id)),
-                            cursor.getInt(cursor.getColumnIndex(VocabularyId)),
-                            cursor.getInt(cursor.getColumnIndex(Ordinal)),
-                            cursor.getString(cursor.getColumnIndex(Description)).replace('|', '\n'));
+                                         cursor.getInt(cursor.getColumnIndex(VocabularyId)),
+                                         cursor.getInt(cursor.getColumnIndex(Ordinal)),
+                                         cursor.getString(cursor.getColumnIndex(Description)).replace('|', '\n'));
 
                     noteList.add(note);
                 } while (cursor.moveToNext());
@@ -75,6 +65,11 @@ public class Notes {
     public static long update(Note note) {
         DataAccess da = new DataAccess();
         return da.update(TableName, getContentValues(note), Id + " =? ", new String[]{String.valueOf(note.getId())});
+    }
+
+    public static long delete(Note note) {
+        DataAccess da = new DataAccess();
+        return da.delete(TableName, Id + " =? ", new String[]{String.valueOf(note.getId())});
     }
 
     public static ContentValues getContentValues(Note note) {

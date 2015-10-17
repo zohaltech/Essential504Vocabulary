@@ -10,14 +10,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
+import com.zohaltech.app.essentialwords.R;
 import com.zohaltech.app.essentialwords.activities.VocabularyDetailsActivity;
 import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.entities.Vocabulary;
 
 import java.util.ArrayList;
-
-import com.zohaltech.app.essentialwords.R;
 
 public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.ViewHolder> {
     Context               context;
@@ -45,7 +43,7 @@ public class VocabularyAdapter extends RecyclerView.Adapter<VocabularyAdapter.Vi
             holder.imgLearned.setVisibility(View.GONE);
         }
 
-        holder.txtVocabulary.setText(position+1 + ". " + vocabulary.getVocabulary());
+        holder.txtVocabulary.setText(vocabulary.getVocabulary());
         holder.layoutVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
