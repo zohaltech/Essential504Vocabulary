@@ -17,14 +17,18 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class ReminderManager {
+public class ReminderManager
+{
     private static String REMINDER_SETTINGS = "reminder_settings";
-    private static String LAST_REMINDER     = "last_reminder";
+    private static String LAST_REMINDER = "last_reminder";
+    public static String SENT_WORDS_PER_DAY = "words_per_day";
 
     // this method is meant to be called just by AlarmReceiver class!
-    public static void setImmediateReminder(int currentVocabularyId, boolean doesTriggersNext) {
+    public static void setImmediateReminder(int currentVocabularyId, boolean doesTriggersNext)
+    {
         Vocabulary current = Vocabularies.select(currentVocabularyId);
-        if (current == null) {
+        if (current == null)
+        {
             // exception occurred.
             return;
         }
@@ -32,14 +36,16 @@ public class ReminderManager {
         current.setLearned(true);
         Vocabularies.update(current);
 
-        if (!doesTriggersNext) {
+        if (!doesTriggersNext)
+        {
             return;
         }
 
         ReminderSettings settings = ReminderManager.getReminderSettings();
 
         Vocabulary next = Vocabularies.next(currentVocabularyId);
-        if (next == null) {
+        if (next == null)
+        {
             settings.setStatus(ReminderSettings.Status.FINISHED);
             settings.setReminder(null);
             ReminderManager.setReminderSettings(settings);
@@ -47,7 +53,8 @@ public class ReminderManager {
         }
 
         Reminder reminder = new Reminder(next.getId(), null, next.getVocabulary(), next.getVocabEnglishDef(), true);
-        if (current.getLesson() == next.getLesson()) {
+        if (getSentWordsPerDay() < settings.getWordsPerDay())
+        {
             Calendar calendar = Calendar.getInstance();
             calendar.add(Calendar.MINUTE, settings.getIntervals());
 
@@ -56,25 +63,31 @@ public class ReminderManager {
             addAlarm(App.context, reminder);
 
             setReminderSettings(settings);
-        } else {
+        }
+        else
+        {
             settings.setReminder(reminder);
             setReminderSettings(settings);
             start(false);
         }
     }
 
-    public static void start(boolean isResume) {
+    public static void start(boolean isResume)
+    {
         ReminderSettings settings = getReminderSettings();
-        if (settings == null) {
+        if (settings == null)
+        {
             return;
         }
 
-        if (settings.getStatus() != ReminderSettings.Status.RUNNING) {
+        if (settings.getStatus() != ReminderSettings.Status.RUNNING)
+        {
             return;
         }
 
         Vocabulary vocabulary = Vocabularies.select(settings.getReminder().getVocabularyId());
-        if (vocabulary == null) {
+        if (vocabulary == null)
+        {
             return;
         }
 
@@ -87,25 +100,34 @@ public class ReminderManager {
 
         Reminder nextReminder = settings.getReminder();
         Date now = new Date();
-        if (nextReminder != null && nextReminder.getTime().after(now)) {
+        if (nextReminder.getTime() == null)
+        {
+            isResume = false;
+        }
+        else if (nextReminder.getTime().after(now))
+        {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
             isResume = formatter.format(nextReminder.getTime()).equals(formatter.format(now));
         }
 
         // in case user manually resumes reminder
-        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes > startTime) {
+        if (isResume && settings.getWeekdays()[today - 1] && elapsedMinutes > startTime)
+        {
             Reminder lastReminder = getLastReminder();
             Vocabulary lastVocabulary = null;
-            if (lastReminder != null) {
+            if (lastReminder != null)
+            {
                 lastVocabulary = Vocabularies.select(lastReminder.getVocabularyId());
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
-            if (lastVocabulary == null || vocabulary.getLesson() == lastVocabulary.getLesson()) {
-
+            if (lastVocabulary == null || getSentWordsPerDay() < settings.getWordsPerDay())
+            {
                 ArrayList<Vocabulary> siblings = Vocabularies.selectSiblings(vocabulary.getId());
-                for (int j = 0; j < siblings.size(); j++) {
-                    if (vocabulary.getId() > siblings.get(j).getId()) {
+                for (int j = 0; j < siblings.size(); j++)
+                {
+                    if (vocabulary.getId() > siblings.get(j).getId())
+                    {
                         continue;
                     }
 
@@ -113,14 +135,16 @@ public class ReminderManager {
                     calendar.add(Calendar.SECOND, 1);
                     Date time = calendar.getTime();
 
-                    if (elapsedMinutes < startTime + (j * settings.getIntervals())) {
+                    if (elapsedMinutes < startTime + (j * settings.getIntervals()))
+                    {
                         time = getTime(nextDayOffset, startTime + j * settings.getIntervals());
                     }
 
                     Reminder reminder = new Reminder(current.getId(), time, current.getVocabulary(), current.getVocabEnglishDef(), false);
 
                     // we'll meet this condition for sure!
-                    if (j == siblings.size() - 1 || elapsedMinutes < startTime + (j * settings.getIntervals())) {
+                    if (j == siblings.size() - 1 || elapsedMinutes < startTime + (j * settings.getIntervals()))
+                    {
                         reminder.setTriggerNext(true);
 
                         settings.setReminder(reminder);
@@ -128,18 +152,25 @@ public class ReminderManager {
                         ReminderManager.setReminderSettings(settings);
 
                         return;
-                    } else {
+                    }
+                    else
+                    {
                         settings.setReminder(reminder);
                         addAlarm(App.context, reminder);
                         ReminderManager.setReminderSettings(settings);
+
+                        return;
                     }
                 }
             }
         }
 
-        if (!settings.getWeekdays()[today - 1] || elapsedMinutes > startTime) {
-            for (int j = 1; j <= 7; j++) {
-                if (settings.getWeekdays()[(today - 1 + j) % 7]) {
+        if (!settings.getWeekdays()[today - 1] || elapsedMinutes > startTime)
+        {
+            for (int j = 1; j <= 7; j++)
+            {
+                if (settings.getWeekdays()[(today - 1 + j) % 7])
+                {
                     nextDayOffset = j;
                     break;
                 }
@@ -153,13 +184,16 @@ public class ReminderManager {
         addAlarm(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
     }
 
-    public static void pause() {
+    public static void pause()
+    {
         ReminderSettings settings = getReminderSettings();
-        if (settings == null) {
+        if (settings == null)
+        {
             return;
         }
 
-        if (settings.getReminder() != null) {
+        if (settings.getReminder() != null)
+        {
             removeAlarm(settings.getReminder().getVocabularyId());
             //settings.getReminder().setTime(null);
         }
@@ -168,14 +202,17 @@ public class ReminderManager {
         setReminderSettings(settings);
     }
 
-    public static void stop() {
+    public static void stop()
+    {
         setLastReminder(null);
         ReminderSettings settings = getReminderSettings();
-        if (settings == null) {
+        if (settings == null)
+        {
             return;
         }
 
-        if (settings.getReminder() != null) {
+        if (settings.getReminder() != null)
+        {
             removeAlarm(settings.getReminder().getVocabularyId());
         }
 
@@ -183,42 +220,64 @@ public class ReminderManager {
         settings.setReminder(null);
         setReminderSettings(settings);
 
+        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, 0).apply();
+
         Vocabularies.resetLearnedVocabularies();
     }
 
-    public static ReminderSettings getReminderSettings() {
+    public static ReminderSettings getReminderSettings()
+    {
         Gson gson = new Gson();
         String alarmJson = App.preferences.getString(REMINDER_SETTINGS, null);
 
         if (alarmJson == null || alarmJson.equals(""))
         {
-            return new ReminderSettings("12:00", 60, null, ReminderSettings.Status.STOP, new boolean[]{true, false, true, false, true, false, false});
+            return new ReminderSettings("12:00", 60, null, ReminderSettings.Status.STOP, new boolean[]{true, false, true, false, true, false, false}, 6);
         }
 
         return gson.fromJson(alarmJson, ReminderSettings.class);
         //return Helper.deserializeReminderSettings();
     }
 
-    public static void setReminderSettings(ReminderSettings settings) {
+    public static void setReminderSettings(ReminderSettings settings)
+    {
         Gson gson = new Gson();
         App.preferences.edit().putString(REMINDER_SETTINGS, gson.toJson(settings)).apply();
         //Helper.serializeReminderSettings(settings);
     }
 
-    public static Reminder getLastReminder() {
+    public static Reminder getLastReminder()
+    {
         Gson gson = new Gson();
         String lastReminder = App.preferences.getString(LAST_REMINDER, null);
 
         return gson.fromJson(lastReminder, Reminder.class);
     }
 
-    public static void setLastReminder(Reminder reminder) {
-        //        Vocabularies.update(reminder.getVocabularyId());
+    public static void setLastReminder(Reminder reminder)
+    {
         Gson gson = new Gson();
         App.preferences.edit().putString(LAST_REMINDER, gson.toJson(reminder)).apply();
     }
 
-    private static void addAlarm(Context context, Reminder reminder) {
+    public static int getSentWordsPerDay()
+    {
+        Reminder last = getLastReminder();
+        Date now = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
+        if (last != null && formatter.format(last.getTime()).equals(formatter.format(now)))
+        {
+            return App.preferences.getInt(SENT_WORDS_PER_DAY, 0);
+        }
+        else
+        {
+            App.preferences.edit().putInt(SENT_WORDS_PER_DAY, 0).apply();
+            return 0;
+        }
+    }
+
+    private static void addAlarm(Context context, Reminder reminder)
+    {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(context, AlarmReceiver.class);
@@ -229,7 +288,8 @@ public class ReminderManager {
 
     }
 
-    private static void removeAlarm(long vocabularyId) {
+    private static void removeAlarm(long vocabularyId)
+    {
         AlarmManager alarmManager = (AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(App.context, AlarmReceiver.class);
@@ -238,7 +298,8 @@ public class ReminderManager {
         alarmManager.cancel(pendingIntent);
     }
 
-    private static int[] getTimeParts(String time) {
+    private static int[] getTimeParts(String time)
+    {
         // string should be in 00:00 format
         String[] segments = time.split(":");
         int hour = Integer.parseInt(segments[0]);
@@ -247,7 +308,8 @@ public class ReminderManager {
         return new int[]{hour, minute};
     }
 
-    private static Date getTime(int days, int offset) {
+    private static Date getTime(int days, int offset)
+    {
         Calendar c = Calendar.getInstance();
 
         c.add(Calendar.DATE, days);
@@ -261,7 +323,8 @@ public class ReminderManager {
         return c.getTime();
     }
 
-    private static long getElapsedMinutes() {
+    private static long getElapsedMinutes()
+    {
         Calendar calendar = Calendar.getInstance();
         long now = calendar.getTimeInMillis();
 
