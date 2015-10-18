@@ -283,8 +283,7 @@ public class ReminderManager
 
     public static void IncreaseSentWordsPerDay()
     {
-        int sentWords = App.preferences.getInt(SENT_WORDS_PER_DAY, 0) + 1;
-        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, sentWords).apply();
+        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, getSentWordsPerDay() + 1).apply();
     }
 
     private static void addAlarm(Context context, Reminder reminder)
