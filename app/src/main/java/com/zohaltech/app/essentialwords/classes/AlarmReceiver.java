@@ -8,18 +8,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
+import com.zohaltech.app.essentialwords.R;
 import com.zohaltech.app.essentialwords.activities.VocabularyDetailsActivity;
 import com.zohaltech.app.essentialwords.data.SystemSettings;
 import com.zohaltech.app.essentialwords.entities.SystemSetting;
 import com.zohaltech.app.essentialwords.serializables.Reminder;
 
-import com.zohaltech.app.essentialwords.R;
-
-public class AlarmReceiver extends BroadcastReceiver
-{
+public class AlarmReceiver extends BroadcastReceiver {
     @Override
-    public void onReceive(Context context, Intent intent)
-    {
+    public void onReceive(Context context, Intent intent) {
         Reminder reminder = (Reminder) intent.getSerializableExtra("reminder");
 
         NotificationCompat.Builder builder =
@@ -55,7 +52,6 @@ public class AlarmReceiver extends BroadcastReceiver
         App.notificationManager.notify(reminder.getVocabularyId(), notification);
 
         ReminderManager.setLastReminder(reminder);
-        ReminderManager.IncreaseSentWordsPerDay();
         ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
     }
 }

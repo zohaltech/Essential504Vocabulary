@@ -11,8 +11,6 @@ import java.util.ArrayList;
 public class LearningStatus {
     private int vocabIndex;
     private int progress;
-    private int dayIndex;
-    private int dayCount;
     private int vocabCount;
 
     public static LearningStatus getLearningStatusByLesson(int lesson) {
@@ -35,23 +33,18 @@ public class LearningStatus {
                 // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
                 int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
 
-                if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+                if (settings.getStatus() == ReminderSettings.Status.FINISHED ||
+                    currentVocab.getLesson() > lesson) {
                     learningStatus.setProgress(100);
-                    learningStatus.setDayIndex(vocabCount / 6);
-                    learningStatus.setDayCount(vocabCount / 6);
                     learningStatus.setVocabIndex(vocabCount);
                     learningStatus.setVocabCount(vocabCount);
                 } else {
                     learningStatus.setProgress(vocabIndex * 100 / vocabCount);
-                    learningStatus.setDayIndex(currentVocab.getLesson());
-                    learningStatus.setDayCount(vocabCount / 6);
                     learningStatus.setVocabIndex(vocabIndex);
                     learningStatus.setVocabCount(vocabCount);
                 }
             } else {
                 learningStatus.setProgress(0);
-                learningStatus.setDayIndex(0);
-                learningStatus.setDayCount(vocabCount / 6);
                 learningStatus.setVocabIndex(0);
                 learningStatus.setVocabCount(vocabCount);
             }
@@ -89,22 +82,6 @@ public class LearningStatus {
 
     private void setProgress(int progress) {
         this.progress = progress;
-    }
-
-    public int getDayIndex() {
-        return dayIndex;
-    }
-
-    private void setDayIndex(int dayIndex) {
-        this.dayIndex = dayIndex;
-    }
-
-    public int getDayCount() {
-        return dayCount;
-    }
-
-    private void setDayCount(int dayCount) {
-        this.dayCount = dayCount;
     }
 
     public int getVocabCount() {
