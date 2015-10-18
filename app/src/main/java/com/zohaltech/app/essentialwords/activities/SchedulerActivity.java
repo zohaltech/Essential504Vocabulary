@@ -278,7 +278,7 @@ public class SchedulerActivity extends EnhancedActivity
 
         ArrayList<Integer> intervals = new ArrayList<>();
 
-        intervals.add(1);
+        //intervals.add(1);
         intervals.add(15);
         intervals.add(30);
         intervals.add(45);
