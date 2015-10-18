@@ -33,7 +33,8 @@ public class LearningStatus {
                 // int vocabIndex = vocabularies.indexOf(currentVocab) + 1;
                 int vocabIndex = indexOf(currentVocab, vocabularies) + 1;
 
-                if (settings.getStatus() == ReminderSettings.Status.FINISHED) {
+                if (settings.getStatus() == ReminderSettings.Status.FINISHED ||
+                    currentVocab.getLesson() > lesson) {
                     learningStatus.setProgress(100);
                     learningStatus.setVocabIndex(vocabCount);
                     learningStatus.setVocabCount(vocabCount);
