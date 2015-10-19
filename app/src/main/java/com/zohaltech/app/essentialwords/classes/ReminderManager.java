@@ -122,8 +122,8 @@ public class ReminderManager
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
-            int sentWordsPerDay = getTodaySentWords();
-            if (lastVocabulary == null || sentWordsPerDay < settings.getWordsPerDay())
+            int todaySentWords = getTodaySentWords();
+            if (lastVocabulary == null || todaySentWords < settings.getWordsPerDay())
             {
 
                 Vocabulary pivotal = lastVocabulary;
@@ -136,8 +136,8 @@ public class ReminderManager
                     return;
                 }
                 ArrayList<Vocabulary> queuedVocabularies = Vocabularies.select(" Where " + Vocabularies.Id + " >= ?",
-                        new String[]{String.valueOf(pivotal.getId())}, " Limit " + String.valueOf(settings.getWordsPerDay() - sentWordsPerDay));
-                for (int j = sentWordsPerDay; j < settings.getWordsPerDay(); j++)
+                        new String[]{String.valueOf(pivotal.getId())}, " Limit " + String.valueOf(settings.getWordsPerDay() - todaySentWords));
+                for (int j = todaySentWords; j < settings.getWordsPerDay(); j++)
                 {
                     Vocabulary current = queuedVocabularies.get(j);
                     calendar.add(Calendar.SECOND, 1);
