@@ -171,7 +171,8 @@ public class ReminderManager
             }
         }
 
-        if (!settings.getWeekdays()[today - 1] || elapsedMinutes > startTime)
+
+        if (!settings.getWeekdays()[today - 1] || elapsedMinutes > startTime || getTodaySentWords() > settings.getWordsPerDay())
         {
             for (int j = 1; j <= 7; j++)
             {
