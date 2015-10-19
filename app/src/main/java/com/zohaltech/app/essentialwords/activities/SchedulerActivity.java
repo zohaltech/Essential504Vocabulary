@@ -233,7 +233,7 @@ public class SchedulerActivity extends EnhancedActivity
         settings.setWordsPerDay((Integer) spinnerWordsPerDay.getSelectedItem());
         settings.setWeekdays(days);
         settings.setStatus(ReminderSettings.Status.RUNNING);
-        ReminderManager.setReminderSettings(settings);
+        ReminderManager.applyReminderSettings(settings);
 
         ReminderManager.start(paused);
 

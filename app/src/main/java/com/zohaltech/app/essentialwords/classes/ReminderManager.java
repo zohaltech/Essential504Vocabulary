@@ -24,7 +24,7 @@ public class ReminderManager
     public static String SENT_WORDS_PER_DAY = "words_per_day";
 
     // this method is meant to be called just by AlarmReceiver class!
-    public static void setImmediateReminder(int currentVocabularyId, boolean doesTriggersNext)
+    public static void registerNextReminder(int currentVocabularyId, boolean doesTriggersNext)
     {
         Vocabulary current = Vocabularies.select(currentVocabularyId);
         if (current == null)
@@ -48,12 +48,13 @@ public class ReminderManager
         {
             settings.setStatus(ReminderSettings.Status.FINISHED);
             settings.setReminder(null);
-            ReminderManager.setReminderSettings(settings);
+            ReminderManager.applyReminderSettings(settings);
             return;
         }
 
         Reminder reminder = new Reminder(next.getId(), null, next.getVocabulary(), next.getVocabEnglishDef(), true);
-        if (getSentWordsPerDay() < settings.getWordsPerDay())
+        int todaySentWords = getTodaySentWords();
+        if (todaySentWords < settings.getWordsPerDay())
         {
             Calendar calendar = Calendar.getInstance();
             calendar.add(Calendar.MINUTE, settings.getIntervals());
@@ -62,12 +63,12 @@ public class ReminderManager
             settings.setReminder(reminder);
             addAlarm(App.context, reminder);
 
-            setReminderSettings(settings);
+            applyReminderSettings(settings);
         }
         else
         {
             settings.setReminder(reminder);
-            setReminderSettings(settings);
+            applyReminderSettings(settings);
             start(false);
         }
     }
@@ -121,7 +122,7 @@ public class ReminderManager
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
-            int sentWordsPerDay = getSentWordsPerDay();
+            int sentWordsPerDay = getTodaySentWords();
             if (lastVocabulary == null || sentWordsPerDay < settings.getWordsPerDay())
             {
 
@@ -156,7 +157,7 @@ public class ReminderManager
 
                         settings.setReminder(reminder);
                         addAlarm(App.context, reminder);
-                        ReminderManager.setReminderSettings(settings);
+                        ReminderManager.applyReminderSettings(settings);
 
                         return;
                     }
@@ -164,7 +165,7 @@ public class ReminderManager
                     {
                         settings.setReminder(reminder);
                         addAlarm(App.context, reminder);
-                        ReminderManager.setReminderSettings(settings);
+                        ReminderManager.applyReminderSettings(settings);
                     }
                 }
             }
@@ -184,7 +185,7 @@ public class ReminderManager
 
         Date alarmTime = getTime(nextDayOffset, startTime);
         settings.getReminder().setTime(alarmTime);
-        ReminderManager.setReminderSettings(settings);
+        ReminderManager.applyReminderSettings(settings);
 
         addAlarm(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
     }
@@ -204,7 +205,7 @@ public class ReminderManager
         }
 
         settings.setStatus(ReminderSettings.Status.PAUSE);
-        setReminderSettings(settings);
+        applyReminderSettings(settings);
     }
 
     public static void stop()
@@ -223,7 +224,7 @@ public class ReminderManager
 
         settings.setStatus(ReminderSettings.Status.STOP);
         settings.setReminder(null);
-        setReminderSettings(settings);
+        applyReminderSettings(settings);
 
         App.preferences.edit().putInt(SENT_WORDS_PER_DAY, 0).apply();
 
@@ -244,7 +245,7 @@ public class ReminderManager
         //return Helper.deserializeReminderSettings();
     }
 
-    public static void setReminderSettings(ReminderSettings settings)
+    public static void applyReminderSettings(ReminderSettings settings)
     {
         Gson gson = new Gson();
         App.preferences.edit().putString(REMINDER_SETTINGS, gson.toJson(settings)).apply();
@@ -263,9 +264,10 @@ public class ReminderManager
     {
         Gson gson = new Gson();
         App.preferences.edit().putString(LAST_REMINDER, gson.toJson(reminder)).apply();
+        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, getTodaySentWords() + 1).apply();
     }
 
-    public static int getSentWordsPerDay()
+    public static int getTodaySentWords()
     {
         Reminder last = getLastReminder();
         Date now = new Date();
@@ -279,11 +281,6 @@ public class ReminderManager
             App.preferences.edit().putInt(SENT_WORDS_PER_DAY, 0).apply();
             return 0;
         }
-    }
-
-    public static void IncreaseSentWordsPerDay()
-    {
-        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, getSentWordsPerDay() + 1).apply();
     }
 
     private static void addAlarm(Context context, Reminder reminder)

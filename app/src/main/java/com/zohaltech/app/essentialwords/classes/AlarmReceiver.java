@@ -55,8 +55,6 @@ public class AlarmReceiver extends BroadcastReceiver
         App.notificationManager.notify(reminder.getVocabularyId(), notification);
 
         ReminderManager.setLastReminder(reminder);
-        ReminderManager.IncreaseSentWordsPerDay();
-
-        ReminderManager.setImmediateReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
+        ReminderManager.registerNextReminder(reminder.getVocabularyId(), reminder.doesTriggersNext());
     }
 }
