@@ -1,23 +1,13 @@
 package com.zohaltech.app.essentialwords.classes;
 
 import android.os.Build;
-import android.util.Log;
 
 import com.zohaltech.app.essentialwords.BuildConfig;
+import com.zohaltech.app.essentialwords.R;
 import com.zohaltech.app.essentialwords.data.SystemSettings;
 import com.zohaltech.app.essentialwords.entities.SystemSetting;
 
-
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
-
-
-import com.zohaltech.app.essentialwords.R;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -36,26 +26,26 @@ public class WebApiClient {
                     SystemSetting setting = SystemSettings.getCurrentSettings();
                     JSONObject jsonObject = new JSONObject();
 
-                        if (!setting.getInstalled()) {
-                            if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
-                                jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
-                                jsonObject.accumulate("AppId", 3);
-                                jsonObject.accumulate("DeviceId", Helper.getDeviceId());
-                                jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
-                                jsonObject.accumulate("DeviceModel", Build.MODEL);
-                                jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
-                                jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
-                                jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
-                                jsonObject.accumulate("IsPurchased", false);
-                                jsonObject.accumulate("MarketId", App.market);
-                                jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
-                                Boolean result = post(jsonObject);
-                                if (result) {
-                                    setting.setInstalled(true);
-                                    SystemSettings.update(setting);
-                                }
+                    if (!setting.getInstalled()) {
+                        if (ConnectionManager.getInternetStatus() == ConnectionManager.InternetStatus.Connected) {
+                            jsonObject.accumulate("SecurityKey", ConstantParams.getApiSecurityKey());
+                            jsonObject.accumulate("AppId", 3);
+                            jsonObject.accumulate("DeviceId", Helper.getDeviceId());
+                            jsonObject.accumulate("DeviceBrand", Build.MANUFACTURER);
+                            jsonObject.accumulate("DeviceModel", Build.MODEL);
+                            jsonObject.accumulate("AndroidVersion", Build.VERSION.RELEASE);
+                            jsonObject.accumulate("ApiVersion", Build.VERSION.SDK_INT);
+                            jsonObject.accumulate("OperatorId", Helper.getOperator().ordinal());
+                            jsonObject.accumulate("IsPurchased", false);
+                            jsonObject.accumulate("MarketId", App.market);
+                            jsonObject.accumulate("AppVersion", BuildConfig.VERSION_CODE);
+                            Boolean result = post(jsonObject);
+                            if (result) {
+                                setting.setInstalled(true);
+                                SystemSettings.update(setting);
                             }
                         }
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
