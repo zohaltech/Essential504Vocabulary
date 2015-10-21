@@ -2,6 +2,7 @@ package com.zohaltech.app.essentialwords.activities;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.zohaltech.app.essentialwords.BuildConfig;
+import com.zohaltech.app.essentialwords.classes.App;
+import com.zohaltech.app.essentialwords.classes.ReminderManager;
 import com.zohaltech.app.essentialwords.classes.WebApiClient;
 import com.zohaltech.app.essentialwords.data.Examples;
 import com.zohaltech.app.essentialwords.data.Vocabularies;
@@ -32,6 +36,9 @@ import widgets.MySnackbar;
 
 
 public class MainActivity extends EnhancedActivity {
+
+    private final String APP_VERSION = "APP_VERSION";
+
     long startTime;
     private DrawerLayout   drawerLayout;
     private DrawerFragment drawerFragment;
@@ -42,6 +49,14 @@ public class MainActivity extends EnhancedActivity {
         setContentView(R.layout.activity_main);
         //getExamples();
         startTime = System.currentTimeMillis() - 5000;
+
+        if (App.preferences.getInt(APP_VERSION, 0) != BuildConfig.VERSION_CODE) {
+            SharedPreferences.Editor editor = App.preferences.edit();
+            editor.putString(ReminderManager.REMINDER_SETTINGS, null);
+            editor.putInt(APP_VERSION, BuildConfig.VERSION_CODE);
+            editor.apply();
+        }
+
         WebApiClient.sendUserData();
     }
 
