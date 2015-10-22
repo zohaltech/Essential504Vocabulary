@@ -262,6 +262,12 @@ public class SchedulerActivity extends EnhancedActivity
         {
             btnStop.setVisibility(View.VISIBLE);
             btnPause.setVisibility(View.VISIBLE);
+
+            if (settings.getReminder() != null)
+            {
+                Reminder reminder = settings.getReminder();
+                MyToast.show("Next alarm: " + reminder.getTime().toString(), Toast.LENGTH_LONG);
+            }
         }
         else if (settings.getStatus() == ReminderSettings.Status.PAUSE)
         {

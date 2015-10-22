@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 import com.google.gson.Gson;
 import com.zohaltech.app.essentialwords.data.Vocabularies;
@@ -61,7 +62,7 @@ public class ReminderManager
 
             reminder.setTime(calendar.getTime());
             settings.setReminder(reminder);
-            addAlarm(App.context, reminder);
+            addAlarm(reminder);
 
             applyReminderSettings(settings);
         }
@@ -156,7 +157,7 @@ public class ReminderManager
                         reminder.setTriggerNext(true);
 
                         settings.setReminder(reminder);
-                        addAlarm(App.context, reminder);
+                        addAlarm(reminder);
                         ReminderManager.applyReminderSettings(settings);
 
                         return;
@@ -164,7 +165,7 @@ public class ReminderManager
                     else
                     {
                         settings.setReminder(reminder);
-                        addAlarm(App.context, reminder);
+                        addAlarm(reminder);
                         ReminderManager.applyReminderSettings(settings);
                     }
                 }
@@ -188,7 +189,7 @@ public class ReminderManager
         settings.getReminder().setTime(alarmTime);
         ReminderManager.applyReminderSettings(settings);
 
-        addAlarm(App.context, new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
+        addAlarm(new Reminder(vocabulary.getId(), alarmTime, vocabulary.getVocabulary(), vocabulary.getVocabEnglishDef(), true));
     }
 
     public static void pause()
@@ -263,9 +264,10 @@ public class ReminderManager
 
     public static void setLastReminder(Reminder reminder)
     {
+        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, getTodaySentWords() + 1).apply();
+
         Gson gson = new Gson();
         App.preferences.edit().putString(LAST_REMINDER, gson.toJson(reminder)).apply();
-        App.preferences.edit().putInt(SENT_WORDS_PER_DAY, getTodaySentWords() + 1).apply();
     }
 
     public static int getTodaySentWords()
@@ -284,15 +286,23 @@ public class ReminderManager
         }
     }
 
-    private static void addAlarm(Context context, Reminder reminder)
+    private static void addAlarm(Reminder reminder)
     {
+        Context context = App.context;
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(context, AlarmReceiver.class);
         intent.putExtra("reminder", reminder);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, reminder.getVocabularyId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+        {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        }
+        else
+        {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminder.getTime().getTime(), pendingIntent);
+        }
 
     }
 
