@@ -1,5 +1,6 @@
 package com.zohaltech.app.essentialwords.activities;
 
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,11 +19,15 @@ import android.view.View;
 
 import com.zohaltech.app.essentialwords.BuildConfig;
 import com.zohaltech.app.essentialwords.classes.App;
+import com.zohaltech.app.essentialwords.classes.DialogManager;
+import com.zohaltech.app.essentialwords.classes.Helper;
 import com.zohaltech.app.essentialwords.classes.ReminderManager;
 import com.zohaltech.app.essentialwords.classes.WebApiClient;
 import com.zohaltech.app.essentialwords.data.Examples;
+import com.zohaltech.app.essentialwords.data.SystemSettings;
 import com.zohaltech.app.essentialwords.data.Vocabularies;
 import com.zohaltech.app.essentialwords.entities.Example;
+import com.zohaltech.app.essentialwords.entities.SystemSetting;
 import com.zohaltech.app.essentialwords.entities.Vocabulary;
 import com.zohaltech.app.essentialwords.fragments.DrawerFragment;
 import com.zohaltech.app.essentialwords.fragments.SearchFragment;
@@ -51,6 +56,8 @@ public class MainActivity extends EnhancedActivity {
         startTime = System.currentTimeMillis() - 5000;
 
         if (App.preferences.getInt(APP_VERSION, 0) != BuildConfig.VERSION_CODE) {
+            SystemSetting setting = SystemSettings.getCurrentSettings();
+            setting.setInstalled(false);
             SharedPreferences.Editor editor = App.preferences.edit();
             editor.putString(ReminderManager.REMINDER_SETTINGS, null);
             editor.putInt(APP_VERSION, BuildConfig.VERSION_CODE);
@@ -58,6 +65,11 @@ public class MainActivity extends EnhancedActivity {
         }
 
         WebApiClient.sendUserData();
+        WebApiClient.checkForUpdate();
+
+        if (App.preferences.getBoolean("RATED", false) == false) {
+            App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
+        }
     }
 
     @Override
@@ -67,6 +79,28 @@ public class MainActivity extends EnhancedActivity {
         drawerFragment.setUp(drawerLayout, toolbar);
         drawerFragment.setMenuVisibility(true);
         displayView(0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int runCount = App.preferences.getInt("APP_RUN_COUNT", 0);
+        boolean rated = App.preferences.getBoolean("RATED", false);
+        if (runCount != 0 && runCount % 6 == 0 && rated == false) {
+            App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
+            Dialog dialog = DialogManager.getPopupDialog(this, "Rate App", "If 504 Essential Words is useful to you, would you like to rate?", "Yes, I rate it", "Not now!", null, new Runnable() {
+                @Override
+                public void run() {
+                    Helper.rateApp(MainActivity.this);
+                }
+            }, new Runnable() {
+                @Override
+                public void run() {
+                    //do nothing
+                }
+            });
+            dialog.show();
+        }
     }
 
     @Override

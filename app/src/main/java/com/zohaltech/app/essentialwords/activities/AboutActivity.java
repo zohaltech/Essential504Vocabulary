@@ -10,16 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zohaltech.app.essentialwords.BuildConfig;
-import com.zohaltech.app.essentialwords.classes.App;
-
 import com.zohaltech.app.essentialwords.R;
+import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.classes.Helper;
 
 import widgets.MySnackbar;
-import widgets.MyToast;
 
 
 public class AboutActivity extends EnhancedActivity {
@@ -63,7 +60,7 @@ public class AboutActivity extends EnhancedActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(App.marketDeveloperUri));
                 if (!myStartActivity(intent)) {
-                    MySnackbar.show(layoutWebsite, getString(R.string.could_not_open_market), Snackbar.LENGTH_SHORT);
+                    MySnackbar.show(layoutWebsite, String.format(getString(R.string.could_not_open_market), App.marketName), Snackbar.LENGTH_SHORT);
                 }
             }
         });
@@ -80,15 +77,7 @@ public class AboutActivity extends EnhancedActivity {
         btnRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(App.marketPollIntent);
-                intent.setData(Uri.parse(App.marketPollUri));
-                intent.setPackage(App.marketPackage);
-                if (!myStartActivity(intent)) {
-                    intent.setData(Uri.parse(App.marketWebsiteUri));
-                    if (!myStartActivity(intent)) {
-                        MyToast.show(String.format(getResources().getString(R.string.could_not_open_market), App.marketName, App.marketName), Toast.LENGTH_SHORT);
-                    }
-                }
+                Helper.rateApp(AboutActivity.this);
             }
         });
 

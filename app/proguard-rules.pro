@@ -15,3 +15,12 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class android.support.v7.widget.** { *; }
+-keep class com.android.vending.billing
+-dontwarn com.squareup.picasso.**
+-dontwarn com.rey.material.**
+-keep class android.support.v7.widget.SearchView { *; }
+-keepattributes Signature
+-keep public class com.google.gson.stream.** { *; }
+-keep class com.zohaltech.app.corevocabulary.serializables.** { *; }
