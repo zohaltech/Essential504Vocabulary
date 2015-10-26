@@ -238,11 +238,6 @@ public class SchedulerActivity extends EnhancedActivity
         ReminderManager.start(paused);
 
         bind();
-
-        settings = ReminderManager.getReminderSettings();
-        Date time = settings.getReminder().getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM HH:mm", Locale.getDefault());
-        MyToast.show("First vocabulary will be notified on " + sdf.format(time), Toast.LENGTH_LONG);
     }
 
     private void bind()
