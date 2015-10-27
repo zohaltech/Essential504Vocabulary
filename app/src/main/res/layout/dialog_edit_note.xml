@@ -32,8 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Enter note here"
-                android:maxLength="512"
-                android:maxLines="3"
+                android:maxLines="5"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/primary_text"/>
 
