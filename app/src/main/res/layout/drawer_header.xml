@@ -25,14 +25,14 @@
         <widgets.LatinTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="504"
+            android:text="@string/drawer_header_1"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white"/>
 
         <widgets.LatinTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Essential Words"
+            android:text="@string/drawer_header_2"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/white"/>
 

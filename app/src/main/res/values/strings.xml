@@ -8,11 +8,13 @@
     <string name="feedback_subject">504 Essential Words Feedback</string>
     <string name="feedback_title">Feedback</string>
 
-    <string name="sharing_message" formatted="false">\"%s\" is a must have android app for improving your everday english. download it from the link below:\n%s</string>
+    <string name="sharing_message" formatted="false">\"%s\" is a must have android app for improving your everyday english. download it from the link below:\n%s</string>
     <string name="could_not_open_market" formatted="false">Could not find %s on your device, Please install it</string>
     <string name="press_back_again_to_exit">Press back again to exit</string>
     <string name="host_name">http://zohaltech.com/api/app/post</string>
     <string name="jan">8F2CF4F0C905</string>
     <string name="host_update">http://zohaltech.com/api/appversion</string>
     <string name="update_query_string" formatted="false"><![CDATA[\?SecurityKey=%s&AppId=%s&MarketId=%s&AppVersion=%s&DeviceId=%s]]></string>
+    <string name="drawer_header_1">504</string>
+    <string name="drawer_header_2">Essential Words</string>
 </resources>

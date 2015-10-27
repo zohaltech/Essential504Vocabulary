@@ -18,24 +18,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zohaltech.app.essentialwords.BuildConfig;
+import com.zohaltech.app.essentialwords.R;
 import com.zohaltech.app.essentialwords.classes.App;
 import com.zohaltech.app.essentialwords.classes.DialogManager;
 import com.zohaltech.app.essentialwords.classes.Helper;
 import com.zohaltech.app.essentialwords.classes.ReminderManager;
 import com.zohaltech.app.essentialwords.classes.WebApiClient;
-import com.zohaltech.app.essentialwords.data.Examples;
 import com.zohaltech.app.essentialwords.data.SystemSettings;
-import com.zohaltech.app.essentialwords.data.Vocabularies;
-import com.zohaltech.app.essentialwords.entities.Example;
 import com.zohaltech.app.essentialwords.entities.SystemSetting;
-import com.zohaltech.app.essentialwords.entities.Vocabulary;
 import com.zohaltech.app.essentialwords.fragments.DrawerFragment;
-import com.zohaltech.app.essentialwords.fragments.SearchFragment;
 import com.zohaltech.app.essentialwords.fragments.LessonsFragment;
-
-import com.zohaltech.app.essentialwords.R;
-
-import java.util.ArrayList;
+import com.zohaltech.app.essentialwords.fragments.SearchFragment;
 
 import widgets.MySnackbar;
 
@@ -88,7 +81,7 @@ public class MainActivity extends EnhancedActivity {
         boolean rated = App.preferences.getBoolean("RATED", false);
         if (runCount != 0 && runCount % 6 == 0 && rated == false) {
             App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();
-            Dialog dialog = DialogManager.getPopupDialog(this, "Rate App", "If 504 Essential Words is useful to you, would you like to rate?", "Yes, I rate it", "Not now!", null, new Runnable() {
+            Dialog dialog = DialogManager.getPopupDialog(this, "Rate App", "If " + getString(R.string.app_name) + " is useful to you, would you like to rate?", "Yes, I rate it", "Not now!", null, new Runnable() {
                 @Override
                 public void run() {
                     Helper.rateApp(MainActivity.this);
