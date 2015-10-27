@@ -20,7 +20,7 @@ public class Notes {
                                       Id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                                       VocabularyId + " INTEGER , " +
                                       Ordinal + " INTEGER , " +
-                                      Description + " VARCHAR(512));";
+                                      Description + " TEXT );";
     static final String DropTable   = "Drop Table If Exists " + TableName;
 
     private static ArrayList<Note> select(String whereClause, String[] selectionArgs) {
