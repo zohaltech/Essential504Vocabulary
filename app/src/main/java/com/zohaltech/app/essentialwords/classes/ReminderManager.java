@@ -119,7 +119,7 @@ public class ReminderManager
             Vocabulary lastVocabulary = null;
             if (lastReminder != null)
             {
-                lastVocabulary = Vocabularies.select(lastReminder.getVocabularyId());
+                lastVocabulary = Vocabularies.next(lastReminder.getVocabularyId());
             }
 
             // if there is no reminder at all or current vocabulary isn't in another group
