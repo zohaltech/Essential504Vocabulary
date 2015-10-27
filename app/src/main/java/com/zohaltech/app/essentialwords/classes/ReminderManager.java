@@ -140,7 +140,7 @@ public class ReminderManager
                         new String[]{String.valueOf(pivotal.getId())}, " Limit " + String.valueOf(settings.getWordsPerDay() - todaySentWords));
                 for (int j = todaySentWords; j < settings.getWordsPerDay(); j++)
                 {
-                    Vocabulary current = queuedVocabularies.get(j);
+                    Vocabulary current = queuedVocabularies.get(j - todaySentWords);
                     calendar.add(Calendar.SECOND, 1);
                     Date time = calendar.getTime();
 
