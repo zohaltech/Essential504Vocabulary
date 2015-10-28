@@ -69,7 +69,7 @@ public class Notes {
 
     public static long delete(Note note) {
         DataAccess da = new DataAccess();
-        return da.delete(TableName, Id + " =? ", new String[]{String.valueOf(note.getId())});
+        return da.delete(TableName, Id + " = ? ", new String[]{String.valueOf(note.getId())});
     }
 
     public static ContentValues getContentValues(Note note) {
