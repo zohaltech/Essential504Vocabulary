@@ -52,6 +52,7 @@ public class WebApiClient {
                             }
                         }
                     }
+                    checkForUpdate();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -61,7 +62,7 @@ public class WebApiClient {
         thread.start();
     }
 
-    public static void checkForUpdate() {
+    private static void checkForUpdate() {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {

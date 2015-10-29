@@ -58,7 +58,6 @@ public class MainActivity extends EnhancedActivity {
         }
 
         WebApiClient.sendUserData();
-        WebApiClient.checkForUpdate();
 
         if (App.preferences.getBoolean("RATED", false) == false) {
             App.preferences.edit().putInt("APP_RUN_COUNT", App.preferences.getInt("APP_RUN_COUNT", 0) + 1).apply();

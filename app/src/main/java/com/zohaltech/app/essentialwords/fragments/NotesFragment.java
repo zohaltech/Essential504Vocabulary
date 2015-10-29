@@ -137,8 +137,4 @@ public class NotesFragment extends Fragment {
 
         return view;
     }
-
-    private void showNoteDialog() {
-
-    }
 }
